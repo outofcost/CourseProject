@@ -115,6 +115,94 @@
 
 ---
 
+## 🚀 NEW: Phase-driven tasks per MASTER_PLAN.md
+
+User goal: maximally-polished .docx coursework ready for HSE submission. Plan in `coordination/MASTER_PLAN.md`. Phases A–H. Below — full task list. Both Claudes execute on their lanes.
+
+### Phase A — Content completion
+
+**Claude-K queue:**
+- **TASK-K-10:** Integrate Kopkin (2012) — direct NBA tax migration paper — в chapter_2 §2.6 + chapter_5 §5.5
+- **TASK-K-11:** Integrate Keefer (2021) — cap-shock methodology — в chapter_5 §5.7
+- **TASK-K-12:** Integrate Berri & Krautmann (2006) — NBA shirking — в chapter_5 §5.7
+- **TASK-K-13:** Integrate White & Sheldon (2014) — CY effect — в chapter_5 §5.7
+- **TASK-K-14:** Resolve skeleton TBD-маркеры (Mincer, Stiroh, Hill-Groothuis, Krautmann, Kahn) — verified general cite
+- **TASK-K-15:** Cite Pratt (1987) + Genizi (1993) в Methods §3.6
+- **TASK-K-16:** Cite Shapley (1953) в Methods §3.6
+- **TASK-K-17:** Cite Rosen (1986) в Methods §3.4 + Discussion §5.2 (cap concavity)
+
+**Claude-A queue:**
+- **TASK-A-10:** Update references.bib bibkey `johnson_2017` → `johnson_2018`
+- **TASK-A-11:** Remove `hinton_2019` и `robst_2011` из references.bib (dropped)
+- **TASK-A-12:** Add `berri_schmidt_2010` как `@book{...}` entry
+- **TASK-A-13:** HSE proxy attempt for paywall sources — upgrade skeleton → FULL
+- **TASK-A-14:** Verify Crossref DOIs in references.bib
+
+### Phase B — Cross-chapter consistency
+
+**Claude-K queue:**
+- **TASK-K-18:** Hypothesis numbering audit
+- **TASK-K-19:** Numerical consistency check (Shapley shares, R²-values, β-coefficients)
+- **TASK-K-20:** Terminology unification (tier names, market terminology, CBA dates)
+- **TASK-K-21:** Cross-reference verification (Глава, Раздел, Рисунок, Таблица)
+
+**Claude-A queue:**
+- **TASK-A-15:** Re-run bib_check_report.md после K-10..K-17
+- **TASK-A-16:** Forward + backward cite consistency check
+
+### Phase C — Prose polish
+
+**Claude-K queue:**
+- **TASK-K-22..27:** Prose polish chapters 1–6 (по одной за task)
+- **TASK-K-28:** Prose polish ai_disclosure.md
+- **TASK-K-29:** Update abstract.md (RU + EN) — final findings + Hembre 2022
+
+### Phase D — Master document assembly
+
+**Claude-K queue:**
+- **TASK-K-30:** Drop deprecated _v1 chapter files
+- **TASK-K-31:** Create manuscript_master.md combining 8 files in HSE order
+- **TASK-K-32:** Length 55–70 страниц check
+- **TASK-K-33:** Section numbering (1.1, 1.2, …)
+- **TASK-K-34:** Title page template
+
+### Phase E — Figures + tables
+
+**Claude-K queue:**
+- **TASK-K-35:** Russian-language figure captions (F1–F7)
+- **TASK-K-36:** Insert figure references в chapter_4
+- **TASK-K-37:** Russian-language table captions
+- **TASK-K-38:** Key tables → markdown tables inline
+- **TASK-K-39:** Generate appendix from full output/tables/ CSV
+
+### Phase F — Bibliography finalize
+
+**Claude-A queue:**
+- **TASK-A-17:** APA-format check per bib entry
+- **TASK-A-18:** Generate alphabetical ordered bibliography markdown
+- **TASK-A-19:** Forward + backward cite consistency v2
+- **TASK-A-20:** Remove unused entries from references.bib
+- **TASK-A-21:** Final bibliography Russian heading + format
+
+### Phase G — HSE compliance
+
+**Claude-K queue:**
+- **TASK-K-40:** Wordcount audit per chapter, % of total
+- **TASK-K-41:** Trim/expand chapters per HSE targets
+- **TASK-K-42:** Title page populated
+- **TASK-K-43:** Abstract RU + EN exactly 250 words, structured
+- **TASK-K-44:** AI Disclosure §1.3 compliance check
+
+**Joint:**
+- **TASK-J-01:** HSE template guideline readout (fonts/margins/page numbers)
+
+### Phase H — Pandoc → .docx
+
+**Claude-K queue:**
+- **TASK-K-45..50:** Pandoc setup → conversion → visual check → hash-snapshot final .docx
+
+---
+
 ## Done (recent, last 20)
 
 - 2026-05-22 — `chapter_5_discussion_v2.md` written (Claude-K, commit 369757c, TASK-03)
