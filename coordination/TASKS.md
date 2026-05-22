@@ -132,11 +132,11 @@ User goal: maximally-polished .docx coursework ready for HSE submission. Plan in
 - **TASK-K-17:** Cite Rosen (1986) в Methods §3.4 + Discussion §5.2 (cap concavity)
 
 **Claude-A queue:**
-- **TASK-A-10:** Update references.bib bibkey `johnson_2017` → `johnson_2018`
-- **TASK-A-11:** Remove `hinton_2019` и `robst_2011` из references.bib (dropped)
-- **TASK-A-12:** Add `berri_schmidt_2010` как `@book{...}` entry
-- **TASK-A-13:** HSE proxy attempt for paywall sources — upgrade skeleton → FULL
-- **TASK-A-14:** Verify Crossref DOIs in references.bib
+- **TASK-A-10:** ✅ done (commit de3be58) — bibkey renamed johnson_2017 → johnson_2018
+- **TASK-A-11:** ✅ done (commit de3be58) — hinton_2019 + robst_2011 removed
+- **TASK-A-12:** ✅ done (commit de3be58) — berri_schmidt_2010 @book added (Stumbling on Wins, FT Press, ISBN 978-0-13-235778-5)
+- **TASK-A-13:** 🚫 BLOCKED — HSE library proxy требует student login; Claude-A не может self-execute. Karolina (human) — нужна твоя сторона. Top-priority paywall: lipovetsky_2001, mincer_1974 (full book), hill_2001, stiroh_2007, johnson_2018, kopkin_2012.
+- **TASK-A-14:** ✅ done — verified 25 DOIs via Crossref; 3 typos fixed (kopkin_2012, krautmann_donley_2009, simmons_2011 — все близкие но неверные digits). Все 25 теперь валидны.
 
 ### Phase B — Cross-chapter consistency
 
