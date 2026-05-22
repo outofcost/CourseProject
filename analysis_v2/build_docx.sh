@@ -17,7 +17,8 @@ pandoc "$SRC" \
     --from=markdown+tex_math_dollars+raw_tex \
     --to=docx \
     -V lang=ru \
-    --standalone
+    --standalone \
+    --resource-path="$ROOT/analysis_v2/reports:$ROOT/analysis_v2/output/figures:$ROOT"
 
 echo "Built: $OUT ($(du -h "$OUT" | cut -f1))"
 echo "Sha256: $(shasum -a 256 "$OUT" | cut -d' ' -f1)"
