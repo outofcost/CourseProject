@@ -1,0 +1,31 @@
+team_abbr,team_name,city,state,no_income_tax
+ATL,Atlanta Hawks,Atlanta,Georgia,0
+BOS,Boston Celtics,Boston,Massachusetts,0
+BKN,Brooklyn Nets,Brooklyn,New York,0
+CHA,Charlotte Hornets,Charlotte,North Carolina,0
+CHI,Chicago Bulls,Chicago,Illinois,0
+CLE,Cleveland Cavaliers,Cleveland,Ohio,0
+DAL,Dallas Mavericks,Dallas,Texas,1
+DEN,Denver Nuggets,Denver,Colorado,0
+DET,Detroit Pistons,Detroit,Michigan,0
+GSW,Golden State Warriors,San Francisco,California,0
+HOU,Houston Rockets,Houston,Texas,1
+IND,Indiana Pacers,Indianapolis,Indiana,0
+LAC,Los Angeles Clippers,Los Angeles,California,0
+LAL,Los Angeles Lakers,Los Angeles,California,0
+MEM,Memphis Grizzlies,Memphis,Tennessee,1
+MIA,Miami Heat,Miami,Florida,1
+MIL,Milwaukee Bucks,Milwaukee,Wisconsin,0
+MIN,Minnesota Timberwolves,Minneapolis,Minnesota,0
+NOP,New Orleans Pelicans,New Orleans,Louisiana,0
+NYK,New York Knicks,New York,New York,0
+OKC,Oklahoma City Thunder,Oklahoma City,Oklahoma,0
+ORL,Orlando Magic,Orlando,Florida,1
+PHI,Philadelphia 76ers,Philadelphia,Pennsylvania,0
+PHX,Phoenix Suns,Phoenix,Arizona,0
+POR,Portland Trail Blazers,Portland,Oregon,0
+SAC,Sacramento Kings,Sacramento,California,0
+SAS,San Antonio Spurs,San Antonio,Texas,1
+TOR,Toronto Raptors,Toronto,Ontario (Canada),0
+UTA,Utah Jazz,Salt Lake City,Utah,0
+WAS,Washington Wizards,Washington,DC/Virginia,0

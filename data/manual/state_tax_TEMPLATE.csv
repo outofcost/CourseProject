@@ -1,0 +1,271 @@
+team_abbr,season,state,no_income_tax,top_marginal_rate,notes
+ATL,2016,Georgia,0,NA,NA
+ATL,2017,Georgia,0,NA,NA
+ATL,2018,Georgia,0,NA,NA
+ATL,2019,Georgia,0,NA,NA
+ATL,2020,Georgia,0,NA,NA
+ATL,2021,Georgia,0,NA,NA
+ATL,2022,Georgia,0,NA,NA
+ATL,2023,Georgia,0,NA,NA
+ATL,2024,Georgia,0,NA,NA
+BOS,2016,Massachusetts,0,NA,NA
+BOS,2017,Massachusetts,0,NA,NA
+BOS,2018,Massachusetts,0,NA,NA
+BOS,2019,Massachusetts,0,NA,NA
+BOS,2020,Massachusetts,0,NA,NA
+BOS,2021,Massachusetts,0,NA,NA
+BOS,2022,Massachusetts,0,NA,NA
+BOS,2023,Massachusetts,0,NA,NA
+BOS,2024,Massachusetts,0,NA,NA
+BKN,2016,New York,0,NA,NA
+BKN,2017,New York,0,NA,NA
+BKN,2018,New York,0,NA,NA
+BKN,2019,New York,0,NA,NA
+BKN,2020,New York,0,NA,NA
+BKN,2021,New York,0,NA,NA
+BKN,2022,New York,0,NA,NA
+BKN,2023,New York,0,NA,NA
+BKN,2024,New York,0,NA,NA
+CHA,2016,North Carolina,0,NA,NA
+CHA,2017,North Carolina,0,NA,NA
+CHA,2018,North Carolina,0,NA,NA
+CHA,2019,North Carolina,0,NA,NA
+CHA,2020,North Carolina,0,NA,NA
+CHA,2021,North Carolina,0,NA,NA
+CHA,2022,North Carolina,0,NA,NA
+CHA,2023,North Carolina,0,NA,NA
+CHA,2024,North Carolina,0,NA,NA
+CHI,2016,Illinois,0,NA,NA
+CHI,2017,Illinois,0,NA,NA
+CHI,2018,Illinois,0,NA,NA
+CHI,2019,Illinois,0,NA,NA
+CHI,2020,Illinois,0,NA,NA
+CHI,2021,Illinois,0,NA,NA
+CHI,2022,Illinois,0,NA,NA
+CHI,2023,Illinois,0,NA,NA
+CHI,2024,Illinois,0,NA,NA
+CLE,2016,Ohio,0,NA,NA
+CLE,2017,Ohio,0,NA,NA
+CLE,2018,Ohio,0,NA,NA
+CLE,2019,Ohio,0,NA,NA
+CLE,2020,Ohio,0,NA,NA
+CLE,2021,Ohio,0,NA,NA
+CLE,2022,Ohio,0,NA,NA
+CLE,2023,Ohio,0,NA,NA
+CLE,2024,Ohio,0,NA,NA
+DAL,2016,Texas,1,NA,NA
+DAL,2017,Texas,1,NA,NA
+DAL,2018,Texas,1,NA,NA
+DAL,2019,Texas,1,NA,NA
+DAL,2020,Texas,1,NA,NA
+DAL,2021,Texas,1,NA,NA
+DAL,2022,Texas,1,NA,NA
+DAL,2023,Texas,1,NA,NA
+DAL,2024,Texas,1,NA,NA
+DEN,2016,Colorado,0,NA,NA
+DEN,2017,Colorado,0,NA,NA
+DEN,2018,Colorado,0,NA,NA
+DEN,2019,Colorado,0,NA,NA
+DEN,2020,Colorado,0,NA,NA
+DEN,2021,Colorado,0,NA,NA
+DEN,2022,Colorado,0,NA,NA
+DEN,2023,Colorado,0,NA,NA
+DEN,2024,Colorado,0,NA,NA
+DET,2016,Michigan,0,NA,NA
+DET,2017,Michigan,0,NA,NA
+DET,2018,Michigan,0,NA,NA
+DET,2019,Michigan,0,NA,NA
+DET,2020,Michigan,0,NA,NA
+DET,2021,Michigan,0,NA,NA
+DET,2022,Michigan,0,NA,NA
+DET,2023,Michigan,0,NA,NA
+DET,2024,Michigan,0,NA,NA
+GSW,2016,California,0,NA,NA
+GSW,2017,California,0,NA,NA
+GSW,2018,California,0,NA,NA
+GSW,2019,California,0,NA,NA
+GSW,2020,California,0,NA,NA
+GSW,2021,California,0,NA,NA
+GSW,2022,California,0,NA,NA
+GSW,2023,California,0,NA,NA
+GSW,2024,California,0,NA,NA
+HOU,2016,Texas,1,NA,NA
+HOU,2017,Texas,1,NA,NA
+HOU,2018,Texas,1,NA,NA
+HOU,2019,Texas,1,NA,NA
+HOU,2020,Texas,1,NA,NA
+HOU,2021,Texas,1,NA,NA
+HOU,2022,Texas,1,NA,NA
+HOU,2023,Texas,1,NA,NA
+HOU,2024,Texas,1,NA,NA
+IND,2016,Indiana,0,NA,NA
+IND,2017,Indiana,0,NA,NA
+IND,2018,Indiana,0,NA,NA
+IND,2019,Indiana,0,NA,NA
+IND,2020,Indiana,0,NA,NA
+IND,2021,Indiana,0,NA,NA
+IND,2022,Indiana,0,NA,NA
+IND,2023,Indiana,0,NA,NA
+IND,2024,Indiana,0,NA,NA
+LAC,2016,California,0,NA,NA
+LAC,2017,California,0,NA,NA
+LAC,2018,California,0,NA,NA
+LAC,2019,California,0,NA,NA
+LAC,2020,California,0,NA,NA
+LAC,2021,California,0,NA,NA
+LAC,2022,California,0,NA,NA
+LAC,2023,California,0,NA,NA
+LAC,2024,California,0,NA,NA
+LAL,2016,California,0,NA,NA
+LAL,2017,California,0,NA,NA
+LAL,2018,California,0,NA,NA
+LAL,2019,California,0,NA,NA
+LAL,2020,California,0,NA,NA
+LAL,2021,California,0,NA,NA
+LAL,2022,California,0,NA,NA
+LAL,2023,California,0,NA,NA
+LAL,2024,California,0,NA,NA
+MEM,2016,Tennessee,1,NA,NA
+MEM,2017,Tennessee,1,NA,NA
+MEM,2018,Tennessee,1,NA,NA
+MEM,2019,Tennessee,1,NA,NA
+MEM,2020,Tennessee,1,NA,NA
+MEM,2021,Tennessee,1,NA,NA
+MEM,2022,Tennessee,1,NA,NA
+MEM,2023,Tennessee,1,NA,NA
+MEM,2024,Tennessee,1,NA,NA
+MIA,2016,Florida,1,NA,NA
+MIA,2017,Florida,1,NA,NA
+MIA,2018,Florida,1,NA,NA
+MIA,2019,Florida,1,NA,NA
+MIA,2020,Florida,1,NA,NA
+MIA,2021,Florida,1,NA,NA
+MIA,2022,Florida,1,NA,NA
+MIA,2023,Florida,1,NA,NA
+MIA,2024,Florida,1,NA,NA
+MIL,2016,Wisconsin,0,NA,NA
+MIL,2017,Wisconsin,0,NA,NA
+MIL,2018,Wisconsin,0,NA,NA
+MIL,2019,Wisconsin,0,NA,NA
+MIL,2020,Wisconsin,0,NA,NA
+MIL,2021,Wisconsin,0,NA,NA
+MIL,2022,Wisconsin,0,NA,NA
+MIL,2023,Wisconsin,0,NA,NA
+MIL,2024,Wisconsin,0,NA,NA
+MIN,2016,Minnesota,0,NA,NA
+MIN,2017,Minnesota,0,NA,NA
+MIN,2018,Minnesota,0,NA,NA
+MIN,2019,Minnesota,0,NA,NA
+MIN,2020,Minnesota,0,NA,NA
+MIN,2021,Minnesota,0,NA,NA
+MIN,2022,Minnesota,0,NA,NA
+MIN,2023,Minnesota,0,NA,NA
+MIN,2024,Minnesota,0,NA,NA
+NOP,2016,Louisiana,0,NA,NA
+NOP,2017,Louisiana,0,NA,NA
+NOP,2018,Louisiana,0,NA,NA
+NOP,2019,Louisiana,0,NA,NA
+NOP,2020,Louisiana,0,NA,NA
+NOP,2021,Louisiana,0,NA,NA
+NOP,2022,Louisiana,0,NA,NA
+NOP,2023,Louisiana,0,NA,NA
+NOP,2024,Louisiana,0,NA,NA
+NYK,2016,New York,0,NA,NA
+NYK,2017,New York,0,NA,NA
+NYK,2018,New York,0,NA,NA
+NYK,2019,New York,0,NA,NA
+NYK,2020,New York,0,NA,NA
+NYK,2021,New York,0,NA,NA
+NYK,2022,New York,0,NA,NA
+NYK,2023,New York,0,NA,NA
+NYK,2024,New York,0,NA,NA
+OKC,2016,Oklahoma,0,NA,NA
+OKC,2017,Oklahoma,0,NA,NA
+OKC,2018,Oklahoma,0,NA,NA
+OKC,2019,Oklahoma,0,NA,NA
+OKC,2020,Oklahoma,0,NA,NA
+OKC,2021,Oklahoma,0,NA,NA
+OKC,2022,Oklahoma,0,NA,NA
+OKC,2023,Oklahoma,0,NA,NA
+OKC,2024,Oklahoma,0,NA,NA
+ORL,2016,Florida,1,NA,NA
+ORL,2017,Florida,1,NA,NA
+ORL,2018,Florida,1,NA,NA
+ORL,2019,Florida,1,NA,NA
+ORL,2020,Florida,1,NA,NA
+ORL,2021,Florida,1,NA,NA
+ORL,2022,Florida,1,NA,NA
+ORL,2023,Florida,1,NA,NA
+ORL,2024,Florida,1,NA,NA
+PHI,2016,Pennsylvania,0,NA,NA
+PHI,2017,Pennsylvania,0,NA,NA
+PHI,2018,Pennsylvania,0,NA,NA
+PHI,2019,Pennsylvania,0,NA,NA
+PHI,2020,Pennsylvania,0,NA,NA
+PHI,2021,Pennsylvania,0,NA,NA
+PHI,2022,Pennsylvania,0,NA,NA
+PHI,2023,Pennsylvania,0,NA,NA
+PHI,2024,Pennsylvania,0,NA,NA
+PHX,2016,Arizona,0,NA,NA
+PHX,2017,Arizona,0,NA,NA
+PHX,2018,Arizona,0,NA,NA
+PHX,2019,Arizona,0,NA,NA
+PHX,2020,Arizona,0,NA,NA
+PHX,2021,Arizona,0,NA,NA
+PHX,2022,Arizona,0,NA,NA
+PHX,2023,Arizona,0,NA,NA
+PHX,2024,Arizona,0,NA,NA
+POR,2016,Oregon,0,NA,NA
+POR,2017,Oregon,0,NA,NA
+POR,2018,Oregon,0,NA,NA
+POR,2019,Oregon,0,NA,NA
+POR,2020,Oregon,0,NA,NA
+POR,2021,Oregon,0,NA,NA
+POR,2022,Oregon,0,NA,NA
+POR,2023,Oregon,0,NA,NA
+POR,2024,Oregon,0,NA,NA
+SAC,2016,California,0,NA,NA
+SAC,2017,California,0,NA,NA
+SAC,2018,California,0,NA,NA
+SAC,2019,California,0,NA,NA
+SAC,2020,California,0,NA,NA
+SAC,2021,California,0,NA,NA
+SAC,2022,California,0,NA,NA
+SAC,2023,California,0,NA,NA
+SAC,2024,California,0,NA,NA
+SAS,2016,Texas,1,NA,NA
+SAS,2017,Texas,1,NA,NA
+SAS,2018,Texas,1,NA,NA
+SAS,2019,Texas,1,NA,NA
+SAS,2020,Texas,1,NA,NA
+SAS,2021,Texas,1,NA,NA
+SAS,2022,Texas,1,NA,NA
+SAS,2023,Texas,1,NA,NA
+SAS,2024,Texas,1,NA,NA
+TOR,2016,Ontario (Canada),0,NA,NA
+TOR,2017,Ontario (Canada),0,NA,NA
+TOR,2018,Ontario (Canada),0,NA,NA
+TOR,2019,Ontario (Canada),0,NA,NA
+TOR,2020,Ontario (Canada),0,NA,NA
+TOR,2021,Ontario (Canada),0,NA,NA
+TOR,2022,Ontario (Canada),0,NA,NA
+TOR,2023,Ontario (Canada),0,NA,NA
+TOR,2024,Ontario (Canada),0,NA,NA
+UTA,2016,Utah,0,NA,NA
+UTA,2017,Utah,0,NA,NA
+UTA,2018,Utah,0,NA,NA
+UTA,2019,Utah,0,NA,NA
+UTA,2020,Utah,0,NA,NA
+UTA,2021,Utah,0,NA,NA
+UTA,2022,Utah,0,NA,NA
+UTA,2023,Utah,0,NA,NA
+UTA,2024,Utah,0,NA,NA
+WAS,2016,DC/Virginia,0,NA,NA
+WAS,2017,DC/Virginia,0,NA,NA
+WAS,2018,DC/Virginia,0,NA,NA
+WAS,2019,DC/Virginia,0,NA,NA
+WAS,2020,DC/Virginia,0,NA,NA
+WAS,2021,DC/Virginia,0,NA,NA
+WAS,2022,DC/Virginia,0,NA,NA
+WAS,2023,DC/Virginia,0,NA,NA
+WAS,2024,DC/Virginia,0,NA,NA

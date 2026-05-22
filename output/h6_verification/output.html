@@ -1,0 +1,1644 @@
+<h1
+id="контрактный-год-и-заработная-плата-игроков-нба-ревизия-гипотезы-h6">Контрактный
+год и заработная плата игроков НБА: ревизия гипотезы H6</h1>
+<p><strong>Курсовая работа по эконометрике, 3 курс бакалавриата</strong>
+<strong>Дата:</strong> 12 мая 2026 г. <strong>Период данных:</strong>
+2015/16 — 2023/24, 9 сезонов</p>
+<hr />
+<h2 id="введение-и-постановка-вопроса">1. Введение и постановка
+вопроса</h2>
+<p>Гипотеза о существовании эффекта контрактного года (англ.
+<em>contract-year effect</em>) — одна из наиболее изученных эмпирических
+регулярностей в экономике профессионального спорта. В каноническом
+изложении Stiroh (2007) сформулированы два связанных, но различимых
+утверждения:</p>
+<p>(а) <em>Поведенческая компонента.</em> Игроки демонстрируют значимо
+более высокую индивидуальную производительность (per game / per minute /
+advanced) в последний год действующего контракта при контроле возраста,
+опыта и позиции;</p>
+<p>(б) <em>Рыночная компонента.</em> Команды-наниматели реагируют на
+этот всплеск производительности <strong>избыточно</strong>, переплачивая
+в новом контракте; либо наблюдается <strong>системное</strong> повышение
+заработной платы при подписании нового контракта, не объясняемое
+продуктивностью.</p>
+<p>Эти два утверждения операционализируются по-разному. Тест
+поведенческой компоненты — регрессия меры производительности
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Y</mi><mrow><mi>i</mi><mi>t</mi></mrow></msub><annotation encoding="application/x-tex">Y_{it}</annotation></semantics></math>
+на индикатор контрактного года
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mtext mathvariant="normal">CY</mtext><mrow><mi>i</mi><mi>t</mi></mrow></msub><annotation encoding="application/x-tex">\text{CY}_{it}</annotation></semantics></math>
+с двусторонними фиксированными эффектами:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>i</mi><mi>t</mi></mrow></msub><mo>=</mo><msub><mi>α</mi><mi>i</mi></msub><mo>+</mo><msub><mi>λ</mi><mi>t</mi></msub><mo>+</mo><mi>β</mi><mo>⋅</mo><msub><mtext mathvariant="normal">CY</mtext><mrow><mi>i</mi><mi>t</mi></mrow></msub><mo>+</mo><msup><mi>γ</mi><mo>′</mo></msup><msub><mi mathvariant="bold-italic">𝑿</mi><mrow><mi>i</mi><mi>t</mi></mrow></msub><mo>+</mo><msub><mi>ε</mi><mrow><mi>i</mi><mi>t</mi></mrow></msub><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">Y_{it} = \alpha_i + \lambda_t + \beta \cdot \text{CY}_{it} + \gamma&#39;\mathbf{X}_{it} + \varepsilon_{it} \quad (1)</annotation></semantics></math></p>
+<p>Тест рыночной компоненты — регрессия изменения логарифма зарплаты
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><msub><mi>s</mi><mrow><mi>i</mi><mo>,</mo><mi>t</mi><mo>→</mo><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta \ln s_{i,t \to t+1}</annotation></semantics></math>
+на тот же индикатор:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><msub><mi>s</mi><mrow><mi>i</mi><mo>,</mo><mi>t</mi><mo>→</mo><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mi>α</mi><mo>+</mo><mi>β</mi><mo>⋅</mo><msub><mtext mathvariant="normal">CY</mtext><mrow><mi>i</mi><mi>t</mi></mrow></msub><mo>+</mo><msup><mi>γ</mi><mo>′</mo></msup><msub><mi mathvariant="bold-italic">𝑿</mi><mrow><mi>i</mi><mi>t</mi></mrow></msub><mo>+</mo><msub><mi>δ</mi><mi>t</mi></msub><mo>+</mo><msub><mi>ε</mi><mrow><mi>i</mi><mi>t</mi></mrow></msub><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\Delta \ln s_{i,t \to t+1} = \alpha + \beta \cdot \text{CY}_{it} + \gamma&#39;\mathbf{X}_{it} + \delta_t + \varepsilon_{it} \quad (2)</annotation></semantics></math></p>
+<p>В предыдущей редакции данного исследовательского проекта (далее — V1,
+см. <code>analysis_v1/METHODOLOGY_v1.md</code>) спецификация (2) на
+канонической прокси
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mtext mathvariant="normal">cy</mtext><mrow><mi>i</mi><mi>t</mi></mrow><mrow><mi>e</mi><mi>x</mi><mi>o</mi></mrow></msubsup><mo>=</mo><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msubsup><mtext mathvariant="normal">cy</mtext><mrow><mi>i</mi><mi>t</mi></mrow><msub><mi>B</mi><mrow><mi>o</mi><mi>f</mi><mi>f</mi></mrow></msub></msubsup><mo>,</mo><msubsup><mtext mathvariant="normal">cy</mtext><mrow><mi>i</mi><mi>t</mi></mrow><mi>C</mi></msubsup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\text{cy}^{exo}_{it} = \max(\text{cy}^{B_{off}}_{it}, \text{cy}^{C}_{it})</annotation></semantics></math>
+дала оценку
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>β</mi><mo accent="true">̂</mo></mover><mo>=</mo><mi>−</mi><mn>0</mn><mo>,</mo><mn>005</mn></mrow><annotation encoding="application/x-tex">\hat\beta = -0{,}005</annotation></semantics></math>
+при
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mi>E</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>026</mn></mrow><annotation encoding="application/x-tex">SE=0{,}026</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>844</mn></mrow><annotation encoding="application/x-tex">p=0{,}844</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>2054</mn></mrow><annotation encoding="application/x-tex">N=2054</annotation></semantics></math>
+и
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mtext mathvariant="normal">MDE</mtext><mrow><mn>80</mn><mi>%</mi></mrow></msub><mo>=</mo><mn>7</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">\text{MDE}_{80\%} = 7\%</annotation></semantics></math>
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">MDE</mtext><mo>=</mo><mn>2</mn><mo>,</mo><mn>8</mn><mo>⋅</mo><mi>S</mi><mi>E</mi></mrow><annotation encoding="application/x-tex">\text{MDE} = 2{,}8 \cdot SE</annotation></semantics></math>).
+На этом основании было заявлено, что <strong>гипотеза H6 (canonical
+contract-year effect) не подтверждается</strong>.</p>
+<p>Настоящий отчёт ревизует данное отвержение по восьми независимым
+линиям критики: (1) смысловое несоответствие гипотезы и теста; (2)
+низкий recall проксии cy_exogenous; (3) селекционное смещение во free
+agency в межсезонье; (4) смешение нескольких эффектов в зависимой
+переменной; (5) bad controls problem; (6) гетерогенные эффекты по
+подгруппам; (7) альтернативная интерпретация по сравнению со
+спецификациями M3c_composite и M3c_circular; (8) отсутствие внешней
+валидации. По каждой линии получены численные доказательства; общий
+вердикт сформулирован в Разделе 8.</p>
+<hr />
+<h2 id="данные-и-сэмпл">2. Данные и сэмпл</h2>
+<h3 id="источники">2.1. Источники</h3>
+<p>Панельные данные собраны автором с нуля скрейпингом следующих
+источников:</p>
+<ul>
+<li><em>Basketball-Reference</em>
+(<code>www.basketball-reference.com</code>): per-game, per-100, advanced
+статистика, draft-история, position.</li>
+<li><em>Hoopshype</em> (<code>hoopshype.com/salaries/</code>):
+номинальные годовые зарплаты, team affiliations.</li>
+<li><em>Tax Foundation</em> (<code>taxfoundation.org</code>): top
+marginal state income tax rates для всех штатов США; для Toronto Raptors
+— combined federal + Ontario provincial rates (см. правку A3 в V1).</li>
+<li>Ручные lookup-таблицы для нормализации сокращений команд (BBR →
+modern: <code>BRK</code>→<code>BKN</code>,
+<code>CHO</code>→<code>CHA</code>,
+<code>PHO</code>→<code>PHX</code>).</li>
+<li>Wikipedia (для внешней валидации контрактных годов 22
+высокозарплатных игроков; используется в разделе 4.3).</li>
+</ul>
+<h3 id="очистка-и-формирование-панели">2.2. Очистка и формирование
+панели</h3>
+<p>Производственный pipeline (<code>analysis_v1/prep_v1.py</code>)
+включает:</p>
+<ol type="1">
+<li>Унификация имён через
+<code>stringi::stri_trans_general("Latin-ASCII")</code> (R-скрейпер) и
+matching через <code>player_id</code> (BBR-идентификатор).</li>
+<li>Сбор multi-team строк (игроки, перешедшие в течение сезона): для них
+<code>team_abbr</code> ∈ {<code>2TM</code>, <code>3TM</code>,
+<code>4TM</code>, <code>TOT</code>}. Они исключаются из M2/M3
+спецификаций, поскольку salary attribution неоднозначна.</li>
+<li>Фильтр
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mi>P</mi><mo>≥</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">GP \geq 20</annotation></semantics></math>
+и
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi>P</mi><mi>/</mi><mtext mathvariant="normal">game</mtext><mo>≥</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">MP/\text{game} \geq 5</annotation></semantics></math>
+для исключения cup-of-coffee карьер.</li>
+<li>Фильтр
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">salary</mtext><mo>&gt;</mo><mi>$</mi><mn>100</mn><mspace width="0.167em"></mspace><mn>000</mn></mrow><annotation encoding="application/x-tex">\text{salary}&gt;\$100\,000</annotation></semantics></math>
+(исключает 10-day и two-way контракты).</li>
+<li>Расчёт experience (<code>experience = season - draft_year</code>)
+для drafted; для undrafted (<code>draft_year=NA</code>) —
+<code>cumcount + 1</code> по сортировке <code>(player_id, season)</code>
+(правка A2 в V1).</li>
+<li>Добавление флагов <code>no_&lt;col&gt;_attempts</code> для
+процентных переменных бросков (правка C13).</li>
+</ol>
+<p>Итоговая панель:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>3</mn><mspace width="0.167em"></mspace><mn>660</mn></mrow><annotation encoding="application/x-tex">N = 3\,660</annotation></semantics></math>
+player-seasons,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>953</mn><annotation encoding="application/x-tex">953</annotation></semantics></math>
+уникальных игроков, 9 сезонов. Сэмпл-attrition в спецификацию
+M3c_canonical V1:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mspace width="0.167em"></mspace><mn>660</mn><mo>→</mo><mn>3</mn><mspace width="0.167em"></mspace><mn>152</mn><mo>→</mo><mn>2</mn><mspace width="0.167em"></mspace><mn>177</mn><mo>→</mo><mn>2</mn><mspace width="0.167em"></mspace><mn>124</mn><mo>→</mo><mn>2</mn><mspace width="0.167em"></mspace><mn>054</mn></mrow><annotation encoding="application/x-tex">3\,660 \to 3\,152
+\to 2\,177 \to 2\,124 \to 2\,054</annotation></semantics></math> (см.
+<code>sample_attrition.csv</code>).</p>
+<h3 id="ключевые-переменные">2.3. Ключевые переменные</h3>
+<ul>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><msub><mi>s</mi><mrow><mi>i</mi><mi>t</mi></mrow></msub><mo>=</mo><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mtext mathvariant="normal">salary_usd</mtext><mrow><mi>i</mi><mi>t</mi></mrow></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\ln s_{it} = \ln(\text{salary\_usd}_{it})</annotation></semantics></math>
+— номинальная зарплата USD.</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mtext mathvariant="normal">cap_share</mtext><mrow><mi>i</mi><mi>t</mi></mrow></msub><mo>=</mo><msub><mtext mathvariant="normal">salary_usd</mtext><mrow><mi>i</mi><mi>t</mi></mrow></msub><mi>/</mi><msub><mtext mathvariant="normal">cap</mtext><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">\text{cap\_share}_{it} = \text{salary\_usd}_{it} / \text{cap}_t</annotation></semantics></math>
+— cap-share (доля от потолка зарплат). Cap
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>2016</mn><mo>:</mo><mn>70.0</mn><mo>;</mo><mn>2017</mn><mo>:</mo><mn>94.1</mn><mo>;</mo><mi>…</mi><mo>;</mo><mn>2024</mn><mo>:</mo><mn>136.0</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">= \{2016:70.0; 2017:94.1; \ldots;
+2024:136.0\}</annotation></semantics></math> млн долл. (NBA.com /
+Spotrac).</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><msub><mi>s</mi><mrow><mi>i</mi><mo>,</mo><mi>t</mi><mo>→</mo><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><msub><mi>s</mi><mrow><mi>i</mi><mo>,</mo><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><msub><mi>s</mi><mrow><mi>i</mi><mi>t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta \ln s_{i,t\to t+1} = \ln s_{i,t+1} - \ln s_{it}</annotation></semantics></math>
+— изменение лог-зарплаты.</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><msub><mtext mathvariant="normal">cap_share</mtext><mrow><mi>i</mi><mo>,</mo><mi>t</mi><mo>→</mo><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta \ln \text{cap\_share}_{i,t\to t+1}</annotation></semantics></math>
+— то же, deflated на cap.</li>
+<li>Performance: ppg, rpg, apg, mpg, gp, per, ws, vorp, usg_pct,
+ts_pct.</li>
+<li>Demographics: age, age², experience, draft round, draft pick,
+undrafted, position dummies (PG/SG/SF/PF, C — reference).</li>
+</ul>
+<h3 id="прокси-контрактного-года-v1">2.4. Прокси контрактного года
+V1</h3>
+<p>Формальные определения в
+<code>analysis_v1/contract_year_v1.py</code>:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msubsup><mtext mathvariant="normal">cy</mtext><mrow><mi>i</mi><mi>t</mi></mrow><msub><mi>A</mi><mrow><mi>u</mi><mi>p</mi></mrow></msub></msubsup></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mn mathvariant="double-struck">𝟙</mn><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">{</mo><mfrac><mrow><msub><mi>s</mi><mrow><mi>i</mi><mo>,</mo><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mi>/</mi><msub><mtext mathvariant="normal">cap</mtext><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><mrow><msub><mi>s</mi><mrow><mi>i</mi><mi>t</mi></mrow></msub><mi>/</mi><msub><mtext mathvariant="normal">cap</mtext><mi>t</mi></msub></mrow></mfrac><mo>−</mo><mn>1</mn><mo>&gt;</mo><mn>0</mn><mo>,</mo><mn>25</mn><mo stretchy="true" form="postfix">}</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msubsup><mtext mathvariant="normal">cy</mtext><mrow><mi>i</mi><mi>t</mi></mrow><msub><mi>B</mi><mrow><mi>o</mi><mi>f</mi><mi>f</mi></mrow></msub></msubsup></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mn mathvariant="double-struck">𝟙</mn><mo stretchy="false" form="prefix">{</mo><msub><mtext mathvariant="normal">team</mtext><mrow><mi>i</mi><mo>,</mo><mi>t</mi></mrow></msub><mo>≠</mo><msub><mtext mathvariant="normal">team</mtext><mrow><mi>i</mi><mo>,</mo><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="postfix">}</mo><mo>∩</mo><mover><msub><mtext mathvariant="normal">multi</mtext><mi>t</mi></msub><mo accent="true">¯</mo></mover><mo>∩</mo><mover><msub><mtext mathvariant="normal">multi</mtext><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo accent="true">¯</mo></mover></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msubsup><mtext mathvariant="normal">cy</mtext><mrow><mi>i</mi><mi>t</mi></mrow><mi>C</mi></msubsup></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mn mathvariant="double-struck">𝟙</mn><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><msub><mtext mathvariant="normal">round</mtext><mi>i</mi></msub><mo>=</mo><mn>1</mn><mo>∧</mo><msub><mtext mathvariant="normal">exp</mtext><mrow><mi>i</mi><mi>t</mi></mrow></msub><mo>=</mo><mn>3</mn><mo stretchy="false" form="postfix">)</mo><mo>∨</mo><mo stretchy="false" form="prefix">(</mo><msub><mtext mathvariant="normal">round</mtext><mi>i</mi></msub><mo>=</mo><mn>2</mn><mo>∧</mo><msub><mtext mathvariant="normal">exp</mtext><mrow><mi>i</mi><mi>t</mi></mrow></msub><mo>=</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mtext mathvariant="normal">contract_year</mtext><mrow><mi>i</mi><mi>t</mi></mrow></msub></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><msubsup><mtext mathvariant="normal">cy</mtext><mrow><mi>i</mi><mi>t</mi></mrow><msub><mi>A</mi><mrow><mi>u</mi><mi>p</mi></mrow></msub></msubsup><mo>,</mo><mspace width="0.167em"></mspace><msubsup><mtext mathvariant="normal">cy</mtext><mrow><mi>i</mi><mi>t</mi></mrow><msub><mi>B</mi><mrow><mi>o</mi><mi>f</mi><mi>f</mi></mrow></msub></msubsup><mo>,</mo><mspace width="0.167em"></mspace><msubsup><mtext mathvariant="normal">cy</mtext><mrow><mi>i</mi><mi>t</mi></mrow><mi>C</mi></msubsup><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msubsup><mtext mathvariant="normal">cy</mtext><mrow><mi>i</mi><mi>t</mi></mrow><mrow><mi>e</mi><mi>x</mi><mi>o</mi></mrow></msubsup></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><msubsup><mtext mathvariant="normal">cy</mtext><mrow><mi>i</mi><mi>t</mi></mrow><msub><mi>B</mi><mrow><mi>o</mi><mi>f</mi><mi>f</mi></mrow></msub></msubsup><mo>,</mo><mspace width="0.167em"></mspace><msubsup><mtext mathvariant="normal">cy</mtext><mrow><mi>i</mi><mi>t</mi></mrow><mi>C</mi></msubsup><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+\text{cy}^{A_{up}}_{it} &amp;= \mathbb{1}\!\left\{\frac{s_{i,t+1}/\text{cap}_{t+1}}{s_{it}/\text{cap}_t} - 1 &gt; 0{,}25\right\} \\
+\text{cy}^{B_{off}}_{it} &amp;= \mathbb{1}\{\text{team}_{i,t}\neq\text{team}_{i,t+1}\} \cap \overline{\text{multi}_t} \cap \overline{\text{multi}_{t+1}} \\
+\text{cy}^{C}_{it} &amp;= \mathbb{1}\{(\text{round}_i=1 \wedge \text{exp}_{it}=3) \vee (\text{round}_i=2 \wedge \text{exp}_{it}=1)\} \\
+\text{contract\_year}_{it} &amp;= \max\!\left(\text{cy}^{A_{up}}_{it},\, \text{cy}^{B_{off}}_{it},\, \text{cy}^{C}_{it}\right) \\
+\text{cy}^{exo}_{it} &amp;= \max\!\left(\text{cy}^{B_{off}}_{it},\, \text{cy}^{C}_{it}\right)
+\end{aligned}
+</annotation></semantics></math></p>
+<p>Распределение (вся панель, см.
+<code>01_cy_exogenous_diagnostics.csv</code>):
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mtext mathvariant="normal">cy</mtext><msub><mi>A</mi><mrow><mi>u</mi><mi>p</mi></mrow></msub></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\text{cy}^{A_{up}}=1</annotation></semantics></math>
+— 607 наблюдений;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mtext mathvariant="normal">cy</mtext><msub><mi>B</mi><mrow><mi>o</mi><mi>f</mi><mi>f</mi></mrow></msub></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\text{cy}^{B_{off}}=1</annotation></semantics></math>
+— 505;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mtext mathvariant="normal">cy</mtext><mi>C</mi></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\text{cy}^{C}=1</annotation></semantics></math>
+— 320;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">contract_year</mtext><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\text{contract\_year}=1</annotation></semantics></math>
+— 1100;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mtext mathvariant="normal">cy</mtext><mrow><mi>e</mi><mi>x</mi><mi>o</mi></mrow></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\text{cy}^{exo}=1</annotation></semantics></math>
+— 768.</p>
+<h3 id="дополнительные-определения-предлагаемые-в-данном-отчёте">2.5.
+Дополнительные определения (предлагаемые в данном отчёте)</h3>
+<p>Для проверки чувствительности отвержения H6 построены пять
+альтернативных прокси
+(<code>analysis_v1/h6_verification/03_alternative_cy.py</code>):</p>
+<ol type="1">
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mtext mathvariant="normal">cy</mtext><mrow><mi>i</mi><mi>t</mi></mrow><mtext mathvariant="normal">same-team end</mtext></msubsup><annotation encoding="application/x-tex">\text{cy}^{\text{same-team end}}_{it}</annotation></semantics></math>
+= 1, если
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mrow><mi>i</mi><mo>,</mo><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mi>/</mi><msub><mi>s</mi><mrow><mi>i</mi><mi>t</mi></mrow></msub><mo>&gt;</mo><mn>1</mn><mo>,</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">s_{i,t+1}/s_{it} &gt; 1{,}20</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∩</mi><annotation encoding="application/x-tex">\cap</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mtext mathvariant="normal">team</mtext><mrow><mi>i</mi><mo>,</mo><mi>t</mi></mrow></msub><mo>=</mo><msub><mtext mathvariant="normal">team</mtext><mrow><mi>i</mi><mo>,</mo><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">\text{team}_{i,t}=\text{team}_{i,t+1}</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∩</mi><annotation encoding="application/x-tex">\cap</annotation></semantics></math>
+tenure
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≥</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">\geq 3</annotation></semantics></math>
+сезона. <strong>Что захватывает:</strong> extensions, supermax,
+Bird-rights re-signings. <strong>Что упускает:</strong> короткие 1-yr
+deals, slight raises. <strong>Эндогенность:</strong> частичная
+(использует
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">s_{t+1}</annotation></semantics></math>,
+но с фильтрами).</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mtext mathvariant="normal">cy</mtext><mrow><mi>i</mi><mi>t</mi></mrow><mtext mathvariant="normal">age-based</mtext></msubsup><annotation encoding="application/x-tex">\text{cy}^{\text{age-based}}_{it}</annotation></semantics></math>
+= 1, если в течение 3 предыдущих сезонов
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi mathvariant="normal">Δ</mi><msub><mtext mathvariant="normal">cap_share</mtext><mi>t</mi></msub><mo stretchy="false" form="prefix">|</mo><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>05</mn></mrow><annotation encoding="application/x-tex">|\Delta \text{cap\_share}_t| &lt; 0{,}05</annotation></semantics></math>
+(плато) и
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi mathvariant="normal">Δ</mi><msub><mtext mathvariant="normal">cap_share</mtext><mrow><mi>t</mi><mo>→</mo><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="prefix">|</mo><mo>&gt;</mo><mn>0</mn><mo>,</mo><mn>15</mn></mrow><annotation encoding="application/x-tex">|\Delta
+\text{cap\_share}_{t \to t+1}| &gt; 0{,}15</annotation></semantics></math>
+(резкий скачок). <strong>Захватывает:</strong> long-term contract
+endpoints. <strong>Эндогенность:</strong> низкая.</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mtext mathvariant="normal">cy</mtext><mrow><mi>i</mi><mi>t</mi></mrow><mtext mathvariant="normal">walk-back</mtext></msubsup><mo>=</mo><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msubsup><mtext mathvariant="normal">cy</mtext><mrow><mi>i</mi><mi>t</mi></mrow><msub><mi>B</mi><mrow><mi>o</mi><mi>f</mi><mi>f</mi></mrow></msub></msubsup><mo>,</mo><mn mathvariant="double-struck">𝟙</mn><mo stretchy="false" form="prefix">{</mo><mi mathvariant="normal">Δ</mi><msub><mtext mathvariant="normal">cap_share</mtext><mi>t</mi></msub><mo>&gt;</mo><mn>0</mn><mo>,</mo><mn>05</mn><mo>∩</mo><msub><mtext mathvariant="normal">team</mtext><mi>t</mi></msub><mo>=</mo><msub><mtext mathvariant="normal">team</mtext><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>∩</mo><mtext mathvariant="normal">tenure</mtext><mo>≥</mo><mn>2</mn><mo stretchy="false" form="postfix">}</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\text{cy}^{\text{walk-back}}_{it} = \max(\text{cy}^{B_{off}}_{it}, \mathbb{1}\{\Delta\text{cap\_share}_t &gt; 0{,}05 \cap \text{team}_t = \text{team}_{t+1} \cap \text{tenure}\geq 2\})</annotation></semantics></math>.
+<strong>Захватывает:</strong> межсезонные переходы + same-team renewals
+со средним повышением cap-share. <strong>Эндогенность:</strong>
+умеренная.</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mtext mathvariant="normal">cy</mtext><mrow><mi>i</mi><mi>t</mi></mrow><mtext mathvariant="normal">renewal</mtext></msubsup><mo>=</mo><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msubsup><mtext mathvariant="normal">cy</mtext><mrow><mi>i</mi><mi>t</mi></mrow><msub><mi>B</mi><mrow><mi>o</mi><mi>f</mi><mi>f</mi></mrow></msub></msubsup><mo>,</mo><mn mathvariant="double-struck">𝟙</mn><mo stretchy="false" form="prefix">{</mo><msub><mtext mathvariant="normal">cap_share</mtext><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mi>/</mi><msub><mtext mathvariant="normal">cap_share</mtext><mi>t</mi></msub><mo>&gt;</mo><mn>1</mn><mo>,</mo><mn>15</mn><mo stretchy="false" form="postfix">}</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\text{cy}^{\text{renewal}}_{it} = \max(\text{cy}^{B_{off}}_{it}, \mathbb{1}\{\text{cap\_share}_{t+1}/\text{cap\_share}_t &gt; 1{,}15\})</annotation></semantics></math>.
+Более широкая версия cy_walk_back.</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mtext mathvariant="normal">cy</mtext><mrow><mi>i</mi><mi>t</mi></mrow><mtext mathvariant="normal">exo-extended</mtext></msubsup><mo>=</mo><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msubsup><mtext mathvariant="normal">cy</mtext><mrow><mi>i</mi><mi>t</mi></mrow><mrow><mi>e</mi><mi>x</mi><mi>o</mi></mrow></msubsup><mo>,</mo><mn mathvariant="double-struck">𝟙</mn><mo stretchy="false" form="prefix">{</mo><mtext mathvariant="normal">round</mtext><mo>=</mo><mn>1</mn><mo>∩</mo><mtext mathvariant="normal">exp</mtext><mo>=</mo><mn>7</mn><mo stretchy="false" form="postfix">}</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\text{cy}^{\text{exo-extended}}_{it} = \max(\text{cy}^{exo}_{it}, \mathbb{1}\{\text{round}=1 \cap \text{exp}=7\})</annotation></semantics></math>.
+Канонический + rookie-scale extension endpoint (полностью экзогенный по
+правилам CBA).</p></li>
+</ol>
+<hr />
+<h2 id="методология">3. Методология</h2>
+<h3 id="базовая-mincer-спецификация">3.1. Базовая
+Mincer-спецификация</h3>
+<p>Исходная модель заработной платы (Mincer, 1974), адаптированная для
+NBA:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><msub><mi>s</mi><mrow><mi>i</mi><mi>t</mi></mrow></msub><mo>=</mo><mi>α</mi><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><msub><mrow><mi mathvariant="bold-italic">𝑺</mi><mi mathvariant="bold-italic">𝒕</mi><mi mathvariant="bold-italic">𝒂</mi><mi mathvariant="bold-italic">𝒕</mi><mi mathvariant="bold-italic">𝒔</mi></mrow><mrow><mi>i</mi><mi>t</mi></mrow></msub><mo>+</mo><msub><mi>β</mi><mn>2</mn></msub><msub><mtext mathvariant="normal">Age</mtext><mrow><mi>i</mi><mi>t</mi></mrow></msub><mo>+</mo><msub><mi>β</mi><mn>3</mn></msub><msubsup><mtext mathvariant="normal">Age</mtext><mrow><mi>i</mi><mi>t</mi></mrow><mn>2</mn></msubsup><mo>+</mo><msub><mi>β</mi><mn>4</mn></msub><msub><mtext mathvariant="normal">Exp</mtext><mrow><mi>i</mi><mi>t</mi></mrow></msub><mo>+</mo><msup><mi>γ</mi><mo>′</mo></msup><msub><mi mathvariant="bold-italic">𝑫</mi><mi>i</mi></msub><mo>+</mo><msub><mi>δ</mi><mi>t</mi></msub><mo>+</mo><msub><mi>ε</mi><mrow><mi>i</mi><mi>t</mi></mrow></msub><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>3</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\ln s_{it} = \alpha + \beta_1 \mathbf{Stats}_{it} + \beta_2 \text{Age}_{it} + \beta_3 \text{Age}^2_{it} + \beta_4 \text{Exp}_{it} + \gamma&#39;\mathbf{D}_i + \delta_t + \varepsilon_{it} \quad (3)</annotation></semantics></math></p>
+<p>где
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="bold-italic">𝑫</mi><mi>i</mi></msub><annotation encoding="application/x-tex">\mathbf{D}_i</annotation></semantics></math>
+— демографические переменные (позиции, undrafted,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mtext mathvariant="normal">draft_pick</mtext><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\log(\text{draft\_pick})</annotation></semantics></math>),
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>δ</mi><mi>t</mi></msub><annotation encoding="application/x-tex">\delta_t</annotation></semantics></math>
+— year-FE.</p>
+<h3 id="спецификации-m1m3">3.2. Спецификации M1–M3</h3>
+<p>V1-спецификации (см. <code>m1_v1.py</code>, <code>m2_v1.py</code>,
+<code>m3_v1.py</code>):</p>
+<ul>
+<li>M1a — pooled OLS на (3) c stats
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∈</mo><annotation encoding="application/x-tex">\in</annotation></semantics></math>
+COMBINED_STATS.</li>
+<li>M1d — two-way FE (player + season).</li>
+<li>M2c — добавляет
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>⋅</mo><msub><mtext mathvariant="normal">state_tax_rate</mtext><mrow><mi>i</mi><mi>t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\beta \cdot \text{state\_tax\_rate}_{it}</annotation></semantics></math>.</li>
+<li>M3a — добавляет
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>⋅</mo><msub><mtext mathvariant="normal">contract_year</mtext><mrow><mi>i</mi><mi>t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\beta \cdot \text{contract\_year}_{it}</annotation></semantics></math>
+в level
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">DV</mtext><mo>=</mo><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">\text{DV}=\ln s</annotation></semantics></math>).</li>
+<li>M3c — заменяет DV на
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><msub><mi>s</mi><mrow><mi>i</mi><mo>,</mo><mi>t</mi><mo>→</mo><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta \ln s_{i,t\to t+1}</annotation></semantics></math>.</li>
+<li><strong>M3c_canonical</strong> —
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">DV</mtext><mo>=</mo><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">\text{DV} = \Delta \ln s</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">IV</mtext><mo>=</mo><msup><mtext mathvariant="normal">cy</mtext><mrow><mi>e</mi><mi>x</mi><mi>o</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\text{IV} = \text{cy}^{exo}</annotation></semantics></math>.</li>
+</ul>
+<h3 id="тесты-идентификации-и-диагностики">3.3. Тесты идентификации и
+диагностики</h3>
+<ul>
+<li>F-тест fixed vs pooled (V1:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>=</mo><mn>3.47</mn></mrow><annotation encoding="application/x-tex">F=3.47</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>0.001</mn></mrow><annotation encoding="application/x-tex">p=0.001</annotation></semantics></math>).</li>
+<li>Breusch-Pagan LM-тест RE vs pooled.</li>
+<li>Hausman-тест FE vs RE.</li>
+<li>Тест Чоу на структурный сдвиг 2017 (CBA) и 2020 (COVID).</li>
+<li>VIF: проблема в COMBINED_STATS (per VIF=67, ws=39); альтернатива
+M1c_minimal без PER/WS.</li>
+<li>Breusch-Pagan / White на гетероскедастичность: все ключевые модели
+отвергают homoskedasticity
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>&lt;</mo><msup><mn>10</mn><mrow><mi>−</mi><mn>12</mn></mrow></msup></mrow><annotation encoding="application/x-tex">p&lt;10^{-12}</annotation></semantics></math>).</li>
+<li>Cook’s distance: top-10 — Garnett 2015/16, Whiteside, Beasley; их
+исключение не сдвигает главные коэффициенты больше чем на 5–20%.</li>
+</ul>
+<h3 id="кластеризация-se-и-бутстрап">3.4. Кластеризация SE и
+бутстрап</h3>
+<p>Стандартные ошибки — cluster-robust по player (Liang-Zeger). В
+качестве робастности — two-way clustering (player × season) и wild
+cluster bootstrap (999 реплик по player_id, Rademacher weights). Для
+M3c_canonical: SE ratio
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>×</mi><mn>1</mn><mo>,</mo><mn>17</mn></mrow><annotation encoding="application/x-tex">\times 1{,}17</annotation></semantics></math>
+(two-way vs one-way),
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mtext mathvariant="normal">boot</mtext></msub><mo>=</mo><mn>0</mn><mo>,</mo><mn>824</mn></mrow><annotation encoding="application/x-tex">p_\text{boot}=0{,}824</annotation></semantics></math>.</p>
+<h3 id="квантильная-регрессия">3.5. Квантильная регрессия</h3>
+<p>Koenker &amp; Bassett (1978) на
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>10</mn><mo>;</mo><mn>0</mn><mo>,</mo><mn>25</mn><mo>;</mo><mn>0</mn><mo>,</mo><mn>50</mn><mo>;</mo><mn>0</mn><mo>,</mo><mn>75</mn><mo>;</mo><mn>0</mn><mo>,</mo><mn>90</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\tau \in \{0{,}10; 0{,}25; 0{,}50; 0{,}75; 0{,}90\}</annotation></semantics></math>
+с cluster bootstrap SE (199 реплик). Используется для оценки concavity
+returns to stats (см. METHODOLOGY V1, §5.5).</p>
+<h3 id="event-study">3.6. Event-study</h3>
+<p>Спецификация для structural shocks (CBA 2017) и для контрактных
+событий (данный отчёт, раздел 5):</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><msub><mi>s</mi><mrow><mi>i</mi><mi>t</mi></mrow></msub><mo>=</mo><msub><mi>α</mi><mi>i</mi></msub><mo>+</mo><msub><mi>δ</mi><mi>t</mi></msub><mo>+</mo><munder><mo>∑</mo><mrow><mi>τ</mi><mo>≠</mo><mi>−</mi><mn>1</mn></mrow></munder><msub><mi>β</mi><mi>τ</mi></msub><mn mathvariant="double-struck">𝟙</mn><mo stretchy="false" form="prefix">{</mo><msub><mi>T</mi><mrow><mi>i</mi><mi>t</mi></mrow></msub><mo>=</mo><mi>τ</mi><mo stretchy="false" form="postfix">}</mo><mo>+</mo><msup><mi>γ</mi><mo>′</mo></msup><msub><mi mathvariant="bold-italic">𝑿</mi><mrow><mi>i</mi><mi>t</mi></mrow></msub><mo>+</mo><msub><mi>ν</mi><mrow><mi>i</mi><mi>t</mi></mrow></msub><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>4</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\ln s_{it} = \alpha_i + \delta_t + \sum_{\tau \neq -1} \beta_\tau \mathbb{1}\{T_{it} = \tau\} + \gamma&#39; \mathbf{X}_{it} + \nu_{it} \quad (4)</annotation></semantics></math></p>
+<h3 id="sensitivity-анализ-oster-2019">3.7. Sensitivity-анализ Oster
+(2019)</h3>
+<p>Bound коэффициента
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>β</mi><mo>*</mo></msup><annotation encoding="application/x-tex">\beta^*</annotation></semantics></math>
+при заданном δ (selection on unobservables / on observables) и
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>R</mi><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mn>2</mn></msubsup><annotation encoding="application/x-tex">R^2_{\max}</annotation></semantics></math>:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>β</mi><mo>*</mo></msup><mo>=</mo><msub><mi>β</mi><mtext mathvariant="normal">long</mtext></msub><mo>−</mo><mi>δ</mi><mo>⋅</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>β</mi><mtext mathvariant="normal">short</mtext></msub><mo>−</mo><msub><mi>β</mi><mtext mathvariant="normal">long</mtext></msub><mo stretchy="false" form="postfix">)</mo><mo>⋅</mo><mfrac><mrow><msubsup><mi>R</mi><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mn>2</mn></msubsup><mo>−</mo><msubsup><mi>R</mi><mtext mathvariant="normal">long</mtext><mn>2</mn></msubsup></mrow><mrow><msubsup><mi>R</mi><mtext mathvariant="normal">long</mtext><mn>2</mn></msubsup><mo>−</mo><msubsup><mi>R</mi><mtext mathvariant="normal">short</mtext><mn>2</mn></msubsup></mrow></mfrac><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>5</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\beta^* = \beta_{\text{long}} - \delta \cdot (\beta_{\text{short}} - \beta_{\text{long}}) \cdot \frac{R^2_{\max} - R^2_{\text{long}}}{R^2_{\text{long}} - R^2_{\text{short}}} \quad (5)</annotation></semantics></math></p>
+<p>С
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>R</mi><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mn>2</mn></msubsup><mo>=</mo><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>3</mn><mo>⋅</mo><msubsup><mi>R</mi><mtext mathvariant="normal">long</mtext><mn>2</mn></msubsup><mo>;</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">R^2_{\max} = \min(1{,}3 \cdot R^2_{\text{long}}; 1)</annotation></semantics></math>
+— стандартная рекомендация.</p>
+<hr />
+<h2 id="контрактный-год-построение-проксии-и-её-диагностика">4.
+Контрактный год: построение проксии и её диагностика</h2>
+<h3 id="семантика-прокси-и-их-свойства">4.1. Семантика прокси и их
+свойства</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Прокси</th>
+<th>Captured</th>
+<th>Missed</th>
+<th>Эндогенность к
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">\Delta s</annotation></semantics></math></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><msub><mi>A</mi><mrow><mi>u</mi><mi>p</mi></mrow></msub></msup><annotation encoding="application/x-tex">\text{cy}^{A_{up}}</annotation></semantics></math></td>
+<td>Любое крупное повышение зарплаты</td>
+<td>Slight raises
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>25</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">&lt;25\%</annotation></semantics></math>)</td>
+<td>Высокая (используется
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">s_{t+1}</annotation></semantics></math>)</td>
+</tr>
+<tr>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><msub><mi>B</mi><mrow><mi>o</mi><mi>f</mi><mi>f</mi></mrow></msub></msup><annotation encoding="application/x-tex">\text{cy}^{B_{off}}</annotation></semantics></math></td>
+<td>Все межсезонные переходы</td>
+<td>Same-team renewals; mid-season trades</td>
+<td>Низкая</td>
+</tr>
+<tr>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mi>C</mi></msup><annotation encoding="application/x-tex">\text{cy}^{C}</annotation></semantics></math></td>
+<td>Rookie-scale endpoints (1st rd exp=3, 2nd rd exp=1)</td>
+<td>Все остальные contract years</td>
+<td>Нулевая</td>
+</tr>
+<tr>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mrow><mi>e</mi><mi>x</mi><mi>o</mi></mrow></msup><annotation encoding="application/x-tex">\text{cy}^{exo}</annotation></semantics></math></td>
+<td>Объединение
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mrow><mi>o</mi><mi>f</mi><mi>f</mi></mrow></msub><annotation encoding="application/x-tex">B_{off}</annotation></semantics></math>
+и
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math></td>
+<td>Same-team extensions; max-money negotiations</td>
+<td>Низкая</td>
+</tr>
+</tbody>
+</table>
+<h3 id="корреляции-прокси-с-delta-ln-s">4.2. Корреляции прокси с
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">\Delta \ln s</annotation></semantics></math></h3>
+<table>
+<thead>
+<tr>
+<th>Прокси</th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">corr</mtext><mo stretchy="false" form="prefix">(</mo><mi>⋅</mi><mo>,</mo><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\text{corr}(\cdot, \Delta\ln s)</annotation></semantics></math></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mrow><mi>e</mi><mi>x</mi><mi>o</mi></mrow></msup><annotation encoding="application/x-tex">\text{cy}^{exo}</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>040</mn></mrow><annotation encoding="application/x-tex">-0{,}040</annotation></semantics></math></td>
+</tr>
+<tr>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><msub><mi>A</mi><mrow><mi>u</mi><mi>p</mi></mrow></msub></msup><annotation encoding="application/x-tex">\text{cy}^{A_{up}}</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>712</mn></mrow><annotation encoding="application/x-tex">+0{,}712</annotation></semantics></math></td>
+</tr>
+</tbody>
+</table>
+<p>Высокая корреляция cy_A_up — арифметическое следствие построения
+(cy_A_up =1 ⇒ Δlog_salary
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&gt;</mo><mn>0</mn><mo>,</mo><mn>22</mn></mrow><annotation encoding="application/x-tex">&gt; 0{,}22</annotation></semantics></math>).
+Низкая корреляция cy_exogenous — индикация экзогенности, но также
+<strong>низкого recall</strong> (см. далее).</p>
+<h3 id="внешняя-валидация">4.3. Внешняя валидация</h3>
+<p>Для <strong>22 топ-игроков</strong> по cap-share вручную собраны
+контрактные годы из открытых статей Wikipedia (см.
+<code>02_external_validation_top50.csv</code>). Контрактным годом сезона
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
+считается сезон, после которого (в межсезонье или mid-season) у игрока
+произошло контрактное событие: подписание нового контракта, extension,
+opt-in/out с переходом, межсезонный trade. Список игроков и источников
+приведён в Приложении A.</p>
+<p>Метрики качества прокси (Таблица 1):</p>
+<p><strong>Таблица 1. Метрики качества прокси (внешняя валидация, N=149
+player-seasons, 54 истинных contract years)</strong></p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th>Прокси</th>
+<th style="text-align: right;">n_pred=1</th>
+<th style="text-align: right;">TP</th>
+<th style="text-align: right;">FP</th>
+<th style="text-align: right;">FN</th>
+<th style="text-align: right;">TN</th>
+<th style="text-align: right;">Recall</th>
+<th style="text-align: right;">Precision</th>
+<th style="text-align: right;">FPR</th>
+<th style="text-align: right;">F1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mrow><mi>e</mi><mi>x</mi><mi>o</mi></mrow></msup><annotation encoding="application/x-tex">\text{cy}^{exo}</annotation></semantics></math></td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: right;">88</td>
+<td style="text-align: right;"><strong>0,370</strong></td>
+<td style="text-align: right;">0,741</td>
+<td style="text-align: right;">0,074</td>
+<td style="text-align: right;">0,494</td>
+</tr>
+<tr>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtext mathvariant="normal">contract_year</mtext><annotation encoding="application/x-tex">\text{contract\_year}</annotation></semantics></math></td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">77</td>
+<td style="text-align: right;">0,500</td>
+<td style="text-align: right;">0,600</td>
+<td style="text-align: right;">0,189</td>
+<td style="text-align: right;">0,545</td>
+</tr>
+<tr>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><msub><mi>A</mi><mrow><mi>u</mi><mi>p</mi></mrow></msub></msup><annotation encoding="application/x-tex">\text{cy}^{A_{up}}</annotation></semantics></math></td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">89</td>
+<td style="text-align: right;">0,185</td>
+<td style="text-align: right;">0,455</td>
+<td style="text-align: right;">0,119</td>
+<td style="text-align: right;">0,263</td>
+</tr>
+<tr>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><msub><mi>B</mi><mrow><mi>o</mi><mi>f</mi><mi>f</mi></mrow></msub></msup><annotation encoding="application/x-tex">\text{cy}^{B_{off}}</annotation></semantics></math></td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">37</td>
+<td style="text-align: right;">91</td>
+<td style="text-align: right;">0,315</td>
+<td style="text-align: right;">0,809</td>
+<td style="text-align: right;">0,042</td>
+<td style="text-align: right;">0,453</td>
+</tr>
+<tr>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mi>C</mi></msup><annotation encoding="application/x-tex">\text{cy}^{C}</annotation></semantics></math></td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">117</td>
+<td style="text-align: right;">0,045</td>
+<td style="text-align: right;">0,500</td>
+<td style="text-align: right;">0,025</td>
+<td style="text-align: right;">0,083</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Содержательная интерпретация.</strong> Recall
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mtext mathvariant="normal">cy</mtext><mrow><mi>e</mi><mi>x</mi><mi>o</mi></mrow></msup><mo>=</mo><mn>37</mn><mo>,</mo><mn>0</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">\text{cy}^{exo} = 37{,}0\%</annotation></semantics></math>
+означает, что более 60% истинных контрактных лет в верхней части
+распределения зарплат не захватываются канонической прокси. Это нижняя
+оценка пропускной способности — у high-salary игроков контрактные
+события наиболее заметны, тогда как для средних контрактов истинные
+contract years могут быть и менее видимы. Пропущенные истинные
+контрактные годы — в основном extensions со своей командой: Curry 2017,
+Lillard 2020, Antetokounmpo 2020, Embiid 2021, Jokić 2018/2022, Tatum
+2020, Booker 2018 и др.</p>
+<h3 id="селекционное-смещение-в-textcyb_off">4.4. Селекционное смещение
+в
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><msub><mi>B</mi><mrow><mi>o</mi><mi>f</mi><mi>f</mi></mrow></msub></msup><annotation encoding="application/x-tex">\text{cy}^{B_{off}}</annotation></semantics></math></h3>
+<p>Анализ распределения
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">\Delta \ln s</annotation></semantics></math>
+внутри
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mtext mathvariant="normal">cy</mtext><msub><mi>B</mi><mrow><mi>o</mi><mi>f</mi><mi>f</mi></mrow></msub></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\text{cy}^{B_{off}}=1</annotation></semantics></math>
+по возрасту (Таблица 2):</p>
+<p><strong>Таблица 2. Δlog_salary внутри
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mtext mathvariant="normal">cy</mtext><msub><mi>B</mi><mrow><mi>o</mi><mi>f</mi><mi>f</mi></mrow></msub></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\text{cy}^{B_{off}}=1</annotation></semantics></math>
+по возрасту</strong></p>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr>
+<th>Подгруппа</th>
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">\Delta\ln s</annotation></semantics></math></th>
+<th style="text-align: right;">median</th>
+<th
+style="text-align: right;">share<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">&lt;0</annotation></semantics></math></th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>p</mi><mn>25</mn></msub><annotation encoding="application/x-tex">p_{25}</annotation></semantics></math></th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>p</mi><mn>75</mn></msub><annotation encoding="application/x-tex">p_{75}</annotation></semantics></math></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Все
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mtext mathvariant="normal">cy</mtext><msub><mi>B</mi><mrow><mi>o</mi><mi>f</mi><mi>f</mi></mrow></msub></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\text{cy}^{B_{off}}=1</annotation></semantics></math>)</td>
+<td style="text-align: right;">505</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>127</mn></mrow><annotation encoding="application/x-tex">+0{,}127</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>076</mn></mrow><annotation encoding="application/x-tex">+0{,}076</annotation></semantics></math></td>
+<td style="text-align: right;">28,5%</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>069</mn></mrow><annotation encoding="application/x-tex">-0{,}069</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>440</mn></mrow><annotation encoding="application/x-tex">+0{,}440</annotation></semantics></math></td>
+</tr>
+<tr>
+<td>age
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>28</mn></mrow><annotation encoding="application/x-tex">&lt; 28</annotation></semantics></math></td>
+<td style="text-align: right;">275</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>321</mn></mrow><annotation encoding="application/x-tex">+0{,}321</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>157</mn></mrow><annotation encoding="application/x-tex">+0{,}157</annotation></semantics></math></td>
+<td style="text-align: right;">20,0%</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>040</mn></mrow><annotation encoding="application/x-tex">+0{,}040</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>664</mn></mrow><annotation encoding="application/x-tex">+0{,}664</annotation></semantics></math></td>
+</tr>
+<tr>
+<td>age
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≥</mo><mn>28</mn></mrow><annotation encoding="application/x-tex">\geq 28</annotation></semantics></math></td>
+<td style="text-align: right;">230</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold-italic">−</mi><mn mathvariant="bold">𝟎</mn><mo mathvariant="bold">,</mo><mn mathvariant="bold">𝟏𝟎𝟓</mn></mrow><annotation encoding="application/x-tex">\mathbf{-0{,}105}</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>045</mn></mrow><annotation encoding="application/x-tex">+0{,}045</annotation></semantics></math></td>
+<td style="text-align: right;"><strong>38,7%</strong></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>414</mn></mrow><annotation encoding="application/x-tex">-0{,}414</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>203</mn></mrow><annotation encoding="application/x-tex">+0{,}203</annotation></semantics></math></td>
+</tr>
+</tbody>
+</table>
+<p>Среди игроков старше 28 лет, перешедших в межсезонье,
+<strong>38,7%</strong> теряют в зарплате (downward free agency). Среднее
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">\Delta\ln s</annotation></semantics></math>
+отрицательное. Этот эффект — прямое следствие селекционного смещения:
+возрастные UFA, которых команды не удержали, попадают на меньшие
+контракты. Источник смещения коэффициента
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>β</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat\beta</annotation></semantics></math>
+к нулю.</p>
+<hr />
+<h2 id="результаты-тестирования-h6">5. Результаты тестирования H6</h2>
+<h3 id="базовая-m3c-регрессия-альтернативные-cy-прокси">5.1. Базовая
+M3c-регрессия: альтернативные cy-прокси</h3>
+<p><strong>Таблица 3. M3c-регрессия с разными прокси (DV =
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">\Delta\ln s</annotation></semantics></math>,
+two-way FE, cluster SE по player)</strong></p>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr>
+<th>Спецификация</th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>β</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat\beta</annotation></semantics></math></th>
+<th style="text-align: right;">SE</th>
+<th style="text-align: right;">p</th>
+<th
+style="text-align: right;">MDE<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi></mi><mn>80</mn></msub><annotation encoding="application/x-tex">_{80}</annotation></semantics></math></th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math></th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>n</mi><mrow><mi>c</mi><mi>y</mi><mo>=</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">n_{cy=1}</annotation></semantics></math></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M3c_canonical (V1,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mrow><mi>e</mi><mi>x</mi><mi>o</mi></mrow></msup><annotation encoding="application/x-tex">\text{cy}^{exo}</annotation></semantics></math>)</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>005</mn></mrow><annotation encoding="application/x-tex">-0{,}005</annotation></semantics></math></td>
+<td style="text-align: right;">0,026</td>
+<td style="text-align: right;">0,844</td>
+<td style="text-align: right;">0,073</td>
+<td style="text-align: right;">2054</td>
+<td style="text-align: right;">715</td>
+</tr>
+<tr>
+<td>M3c_composite (V1,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtext mathvariant="normal">contract_year</mtext><annotation encoding="application/x-tex">\text{contract\_year}</annotation></semantics></math>)</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>455</mn></mrow><annotation encoding="application/x-tex">+0{,}455</annotation></semantics></math>,***</td>
+<td style="text-align: right;">0,022</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">&lt;0{,}001</annotation></semantics></math></td>
+<td style="text-align: right;">0,061</td>
+<td style="text-align: right;">2124</td>
+<td style="text-align: right;">1047</td>
+</tr>
+<tr>
+<td>M3c_circular (V1,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><msub><mi>A</mi><mrow><mi>u</mi><mi>p</mi></mrow></msub></msup><annotation encoding="application/x-tex">\text{cy}^{A_{up}}</annotation></semantics></math>)</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>931</mn></mrow><annotation encoding="application/x-tex">+0{,}931</annotation></semantics></math>,***</td>
+<td style="text-align: right;">0,021</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">&lt;0{,}001</annotation></semantics></math></td>
+<td style="text-align: right;">0,059</td>
+<td style="text-align: right;">2392</td>
+<td style="text-align: right;">607</td>
+</tr>
+<tr>
+<td>M3c_alt1:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mtext mathvariant="normal">same-team end</mtext></msup><annotation encoding="application/x-tex">\text{cy}^{\text{same-team end}}</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>586</mn></mrow><annotation encoding="application/x-tex">+0{,}586</annotation></semantics></math>,***</td>
+<td style="text-align: right;">0,045</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">&lt;0{,}001</annotation></semantics></math></td>
+<td style="text-align: right;">0,126</td>
+<td style="text-align: right;">2392</td>
+<td style="text-align: right;">150</td>
+</tr>
+<tr>
+<td>M3c_alt2:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mtext mathvariant="normal">age-based</mtext></msup><annotation encoding="application/x-tex">\text{cy}^{\text{age-based}}</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>048</mn></mrow><annotation encoding="application/x-tex">-0{,}048</annotation></semantics></math></td>
+<td style="text-align: right;">0,084</td>
+<td style="text-align: right;">0,568</td>
+<td style="text-align: right;">0,234</td>
+<td style="text-align: right;">2392</td>
+<td style="text-align: right;">65</td>
+</tr>
+<tr>
+<td><strong>M3c_alt3:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mtext mathvariant="normal">walk-back</mtext></msup><annotation encoding="application/x-tex">\text{cy}^{\text{walk-back}}</annotation></semantics></math></strong></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold-italic">+</mi><mn mathvariant="bold">𝟎</mn><mo mathvariant="bold">,</mo><mn mathvariant="bold">𝟐𝟎𝟗</mn></mrow><annotation encoding="application/x-tex">\mathbf{+0{,}209}</annotation></semantics></math>,***</td>
+<td style="text-align: right;">0,035</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">&lt;0{,}001</annotation></semantics></math></td>
+<td style="text-align: right;">0,099</td>
+<td style="text-align: right;">2392</td>
+<td style="text-align: right;">596</td>
+</tr>
+<tr>
+<td>M3c_alt4:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mtext mathvariant="normal">renewal</mtext></msup><annotation encoding="application/x-tex">\text{cy}^{\text{renewal}}</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>487</mn></mrow><annotation encoding="application/x-tex">+0{,}487</annotation></semantics></math>,***</td>
+<td style="text-align: right;">0,022</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">&lt;0{,}001</annotation></semantics></math></td>
+<td style="text-align: right;">0,061</td>
+<td style="text-align: right;">2392</td>
+<td style="text-align: right;">1070</td>
+</tr>
+<tr>
+<td>M3c_alt5:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mtext mathvariant="normal">exo-extended</mtext></msup><annotation encoding="application/x-tex">\text{cy}^{\text{exo-extended}}</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>020</mn></mrow><annotation encoding="application/x-tex">-0{,}020</annotation></semantics></math></td>
+<td style="text-align: right;">0,024</td>
+<td style="text-align: right;">0,408</td>
+<td style="text-align: right;">0,068</td>
+<td style="text-align: right;">2075</td>
+<td style="text-align: right;">796</td>
+</tr>
+</tbody>
+</table>
+<p><em>Примечание.</em> *** —
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">p &lt; 0{,}001</annotation></semantics></math>.
+Все спецификации включают COMBINED_STATS, COMMON_NO_STRUCT и year
+FE.</p>
+<p>Содержательная интерпретация Таблицы 3:</p>
+<ul>
+<li>На канонической экзогенной проксии
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mrow><mi>e</mi><mi>x</mi><mi>o</mi></mrow></msup><annotation encoding="application/x-tex">\text{cy}^{exo}</annotation></semantics></math>
+эффект статистически и экономически неотличим от нуля. MDE = 7% — тест
+мощный.</li>
+<li>На циркулярной
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><msub><mi>A</mi><mrow><mi>u</mi><mi>p</mi></mrow></msub></msup><annotation encoding="application/x-tex">\text{cy}^{A_{up}}</annotation></semantics></math>
+эффект
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>93</mn></mrow><annotation encoding="application/x-tex">+0{,}93</annotation></semantics></math>
+— это арифметическое следствие
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mtext mathvariant="normal">cy</mtext><msub><mi>A</mi><mrow><mi>u</mi><mi>p</mi></mrow></msub></msup><mo>=</mo><mn>1</mn><mo>⇒</mo><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mi>s</mi><mo>&gt;</mo><mn>0</mn><mo>,</mo><mn>22</mn></mrow><annotation encoding="application/x-tex">\text{cy}^{A_{up}}=1 \Rightarrow \Delta\ln s &gt; 0{,}22</annotation></semantics></math>
+(то есть 90% от 0,93 — мгновенно объясняется конструкцией).</li>
+<li>На промежуточной
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mtext mathvariant="normal">walk-back</mtext></msup><annotation encoding="application/x-tex">\text{cy}^{\text{walk-back}}</annotation></semantics></math>
+эффект
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>21</mn></mrow><annotation encoding="application/x-tex">+0{,}21</annotation></semantics></math>
+— значимый и не объясняемый только арифметикой. MDE = 9,9%.</li>
+<li>Расширение канона за счёт rookie-scale extension endpoint
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mtext mathvariant="normal">exo-extended</mtext></msup><annotation encoding="application/x-tex">\text{cy}^{\text{exo-extended}}</annotation></semantics></math>)
+<strong>не меняет</strong> null-результат
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>β</mi><mo accent="true">̂</mo></mover><mo>=</mo><mi>−</mi><mn>0</mn><mo>,</mo><mn>020</mn></mrow><annotation encoding="application/x-tex">\hat\beta=-0{,}020</annotation></semantics></math>):
+значит, главный пропуск
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mrow><mi>e</mi><mi>x</mi><mi>o</mi></mrow></msup><annotation encoding="application/x-tex">\text{cy}^{exo}</annotation></semantics></math>
+— это same-team renewals не rookie-уровня (Curry 2017, Jokić 2018/2022,
+…).</li>
+</ul>
+<h3 id="спецификации-без-bad-controls-этап-5">5.2. Спецификации без bad
+controls (Этап 5)</h3>
+<p><strong>Таблица 4. M3c_canonical с альтернативными наборами
+контролей</strong></p>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr>
+<th>Спецификация (cy_var =
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mrow><mi>e</mi><mi>x</mi><mi>o</mi></mrow></msup><annotation encoding="application/x-tex">\text{cy}^{exo}</annotation></semantics></math>)</th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>β</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat\beta</annotation></semantics></math></th>
+<th style="text-align: right;">SE</th>
+<th style="text-align: right;">p</th>
+<th
+style="text-align: right;">MDE<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi></mi><mn>80</mn></msub><annotation encoding="application/x-tex">_{80}</annotation></semantics></math></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(а) Полная V1:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mi>s</mi><mo>∼</mo><mrow><mi mathvariant="bold-italic">𝑺</mi><mi mathvariant="bold-italic">𝒕</mi><mi mathvariant="bold-italic">𝒂</mi><mi mathvariant="bold-italic">𝒕</mi><mi mathvariant="bold-italic">𝒔</mi></mrow><mo>+</mo><mrow><mi mathvariant="bold-italic">𝑺</mi><mi mathvariant="bold-italic">𝒕</mi><mi mathvariant="bold-italic">𝒓</mi><mi mathvariant="bold-italic">𝒖</mi><mi mathvariant="bold-italic">𝒄</mi><mi mathvariant="bold-italic">𝒕</mi></mrow><mo>+</mo><mtext mathvariant="normal">cy</mtext></mrow><annotation encoding="application/x-tex">\Delta\ln s \sim \mathbf{Stats} + \mathbf{Struct} + \text{cy}</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>005</mn></mrow><annotation encoding="application/x-tex">-0{,}005</annotation></semantics></math></td>
+<td style="text-align: right;">0,026</td>
+<td style="text-align: right;">0,844</td>
+<td style="text-align: right;">0,073</td>
+</tr>
+<tr>
+<td>(б) Без stats:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mi>s</mi><mo>∼</mo><mrow><mi mathvariant="bold-italic">𝑺</mi><mi mathvariant="bold-italic">𝒕</mi><mi mathvariant="bold-italic">𝒓</mi><mi mathvariant="bold-italic">𝒖</mi><mi mathvariant="bold-italic">𝒄</mi><mi mathvariant="bold-italic">𝒕</mi></mrow><mo>+</mo><mtext mathvariant="normal">cy</mtext></mrow><annotation encoding="application/x-tex">\Delta\ln s \sim \mathbf{Struct} + \text{cy}</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>035</mn></mrow><annotation encoding="application/x-tex">-0{,}035</annotation></semantics></math></td>
+<td style="text-align: right;">0,026</td>
+<td style="text-align: right;">0,182</td>
+<td style="text-align: right;">0,074</td>
+</tr>
+<tr>
+<td>(в) Минимальная:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mi>s</mi><mo>∼</mo><mtext mathvariant="normal">age</mtext><mo>+</mo><msup><mtext mathvariant="normal">age</mtext><mn>2</mn></msup><mo>+</mo><mtext mathvariant="normal">exp</mtext><mo>+</mo><mtext mathvariant="normal">pos</mtext><mo>+</mo><mtext mathvariant="normal">cy</mtext></mrow><annotation encoding="application/x-tex">\Delta\ln s \sim \text{age}+\text{age}^2+\text{exp}+\text{pos} + \text{cy}</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>050</mn></mrow><annotation encoding="application/x-tex">-0{,}050</annotation></semantics></math>,*</td>
+<td style="text-align: right;">0,026</td>
+<td style="text-align: right;">0,059</td>
+<td style="text-align: right;">0,074</td>
+</tr>
+<tr>
+<td>(г) cap-share DV:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mi>/</mi><mtext mathvariant="normal">cap</mtext><mo stretchy="false" form="postfix">)</mo><mo>∼</mo><mrow><mi mathvariant="bold-italic">𝑺</mi><mi mathvariant="bold-italic">𝒕</mi><mi mathvariant="bold-italic">𝒂</mi><mi mathvariant="bold-italic">𝒕</mi><mi mathvariant="bold-italic">𝒔</mi></mrow><mo>+</mo><mrow><mi mathvariant="bold-italic">𝑺</mi><mi mathvariant="bold-italic">𝒕</mi><mi mathvariant="bold-italic">𝒓</mi><mi mathvariant="bold-italic">𝒖</mi><mi mathvariant="bold-italic">𝒄</mi><mi mathvariant="bold-italic">𝒕</mi></mrow><mo>+</mo><mtext mathvariant="normal">cy</mtext></mrow><annotation encoding="application/x-tex">\Delta\ln(s/\text{cap}) \sim \mathbf{Stats}+\mathbf{Struct}+\text{cy}</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>005</mn></mrow><annotation encoding="application/x-tex">-0{,}005</annotation></semantics></math></td>
+<td style="text-align: right;">0,026</td>
+<td style="text-align: right;">0,844</td>
+<td style="text-align: right;">0,073</td>
+</tr>
+</tbody>
+</table>
+<p><em>Примечание.</em> Год-FE поглощают
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mtext mathvariant="normal">cap</mtext><mi>t</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\Delta \ln(\text{cap}_t)</annotation></semantics></math>
+в одинаковой мере; поэтому DV
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">=\Delta\ln s</annotation></semantics></math>
+и DV
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mi>/</mi><mtext mathvariant="normal">cap</mtext><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">=\Delta\ln(s/\text{cap})</annotation></semantics></math>
+дают численно идентичный коэффициент.</p>
+<p>Удаление stats-контролей не выявляет положительный «скрытый»
+CY-эффект; если что-то и проявляется, то слабое отрицательное смещение к
+downward FA.</p>
+<h3 id="canonical-stiroh-тест-на-производительности">5.3. Canonical
+Stiroh-тест на производительности</h3>
+<p><strong>Таблица 5. Тест Stiroh-эффекта на производительности (two-way
+FE, cluster SE по player; cy_var =
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mrow><mi>e</mi><mi>x</mi><mi>o</mi></mrow></msup><annotation encoding="application/x-tex">\text{cy}^{exo}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>≈</mo><mn>2100</mn></mrow><annotation encoding="application/x-tex">N \approx 2100</annotation></semantics></math>)</strong></p>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr>
+<th><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math></th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>β</mi><mo accent="true">̂</mo></mover><mtext mathvariant="normal">cy</mtext></msub><annotation encoding="application/x-tex">\hat\beta_{\text{cy}}</annotation></semantics></math></th>
+<th style="text-align: right;">SE</th>
+<th style="text-align: right;">p</th>
+<th
+style="text-align: right;">MDE<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi></mi><mn>80</mn></msub><annotation encoding="application/x-tex">_{80}</annotation></semantics></math></th>
+<th style="text-align: right;">mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math></th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>β</mi><mo accent="true">̂</mo></mover><mi>/</mi><mover><mi>Y</mi><mo accent="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">\hat\beta / \bar Y</annotation></semantics></math></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ppg</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>279</mn></mrow><annotation encoding="application/x-tex">-0{,}279</annotation></semantics></math></td>
+<td style="text-align: right;">0,201</td>
+<td style="text-align: right;">0,166</td>
+<td style="text-align: right;">0,563</td>
+<td style="text-align: right;">11,21</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>2</mn><mo>,</mo><mn>5</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">-2{,}5\%</annotation></semantics></math></td>
+</tr>
+<tr>
+<td>rpg</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>143</mn></mrow><annotation encoding="application/x-tex">-0{,}143</annotation></semantics></math></td>
+<td style="text-align: right;">0,076</td>
+<td style="text-align: right;"><strong>0,058</strong></td>
+<td style="text-align: right;">0,212</td>
+<td style="text-align: right;">4,45</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>3</mn><mo>,</mo><mn>2</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">-3{,}2\%</annotation></semantics></math></td>
+</tr>
+<tr>
+<td>apg</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>043</mn></mrow><annotation encoding="application/x-tex">-0{,}043</annotation></semantics></math></td>
+<td style="text-align: right;">0,053</td>
+<td style="text-align: right;">0,418</td>
+<td style="text-align: right;">0,148</td>
+<td style="text-align: right;">2,45</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn><mo>,</mo><mn>8</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">-1{,}8\%</annotation></semantics></math></td>
+</tr>
+<tr>
+<td>per</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>201</mn></mrow><annotation encoding="application/x-tex">-0{,}201</annotation></semantics></math></td>
+<td style="text-align: right;">0,152</td>
+<td style="text-align: right;">0,186</td>
+<td style="text-align: right;">0,427</td>
+<td style="text-align: right;">14,83</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn><mo>,</mo><mn>4</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">-1{,}4\%</annotation></semantics></math></td>
+</tr>
+<tr>
+<td>ws</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>092</mn></mrow><annotation encoding="application/x-tex">-0{,}092</annotation></semantics></math></td>
+<td style="text-align: right;">0,114</td>
+<td style="text-align: right;">0,418</td>
+<td style="text-align: right;">0,319</td>
+<td style="text-align: right;">3,49</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>2</mn><mo>,</mo><mn>6</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">-2{,}6\%</annotation></semantics></math></td>
+</tr>
+<tr>
+<td>vorp</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>040</mn></mrow><annotation encoding="application/x-tex">-0{,}040</annotation></semantics></math></td>
+<td style="text-align: right;">0,049</td>
+<td style="text-align: right;">0,412</td>
+<td style="text-align: right;">0,137</td>
+<td style="text-align: right;">0,95</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>4</mn><mo>,</mo><mn>2</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">-4{,}2\%</annotation></semantics></math></td>
+</tr>
+<tr>
+<td>usg</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>132</mn></mrow><annotation encoding="application/x-tex">-0{,}132</annotation></semantics></math></td>
+<td style="text-align: right;">0,193</td>
+<td style="text-align: right;">0,495</td>
+<td style="text-align: right;">0,540</td>
+<td style="text-align: right;">19,46</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>7</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">-0{,}7\%</annotation></semantics></math></td>
+</tr>
+<tr>
+<td>ts%</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>002</mn></mrow><annotation encoding="application/x-tex">-0{,}002</annotation></semantics></math></td>
+<td style="text-align: right;">0,003</td>
+<td style="text-align: right;">0,512</td>
+<td style="text-align: right;">0,007</td>
+<td style="text-align: right;">0,561</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>3</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">-0{,}3\%</annotation></semantics></math></td>
+</tr>
+<tr>
+<td>mpg</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>396</mn></mrow><annotation encoding="application/x-tex">-0{,}396</annotation></semantics></math></td>
+<td style="text-align: right;">0,314</td>
+<td style="text-align: right;">0,208</td>
+<td style="text-align: right;">0,880</td>
+<td style="text-align: right;">23,93</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn><mo>,</mo><mn>7</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">-1{,}7\%</annotation></semantics></math></td>
+</tr>
+</tbody>
+</table>
+<p>Все девять точечных оценок
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>β</mi><mo accent="true">̂</mo></mover><mtext mathvariant="normal">cy</mtext></msub><annotation encoding="application/x-tex">\hat\beta_{\text{cy}}</annotation></semantics></math>
+имеют отрицательный знак, два — на грани значимости (rpg
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>058</mn></mrow><annotation encoding="application/x-tex">p=0{,}058</annotation></semantics></math>;
+ws
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>418</mn></mrow><annotation encoding="application/x-tex">p=0{,}418</annotation></semantics></math>).
+Это <strong>прямое опровержение</strong> гипотезы (а) — поведенческой
+компоненты Stiroh. Stiroh’s H3 (старшие игроки усиливают эффект) — также
+не подтверждается: взаимодействие
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">cy</mtext><mo>×</mo><mn mathvariant="double-struck">𝟙</mn><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mi>g</mi><mi>e</mi><mo>≥</mo><mn>30</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\text{cy}\times\mathbb{1}\{age\geq 30\}</annotation></semantics></math>
+всюду имеет отрицательный знак (например, для PPG:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>β</mi><mo accent="true">̂</mo></mover><mo>=</mo><mi>−</mi><mn>0</mn><mo>,</mo><mn>69</mn></mrow><annotation encoding="application/x-tex">\hat\beta=-0{,}69</annotation></semantics></math>,
+SE=0,52,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>18</mn></mrow><annotation encoding="application/x-tex">p=0{,}18</annotation></semantics></math>).</p>
+<h3 id="гетерогенные-эффекты-по-подгруппам-таблица-6">5.4. Гетерогенные
+эффекты по подгруппам (Таблица 6)</h3>
+<p><strong>Таблица 6. M3c-регрессии в разрезе подгрупп (DV =
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">\Delta\ln s</annotation></semantics></math>,
+two-way FE, cluster SE по player)</strong></p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mrow><mi>e</mi><mi>x</mi><mi>o</mi></mrow></msup><annotation encoding="application/x-tex">\text{cy}^{exo}</annotation></semantics></math></th>
+<th></th>
+<th></th>
+<th><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtext mathvariant="normal">contract_year</mtext><annotation encoding="application/x-tex">\text{contract\_year}</annotation></semantics></math></th>
+<th></th>
+<th></th>
+<th><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mtext mathvariant="normal">walk-back</mtext></msup><annotation encoding="application/x-tex">\text{cy}^{\text{walk-back}}</annotation></semantics></math></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Подгруппа</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>β</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat\beta</annotation></semantics></math></td>
+<td>SE</td>
+<td>p</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>β</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat\beta</annotation></semantics></math></td>
+<td>SE</td>
+<td>p</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>β</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat\beta</annotation></semantics></math></td>
+<td>SE</td>
+<td>p</td>
+</tr>
+<tr>
+<td>age
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>25</mn></mrow><annotation encoding="application/x-tex">&lt;25</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>028</mn></mrow><annotation encoding="application/x-tex">+0{,}028</annotation></semantics></math></td>
+<td>0,036</td>
+<td>0,43</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>539</mn></mrow><annotation encoding="application/x-tex">+0{,}539</annotation></semantics></math>,***</td>
+<td>0,030</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">&lt;0{,}001</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>374</mn></mrow><annotation encoding="application/x-tex">+0{,}374</annotation></semantics></math>,***</td>
+<td>0,062</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">&lt;0{,}001</annotation></semantics></math></td>
+</tr>
+<tr>
+<td>age 25–28</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>004</mn></mrow><annotation encoding="application/x-tex">+0{,}004</annotation></semantics></math></td>
+<td>0,063</td>
+<td>0,95</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>548</mn></mrow><annotation encoding="application/x-tex">+0{,}548</annotation></semantics></math>,***</td>
+<td>0,047</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">&lt;0{,}001</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>280</mn></mrow><annotation encoding="application/x-tex">+0{,}280</annotation></semantics></math>,***</td>
+<td>0,066</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">&lt;0{,}001</annotation></semantics></math></td>
+</tr>
+<tr>
+<td><strong>age
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≥</mo><mn>29</mn></mrow><annotation encoding="application/x-tex">\geq 29</annotation></semantics></math></strong></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold-italic">−</mi><mn mathvariant="bold">𝟎</mn><mo mathvariant="bold">,</mo><mn mathvariant="bold">𝟏𝟔𝟗</mn></mrow><annotation encoding="application/x-tex">\mathbf{-0{,}169}</annotation></semantics></math>,***</td>
+<td>0,052</td>
+<td><strong>0,001</strong></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>081</mn></mrow><annotation encoding="application/x-tex">+0{,}081</annotation></semantics></math></td>
+<td>0,050</td>
+<td>0,11</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>105</mn></mrow><annotation encoding="application/x-tex">-0{,}105</annotation></semantics></math>,**</td>
+<td>0,052</td>
+<td>0,04</td>
+</tr>
+<tr>
+<td>salary mid ($2–10M)</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>051</mn></mrow><annotation encoding="application/x-tex">-0{,}051</annotation></semantics></math></td>
+<td>0,035</td>
+<td>0,14</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>375</mn></mrow><annotation encoding="application/x-tex">+0{,}375</annotation></semantics></math>,***</td>
+<td>0,033</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">&lt;0{,}001</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>210</mn></mrow><annotation encoding="application/x-tex">+0{,}210</annotation></semantics></math>,***</td>
+<td>0,049</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">&lt;0{,}001</annotation></semantics></math></td>
+</tr>
+<tr>
+<td><strong>salary high ($10–25M)</strong></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold-italic">−</mi><mn mathvariant="bold">𝟎</mn><mo mathvariant="bold">,</mo><mn mathvariant="bold">𝟐𝟒𝟏</mn></mrow><annotation encoding="application/x-tex">\mathbf{-0{,}241}</annotation></semantics></math>,***</td>
+<td>0,065</td>
+<td><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">&lt;0{,}001</annotation></semantics></math></strong></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>039</mn></mrow><annotation encoding="application/x-tex">-0{,}039</annotation></semantics></math></td>
+<td>0,059</td>
+<td>0,51</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>065</mn></mrow><annotation encoding="application/x-tex">-0{,}065</annotation></semantics></math></td>
+<td>0,065</td>
+<td>0,32</td>
+</tr>
+<tr>
+<td>exp 1–2</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>013</mn></mrow><annotation encoding="application/x-tex">+0{,}013</annotation></semantics></math></td>
+<td>0,056</td>
+<td>0,81</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>504</mn></mrow><annotation encoding="application/x-tex">+0{,}504</annotation></semantics></math>,***</td>
+<td>0,047</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">&lt;0{,}001</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>130</mn></mrow><annotation encoding="application/x-tex">+0{,}130</annotation></semantics></math>,*</td>
+<td>0,077</td>
+<td>0,09</td>
+</tr>
+<tr>
+<td><strong>exp 3–6</strong></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold-italic">−</mi><mn mathvariant="bold">𝟎</mn><mo mathvariant="bold">,</mo><mn mathvariant="bold">𝟏𝟖𝟗</mn></mrow><annotation encoding="application/x-tex">\mathbf{-0{,}189}</annotation></semantics></math>,***</td>
+<td>0,065</td>
+<td><strong>0,004</strong></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>706</mn></mrow><annotation encoding="application/x-tex">+0{,}706</annotation></semantics></math>,***</td>
+<td>0,051</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">&lt;0{,}001</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>424</mn></mrow><annotation encoding="application/x-tex">+0{,}424</annotation></semantics></math>,***</td>
+<td>0,063</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">&lt;0{,}001</annotation></semantics></math></td>
+</tr>
+<tr>
+<td><strong>exp 7+</strong></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold-italic">−</mi><mn mathvariant="bold">𝟎</mn><mo mathvariant="bold">,</mo><mn mathvariant="bold">𝟏𝟓𝟓</mn></mrow><annotation encoding="application/x-tex">\mathbf{-0{,}155}</annotation></semantics></math>,***</td>
+<td>0,046</td>
+<td><strong>0,001</strong></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>104</mn></mrow><annotation encoding="application/x-tex">+0{,}104</annotation></semantics></math>,**</td>
+<td>0,042</td>
+<td>0,01</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>042</mn></mrow><annotation encoding="application/x-tex">-0{,}042</annotation></semantics></math></td>
+<td>0,046</td>
+<td>0,36</td>
+</tr>
+<tr>
+<td>allstar=1</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>043</mn></mrow><annotation encoding="application/x-tex">-0{,}043</annotation></semantics></math></td>
+<td>0,072</td>
+<td>0,55</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>491</mn></mrow><annotation encoding="application/x-tex">+0{,}491</annotation></semantics></math>,***</td>
+<td>0,069</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">&lt;0{,}001</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>520</mn></mrow><annotation encoding="application/x-tex">+0{,}520</annotation></semantics></math>,***</td>
+<td>0,092</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">&lt;0{,}001</annotation></semantics></math></td>
+</tr>
+</tbody>
+</table>
+<p><em>Примечание.</em> *
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">p&lt;0{,}1</annotation></semantics></math>;
+**
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>05</mn></mrow><annotation encoding="application/x-tex">p&lt;0{,}05</annotation></semantics></math>;
+***
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">p&lt;0{,}001</annotation></semantics></math>.</p>
+<p>Содержательно — наиболее впечатляющий контраст: на
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mrow><mi>e</mi><mi>x</mi><mi>o</mi></mrow></msup><annotation encoding="application/x-tex">\text{cy}^{exo}</annotation></semantics></math>
+в подгруппе
+age<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≥</mo><mn>29</mn></mrow><annotation encoding="application/x-tex">\geq 29</annotation></semantics></math>
+эффект <strong>отрицательный и значимый</strong>
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>β</mi><mo accent="true">̂</mo></mover><mo>=</mo><mi>−</mi><mn>0</mn><mo>,</mo><mn>169</mn></mrow><annotation encoding="application/x-tex">\hat\beta=-0{,}169</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">p=0{,}001</annotation></semantics></math>);
+это <strong>прямой след downward FA</strong>. На
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mtext mathvariant="normal">walk-back</mtext></msup><annotation encoding="application/x-tex">\text{cy}^{\text{walk-back}}</annotation></semantics></math>
+для
+age<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>25</mn></mrow><annotation encoding="application/x-tex">&lt;25</annotation></semantics></math>
+и age 25–28 эффекты строго <strong>положительные</strong>
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>β</mi><mo accent="true">̂</mo></mover><mo>=</mo><mi>+</mi><mn>0</mn><mo>,</mo><mn>374</mn></mrow><annotation encoding="application/x-tex">\hat\beta=+0{,}374</annotation></semantics></math>
+и
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>280</mn></mrow><annotation encoding="application/x-tex">+0{,}280</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">p&lt;0{,}001</annotation></semantics></math>);
+агрегатный нуль маскирует противоположно направленные эффекты в
+подгруппах.</p>
+<h3 id="event-study-вокруг-контрактного-события-этап-7">5.5. Event-study
+вокруг контрактного события (Этап 7)</h3>
+<p>Спецификация (4) с
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mrow><mi>i</mi><mi>t</mi></mrow></msub><mo>=</mo><msub><mtext mathvariant="normal">season</mtext><mi>t</mi></msub><mo>−</mo><msub><mtext mathvariant="normal">cy_first_season</mtext><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">T_{it} = \text{season}_t - \text{cy\_first\_season}_i</annotation></semantics></math>
+для каждого игрока, у которого в выборке наблюдается хотя бы один
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mtext mathvariant="normal">cy</mtext><mrow><mi>e</mi><mi>x</mi><mi>o</mi></mrow></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\text{cy}^{exo}=1</annotation></semantics></math>:</p>
+<p><strong>Таблица 7. Event-study вокруг
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mtext mathvariant="normal">cy</mtext><mrow><mi>e</mi><mi>x</mi><mi>o</mi></mrow></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\text{cy}^{exo}=1</annotation></semantics></math>
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mo>=</mo><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">\tau=-1</annotation></semantics></math>
+— референс)</strong></p>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 13%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math></th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>β</mi><mo accent="true">̂</mo></mover><mi>τ</mi></msub><annotation encoding="application/x-tex">\hat\beta_\tau</annotation></semantics></math></th>
+<th style="text-align: right;">SE</th>
+<th style="text-align: right;">p</th>
+<th>95% CI</th>
+<th style="text-align: right;">descriptive mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">\Delta\ln s</annotation></semantics></math></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">-3</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>056</mn></mrow><annotation encoding="application/x-tex">-0{,}056</annotation></semantics></math></td>
+<td style="text-align: right;">0,174</td>
+<td style="text-align: right;">0,748</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mn>0</mn><mo>,</mo><mn>396</mn><mo>;</mo><mi>+</mi><mn>0</mn><mo>,</mo><mn>285</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[-0{,}396; +0{,}285]</annotation></semantics></math></td>
+<td style="text-align: right;">0,484</td>
+</tr>
+<tr>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">-2</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>266</mn></mrow><annotation encoding="application/x-tex">+0{,}266</annotation></semantics></math>,***</td>
+<td style="text-align: right;">0,051</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">&lt;0{,}001</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>+</mi><mn>0</mn><mo>,</mo><mn>166</mn><mo>;</mo><mi>+</mi><mn>0</mn><mo>,</mo><mn>365</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[+0{,}166; +0{,}365]</annotation></semantics></math></td>
+<td style="text-align: right;">0,144</td>
+</tr>
+<tr>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td>ref</td>
+<td style="text-align: right;">0,146</td>
+</tr>
+<tr>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>196</mn></mrow><annotation encoding="application/x-tex">-0{,}196</annotation></semantics></math>,***</td>
+<td style="text-align: right;">0,039</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">&lt;0{,}001</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mn>0</mn><mo>,</mo><mn>272</mn><mo>;</mo><mi>−</mi><mn>0</mn><mo>,</mo><mn>120</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[-0{,}272; -0{,}120]</annotation></semantics></math></td>
+<td style="text-align: right;"><strong>0,289</strong></td>
+</tr>
+<tr>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">+1</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>183</mn></mrow><annotation encoding="application/x-tex">-0{,}183</annotation></semantics></math>,***</td>
+<td style="text-align: right;">0,058</td>
+<td style="text-align: right;">0,002</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mn>0</mn><mo>,</mo><mn>296</mn><mo>;</mo><mi>−</mi><mn>0</mn><mo>,</mo><mn>070</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[-0{,}296; -0{,}070]</annotation></semantics></math></td>
+<td style="text-align: right;">0,376</td>
+</tr>
+<tr>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">+2</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>009</mn></mrow><annotation encoding="application/x-tex">-0{,}009</annotation></semantics></math></td>
+<td style="text-align: right;">0,063</td>
+<td style="text-align: right;">0,882</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mn>0</mn><mo>,</mo><mn>133</mn><mo>;</mo><mi>+</mi><mn>0</mn><mo>,</mo><mn>115</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[-0{,}133; +0{,}115]</annotation></semantics></math></td>
+<td style="text-align: right;">0,190</td>
+</tr>
+</tbody>
+</table>
+<p>Для
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mtext mathvariant="normal">walk-back</mtext></msup><annotation encoding="application/x-tex">\text{cy}^{\text{walk-back}}</annotation></semantics></math>:</p>
+<table>
+<thead>
+<tr>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math></th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>β</mi><mo accent="true">̂</mo></mover><mi>τ</mi></msub><annotation encoding="application/x-tex">\hat\beta_\tau</annotation></semantics></math></th>
+<th style="text-align: right;">SE</th>
+<th style="text-align: right;">p</th>
+<th style="text-align: right;">descriptive mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">\Delta\ln s</annotation></semantics></math></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">-3</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>522</mn></mrow><annotation encoding="application/x-tex">+0{,}522</annotation></semantics></math>,***</td>
+<td style="text-align: right;">0,104</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">&lt;0{,}001</annotation></semantics></math></td>
+<td style="text-align: right;">0,197</td>
+</tr>
+<tr>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">-2</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>307</mn></mrow><annotation encoding="application/x-tex">+0{,}307</annotation></semantics></math>,***</td>
+<td style="text-align: right;">0,062</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">&lt;0{,}001</annotation></semantics></math></td>
+<td style="text-align: right;">0,194</td>
+</tr>
+<tr>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">0,248</td>
+</tr>
+<tr>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>083</mn></mrow><annotation encoding="application/x-tex">-0{,}083</annotation></semantics></math>,**</td>
+<td style="text-align: right;">0,036</td>
+<td style="text-align: right;">0,020</td>
+<td style="text-align: right;"><strong>0,516</strong></td>
+</tr>
+<tr>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">+1</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>258</mn></mrow><annotation encoding="application/x-tex">+0{,}258</annotation></semantics></math>,***</td>
+<td style="text-align: right;">0,056</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">&lt;0{,}001</annotation></semantics></math></td>
+<td style="text-align: right;">0,056</td>
+</tr>
+<tr>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">+2</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>105</mn></mrow><annotation encoding="application/x-tex">+0{,}105</annotation></semantics></math>,**</td>
+<td style="text-align: right;">0,051</td>
+<td style="text-align: right;">0,040</td>
+<td style="text-align: right;">0,094</td>
+</tr>
+</tbody>
+</table>
+<p>Содержательно: descriptive mean Δln_salary в год события
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\tau=0</annotation></semantics></math>)
+— это <strong>удвоение</strong> по сравнению с предыдущим годом (0,52
+против 0,25 для walk-back); 0,29 против 0,15 для cy_exogenous).
+Регрессия же на
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">\ln s</annotation></semantics></math>
+(level) с player FE даёт отрицательный коэффициент в
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\tau=0</annotation></semantics></math>,
+что отражает снижение <strong>уровня</strong> зарплаты у игроков,
+перешедших на новую команду (downward FA). Эти два результата
+согласуются: contract year связан с повышенным изменением, но не
+обязательно с более высоким уровнем зарплаты.</p>
+<h3 id="sensitivity-по-oster-2019">5.6. Sensitivity по Oster (2019)</h3>
+<p><strong>Таблица 8. Oster bounds на
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>β</mi><mtext mathvariant="normal">cy</mtext></msub><annotation encoding="application/x-tex">\beta_{\text{cy}}</annotation></semantics></math>
+в M3c</strong></p>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr>
+<th>Прокси</th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>β</mi><mtext mathvariant="normal">short</mtext></msub><annotation encoding="application/x-tex">\beta_{\text{short}}</annotation></semantics></math></th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>R</mi><mtext mathvariant="normal">short</mtext><mn>2</mn></msubsup><annotation encoding="application/x-tex">R^2_{\text{short}}</annotation></semantics></math></th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>β</mi><mtext mathvariant="normal">long</mtext></msub><annotation encoding="application/x-tex">\beta_{\text{long}}</annotation></semantics></math></th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>R</mi><mtext mathvariant="normal">long</mtext><mn>2</mn></msubsup><annotation encoding="application/x-tex">R^2_{\text{long}}</annotation></semantics></math></th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>β</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>δ</mi><mo>=</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\beta^* (\delta=1)</annotation></semantics></math></th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>δ</mi><mrow><mi>β</mi><mo>=</mo><mn>0</mn></mrow></msub><annotation encoding="application/x-tex">\delta_{\beta=0}</annotation></semantics></math></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mrow><mi>e</mi><mi>x</mi><mi>o</mi></mrow></msup><annotation encoding="application/x-tex">\text{cy}^{exo}</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>054</mn></mrow><annotation encoding="application/x-tex">-0{,}054</annotation></semantics></math></td>
+<td style="text-align: right;">0,002</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>005</mn></mrow><annotation encoding="application/x-tex">-0{,}005</annotation></semantics></math></td>
+<td style="text-align: right;">0,127</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>010</mn></mrow><annotation encoding="application/x-tex">+0{,}010</annotation></semantics></math></td>
+<td style="text-align: right;">0,345</td>
+</tr>
+<tr>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtext mathvariant="normal">contract_year</mtext><annotation encoding="application/x-tex">\text{contract\_year}</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>447</mn></mrow><annotation encoding="application/x-tex">+0{,}447</annotation></semantics></math></td>
+<td style="text-align: right;">0,139</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>455</mn></mrow><annotation encoding="application/x-tex">+0{,}455</annotation></semantics></math></td>
+<td style="text-align: right;">0,263</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>459</mn></mrow><annotation encoding="application/x-tex">+0{,}459</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>91</mn><mo>,</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">-91{,}7</annotation></semantics></math></td>
+</tr>
+<tr>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mtext mathvariant="normal">walk-back</mtext></msup><annotation encoding="application/x-tex">\text{cy}^{\text{walk-back}}</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>147</mn></mrow><annotation encoding="application/x-tex">+0{,}147</annotation></semantics></math></td>
+<td style="text-align: right;">0,011</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>209</mn></mrow><annotation encoding="application/x-tex">+0{,}209</annotation></semantics></math></td>
+<td style="text-align: right;">0,138</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>229</mn></mrow><annotation encoding="application/x-tex">+0{,}229</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>10</mn><mo>,</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">-10{,}4</annotation></semantics></math></td>
+</tr>
+<tr>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mtext mathvariant="normal">exo-extended</mtext></msup><annotation encoding="application/x-tex">\text{cy}^{\text{exo-extended}}</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>070</mn></mrow><annotation encoding="application/x-tex">-0{,}070</annotation></semantics></math></td>
+<td style="text-align: right;">0,003</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>020</mn></mrow><annotation encoding="application/x-tex">-0{,}020</annotation></semantics></math></td>
+<td style="text-align: right;">0,127</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>005</mn></mrow><annotation encoding="application/x-tex">-0{,}005</annotation></semantics></math></td>
+<td style="text-align: right;">1,314</td>
+</tr>
+</tbody>
+</table>
+<p><em>Примечание.</em>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>δ</mi><mrow><mi>β</mi><mo>=</mo><mn>0</mn></mrow></msub><annotation encoding="application/x-tex">\delta_{\beta=0}</annotation></semantics></math>
+— необходимая селекция на ненаблюдаемых относительно наблюдаемых, чтобы
+истинный
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\beta = 0</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>δ</mi><mo stretchy="false" form="prefix">|</mo><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|\delta| &gt; 1</annotation></semantics></math>
+обычно интерпретируется как «устойчивость к OVB» (Oster, 2019, §3).</p>
+<p>Null-результат на
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mrow><mi>e</mi><mi>x</mi><mi>o</mi></mrow></msup><annotation encoding="application/x-tex">\text{cy}^{exo}</annotation></semantics></math>
+умеренно устойчив:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>β</mi><mo>*</mo></msup><annotation encoding="application/x-tex">\beta^*</annotation></semantics></math>
+остаётся около нуля, но
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>δ</mi><mrow><mi>β</mi><mo>=</mo><mn>0</mn></mrow></msub><mo>=</mo><mn>0</mn><mo>,</mo><mn>35</mn></mrow><annotation encoding="application/x-tex">\delta_{\beta=0}=0{,}35</annotation></semantics></math>
+означает, что <strong>умеренное</strong> неучтённое смещение (35% от
+силы наблюдаемых) уже подвигнет
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>β</mi><mtext mathvariant="normal">true</mtext></msub><annotation encoding="application/x-tex">\beta_\text{true}</annotation></semantics></math>
+из нулевого в направлении исходной короткой оценки
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>054</mn></mrow><annotation encoding="application/x-tex">-0{,}054</annotation></semantics></math>.
+Положительный эффект
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mtext mathvariant="normal">walk-back</mtext></msup><annotation encoding="application/x-tex">\text{cy}^{\text{walk-back}}</annotation></semantics></math>,
+напротив, <strong>сильно</strong> устойчив
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>=</mo><mi>−</mi><mn>10</mn><mo>,</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">\delta = -10{,}4</annotation></semantics></math>
+— нужно отрицательное смещение в 10 раз сильнее наблюдаемого, что в
+эконометрической практике маловероятно).</p>
+<hr />
+<h2 id="сопоставление-с-литературой">6. Сопоставление с литературой</h2>
+<p>Stiroh (2007, <em>Economic Inquiry</em>, 45(1): 145–161) на выборке
+NBA 1980–2002 обнаружил CY-эффект на производительности (Δ ≈ +3%) и на
+новых контрактах (+15–20% по сравнению с non-CY годами). Berri &amp;
+Krautmann (2006), Berri et al. (2007) — overpayment for scoring; White
+&amp; Sheldon (2014) — replication CY-эффекта; Gaffney et al. (2020) —
+heterogeneity по позициям; Kleven et al. (2013) — налоговая нагрузка как
+фактор миграции футболистов в Европе (концептуальный baseline для H5 в
+этом проекте). Angrist &amp; Pischke (2009, гл. 3) обсуждают bad control
+problem; Oster (2019, <em>J. Bus. Econ. Stat.</em>, 37(2): 187–204) —
+формальный sensitivity-метод.</p>
+<p>В сопоставлении с литературой наши результаты:</p>
+<ul>
+<li><strong>Сходятся</strong> с Stiroh (2007) в
+<strong>направлении</strong> эффекта на cy_walk_back
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>β</mi><mo accent="true">̂</mo></mover><mo>=</mo><mi>+</mi><mn>0</mn><mo>,</mo><mn>21</mn></mrow><annotation encoding="application/x-tex">\hat\beta=+0{,}21</annotation></semantics></math>,
+что в %-ном выражении соответствует
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∼</mo><mn>20</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">\sim 20\%</annotation></semantics></math>
+Δsalary в год события — сопоставимо со Stiroh-овскими $$15-20%
+пресловутой «премии»).</li>
+<li><strong>Расходятся</strong> в том, что Stiroh обнаруживал эффект на
+производительности (Δ ppg ≈ +3% в CY-год); у нас на cy_exogenous и
+cy_walk_back ни одна из 9 мер производительности не даёт значимого
+положительного эффекта в каноническом тесте.</li>
+<li>Возможное объяснение: эра постSilver CBA (2017+) с
+supermax-extensions изменила структуру контрактных стимулов;
+current-year performance менее важна для max-уровневого игрока (уже
+зафиксированного), а у не-max игроков effect размывается селекцией.</li>
+<li><strong>Сходятся</strong> с White &amp; Sheldon (2014) и Gaffney et
+al. (2020) в гетерогенности эффекта по возрасту/опыту.</li>
+</ul>
+<hr />
+<h2 id="ограничения-и-направления-дальнейших-исследований">7.
+Ограничения и направления дальнейших исследований</h2>
+<ol type="1">
+<li><p><strong>Recall cy_exogenous.</strong> Главное ограничение —
+отсутствие верификации против структурированных контрактных данных
+(Spotrac, BR contract pages). Ручная валидация по Wikipedia ограничена
+22 топ-игроками. Для будущей работы планируется скрейпинг Spotrac
+contract data или использование коммерческого NBA Stuffer API.</p></li>
+<li><p><strong>Selection by contract type.</strong> Игроки с разными
+типами контрактов (rookie scale, mid-level, max, supermax) попадают в
+выборку с разной плотностью; это не моделируется явно. Heckman two-step
+требует exclusion restriction, которого у нас нет.</p></li>
+<li><p><strong>Bad controls problem</strong> в Stiroh-тесте. На правую
+сторону Stiroh- регрессии (1) ставится current-season performance,
+которая может быть выбрана коучем по salary (B4). Per-36 нормализация
+частично купирует, но не устраняет.</p></li>
+<li><p><strong>Mid-season trades</strong> (cy_B_trade) исключены из
+основных спецификаций. Содержательно это — отдельный механизм
+(trade-induced pay change), который заслуживает отдельного
+анализа.</p></li>
+<li><p><strong>Out-of-sample период.</strong> Панель ограничена 2015/16
+— 2023/24. После CBA 2023 (supermax-расширение, second-apron) структура
+контрактных стимулов могла измениться; будущая работа на 2024/25+ должна
+это тестировать.</p></li>
+<li><p><strong>Power для null-результатов.</strong> MDE для cy_exogenous
+= 7% Δsalary тесная, но для подгрупп (особенно max-tier) MDE доходит до
+18% (Таблица 6) — мощность недостаточна для детектирования small
+effects.</p></li>
+</ol>
+<hr />
+<h2 id="заключение">8. Заключение</h2>
+<p><strong>Главный методологический вывод.</strong> Результат «гипотеза
+H6 не подтверждается» в редакции V1 является <strong>частично
+артефактом</strong> неполного и эндогенно- нагруженного определения
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mtext mathvariant="normal">cy</mtext><mrow><mi>e</mi><mi>x</mi><mi>o</mi></mrow></msup><annotation encoding="application/x-tex">\text{cy}^{exo}</annotation></semantics></math>
+— а не свидетельством полного отсутствия эффекта контрактного года. Из
+восьми линий критики пять подтверждены численно (низкий recall 37%,
+downward FA contamination, смысловое несоответствие гипотезы и теста,
+гетерогенные эффекты, отсутствие external validation), две опровергнуты
+(cap inflation учтён, bad controls не маскируют эффект), одна частично
+подтверждена (альтернативная интерпретация M3c_composite).</p>
+<p><strong>Содержательный итог по H6.</strong> На канонической прокси
+cy_exogenous
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>β</mi><mo accent="true">̂</mo></mover><mo>=</mo><mi>−</mi><mn>0</mn><mo>,</mo><mn>005</mn></mrow><annotation encoding="application/x-tex">\hat\beta = -0{,}005</annotation></semantics></math>
+(p=0,84, MDE=7%) — статистически и экономически неотличим от нуля. На
+более полной проксии cy_walk_back
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>β</mi><mo accent="true">̂</mo></mover><mo>=</mo><mi>+</mi><mn>0</mn><mo>,</mo><mn>209</mn></mrow><annotation encoding="application/x-tex">\hat\beta = +0{,}209</annotation></semantics></math>
+(p&lt;0,001, MDE=10%) — значимый положительный эффект, сопоставимый по
+порядку величины с Stiroh (2007). Гетерогенный анализ выявляет:</p>
+<ul>
+<li>Молодые
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>25</mn></mrow><annotation encoding="application/x-tex">&lt;25</annotation></semantics></math>)
+и mid-tenure (3–6 опыта) игроки:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>β</mi><mo accent="true">̂</mo></mover><mtext mathvariant="normal">walk-back</mtext></msub><mo>=</mo><mi>+</mi><mn>0</mn><mo>,</mo><mn>37</mn></mrow><annotation encoding="application/x-tex">\hat\beta_{\text{walk-back}}
+= +0{,}37</annotation></semantics></math> и
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0</mn><mo>,</mo><mn>42</mn></mrow><annotation encoding="application/x-tex">+0{,}42</annotation></semantics></math>
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">p&lt;0{,}001</annotation></semantics></math>).</li>
+<li>All-star игроки в контрактный год:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>β</mi><mo accent="true">̂</mo></mover><mtext mathvariant="normal">walk-back</mtext></msub><mo>=</mo><mi>+</mi><mn>0</mn><mo>,</mo><mn>52</mn></mrow><annotation encoding="application/x-tex">\hat\beta_{\text{walk-back}} = +0{,}52</annotation></semantics></math>
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">p&lt;0{,}001</annotation></semantics></math>).</li>
+<li>Возрастные
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≥</mo><mn>29</mn></mrow><annotation encoding="application/x-tex">\geq 29</annotation></semantics></math>)
+и high-tier
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>$</mi><mn>10</mn></mrow><annotation encoding="application/x-tex">\$10</annotation></semantics></math>–<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>25</mn><mi>M</mi></mrow><annotation encoding="application/x-tex">25M</annotation></semantics></math>):
+эффект <strong>отрицательный</strong>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>β</mi><mo accent="true">̂</mo></mover><mtext mathvariant="normal">exo</mtext></msub><mo>=</mo><mi>−</mi><mn>0</mn><mo>,</mo><mn>17</mn></mrow><annotation encoding="application/x-tex">\hat\beta_{\text{exo}} = -0{,}17</annotation></semantics></math>
+и
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>0</mn><mo>,</mo><mn>24</mn></mrow><annotation encoding="application/x-tex">-0{,}24</annotation></semantics></math>
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>001</mn></mrow><annotation encoding="application/x-tex">p&lt;0{,}001</annotation></semantics></math>)
+— отражает downward FA.</li>
+</ul>
+<p><strong>Stiroh-эффект на производительности</strong> не
+обнаруживается ни на одной проксии: 9 точечных оценок
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>β</mi><mo accent="true">̂</mo></mover><mtext mathvariant="normal">cy</mtext></msub><annotation encoding="application/x-tex">\hat\beta_{\text{cy}}</annotation></semantics></math>
+для PPG, RPG, APG, PER, WS, VORP, USG, TS%, MPG <strong>все</strong>
+имеют отрицательный знак, ни одна не достигает
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>&lt;</mo><mn>0</mn><mo>,</mo><mn>05</mn></mrow><annotation encoding="application/x-tex">p&lt;0{,}05</annotation></semantics></math>.
+MDE для большинства метрик
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>5</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">&lt;5\%</annotation></semantics></math>
+от среднего — power достаточная, чтобы детектировать эффект
+Stiroh-овского масштаба.</p>
+<p><strong>Итоговая рекомендуемая спецификация</strong> для финального
+теста H6:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><msub><mi>s</mi><mrow><mi>i</mi><mo>,</mo><mi>t</mi><mo>→</mo><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mi>α</mi><mo>+</mo><mi>β</mi><mo>⋅</mo><msubsup><mtext mathvariant="normal">cy</mtext><mrow><mi>i</mi><mi>t</mi></mrow><mtext mathvariant="normal">walk-back</mtext></msubsup><mo>+</mo><msub><mrow><mi mathvariant="bold-italic">𝑺</mi><mi mathvariant="bold-italic">𝒕</mi><mi mathvariant="bold-italic">𝒓</mi><mi mathvariant="bold-italic">𝒖</mi><mi mathvariant="bold-italic">𝒄</mi><mi mathvariant="bold-italic">𝒕</mi></mrow><mrow><mi>i</mi><mi>t</mi></mrow></msub><mo>+</mo><msub><mi>δ</mi><mi>t</mi></msub><mo>+</mo><msub><mi>ε</mi><mrow><mi>i</mi><mi>t</mi></mrow></msub><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>6</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\Delta\ln s_{i,t\to t+1} = \alpha + \beta \cdot \text{cy}^{\text{walk-back}}_{it} + \mathbf{Struct}_{it} + \delta_t + \varepsilon_{it} \quad (6)</annotation></semantics></math></p>
+<p>С player-clustered SE. Полученная оценка
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>β</mi><mo accent="true">̂</mo></mover><mo>=</mo><mi>+</mi><mn>0</mn><mo>,</mo><mn>209</mn></mrow><annotation encoding="application/x-tex">\hat\beta = +0{,}209</annotation></semantics></math>
+(SE=0,036, p&lt;0,001) интерпретируется как: при наблюдении контрактного
+события (межсезонный переход или повышение cap-share
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≥</mo><mn>5</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">\geq 5\%</annotation></semantics></math>
+при сохранении команды) ожидаемое изменение
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">ln</mi><mo>&#8289;</mo></mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">\ln s</annotation></semantics></math>
+в следующем году выше на
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>,</mo><mn>21</mn></mrow><annotation encoding="application/x-tex">0{,}21</annotation></semantics></math>
+(приблизительно +23% в зарплате) по сравнению с non-CY годом, при
+контроле возраста, опыта, позиции, статуса драфта и общего тренда
+зарплат.</p>
+<p>Этот результат <strong>частично согласуется</strong> с Stiroh (2007)
+по величине <strong>рыночной премии за contract year</strong>, но
+<strong>не подтверждает</strong> поведенческую компоненту (нет всплеска
+производительности). Содержательно: NBA-рынок реагирует на контрактные
+циклы, но не через индивидуальный «эффект мотивации», а через
+структурные механизмы (рост cap-share, переход на mid-level/max
+контракт).</p>
+<hr />
+<h2 id="приложения">9. Приложения</h2>
+<h3 id="приложение-a.-список-игроков-для-внешней-валидации">Приложение
+A. Список игроков для внешней валидации</h3>
+<p>22 игрока, по которым собраны контрактные годы (источник — статьи
+Wikipedia, доступные через WebFetch):</p>
+<pre class="text"><code>Stephen Curry          (curryst01)  — GSW supermax 2017, ext 2021
+LeBron James           (jamesle01)  — CLE 2014/15/16, LAL 2018/20/22
+Damian Lillard         (lillada01)  — POR ext 2015/2019, MIL trade 2023
+Kevin Durant           (duranke01)  — OKC, GSW, BKN signing 2019
+Russell Westbrook      (westbru01)  — OKC supermax 2017, trades 2019-2021
+James Harden           (hardeja01)  — HOU 2017, PHI 2022
+Giannis Antetokounmpo  (antetgi01)  — MIL ext 2016, supermax 2020, ext 2023
+Joel Embiid            (embiijo01)  — PHI rookie max 2017, ext 2021/2024
+Anthony Davis          (davisan02)  — NOH/LAL trade 2019, ext 2020/2023
+Kawhi Leonard          (leonaka01)  — SAS, TOR/LAC 2019, ext 2021
+Jimmy Butler           (butleji01)  — CHI/PHI, MIA 2019, ext 2021
+Paul George            (georgpa01)  — IND/OKC 2017, LAC 2019/2020
+Kyrie Irving           (irvinky01)  — CLE/BOS 2017, BKN 2019, DAL 2023
+Klay Thompson          (thompkl01)  — GSW ext 2014/19, DAL 2024
+Chris Paul             (paulch01)   — LAC/HOU 2017/18, OKC/PHX, GSW 2023
+Tobias Harris          (harrito02)  — ORL/PHI 2019
+Bradley Beal           (bealbr01)   — WAS supermax 2022
+Nikola Jokić           (jokicni01)  — DEN max 2018, supermax 2022
+Jayson Tatum           (tatumja01)  — BOS rookie ext 2020, supermax 2024
+Devin Booker           (bookede01)  — PHX max 2018/2022
+Karl-Anthony Towns     (townska01)  — MIN supermax 2018, ext 2022
+Luka Dončić            (doncilu01)  — DAL rookie ext 2021</code></pre>
+<p>Полная таблица (player_id, season, cy_truth, фактические значения
+прокси) — в <code>02_external_validation_top50.csv</code>.</p>
+<h3 id="приложение-b.-output-файлы-данного-отчёта">Приложение B.
+Output-файлы данного отчёта</h3>
+<p>В директории <code>output/h6_verification/</code>:</p>
+<ul>
+<li><code>01_cy_exogenous_diagnostics.csv</code> +
+<code>01_summary.md</code> — Этап 1.</li>
+<li><code>02_external_validation_top50.csv</code> +
+<code>02_validation_summary.md</code> — Этап 2.</li>
+<li><code>03_alternative_cy_definitions.csv</code>,
+<code>03_m3c_alternative.csv</code>, <code>03_signal_counts.csv</code> —
+Этап 3.</li>
+<li><code>04_stiroh_performance_test.csv</code> — Этап 4.</li>
+<li><code>05_m3c_no_bad_controls.csv</code> — Этап 5.</li>
+<li><code>06_heterogeneous_effects.csv</code> — Этап 6.</li>
+<li><code>07_event_study_around_cy.csv</code> +
+<code>07_event_study_around_cy.png</code> — Этап 7.</li>
+<li><code>08_power_by_subgroup.csv</code> — Этап 8.</li>
+<li><code>09_oster_sensitivity.csv</code> — Этап 9.</li>
+<li><code>VERIFICATION_RESULTS.md</code> — сводный вердикт по 8 линиям
+критики.</li>
+</ul>
+<h3 id="приложение-c.-скрипты">Приложение C. Скрипты</h3>
+<p>Все Python-скрипты, написанные для данного отчёта, в
+<code>analysis_v1/h6_verification/</code>:</p>
+<pre class="text"><code>01_diagnostics.py        04_stiroh_performance.py   07_event_study.py
+02_external_validation.py 05_no_bad_controls.py     08_power_subgroup.py
+03_alternative_cy.py     06_heterogeneous.py        09_oster.py
+alt_cy_helper.py         (helper для подключения alt-cy)</code></pre>
+<hr />
+<h2 id="список-литературы">Список литературы</h2>
+<ol type="1">
+<li><p>Angrist, J. D., &amp; Pischke, J.-S. (2009). <em>Mostly Harmless
+Econometrics: An Empiricist’s Companion.</em> Princeton University
+Press, гл. 3.</p></li>
+<li><p>Berri, D. J., &amp; Krautmann, A. C. (2006). Shirking on the
+court: Testing for the incentive effects of guaranteed pay. <em>Economic
+Inquiry</em>, 44(3), 536–546.</p></li>
+<li><p>Berri, D. J., Schmidt, M. B., &amp; Brook, S. L. (2007). <em>The
+Wages of Wins: Taking Measure of the Many Myths in Modern Sport.</em>
+Stanford Business Books.</p></li>
+<li><p>Gaffney, A. K., et al. (2020). Heterogeneity in the contract year
+effect: An NBA analysis. <em>Journal of Sports Economics</em>, 21(8),
+789–812.</p></li>
+<li><p>Kahn, L. M., &amp; Sherer, P. D. (1988). Racial differences in
+professional basketball players’ compensation. <em>Journal of Labor
+Economics</em>, 6(1), 40–61.</p></li>
+<li><p>Kleven, H. J., Landais, C., &amp; Saez, E. (2013). Taxation and
+international migration of superstars: Evidence from the European
+football market. <em>American Economic Review</em>, 103(5),
+1892–1924.</p></li>
+<li><p>Koenker, R., &amp; Bassett, G. (1978). Regression quantiles.
+<em>Econometrica</em>, 46(1), 33–50.</p></li>
+<li><p>Mincer, J. (1974). <em>Schooling, Experience, and Earnings.</em>
+National Bureau of Economic Research.</p></li>
+<li><p>Oster, E. (2019). Unobservable selection and coefficient
+stability: Theory and evidence. <em>Journal of Business &amp; Economic
+Statistics</em>, 37(2), 187–204.</p></li>
+<li><p>Rosen, S. (1986). The theory of equalizing differences. In O.
+Ashenfelter &amp; R. Layard (Eds.), <em>Handbook of Labor
+Economics</em>, vol. 1 (pp. 641–692). North-Holland.</p></li>
+<li><p>Stiroh, K. J. (2007). Playing for keeps: Pay and performance in
+the NBA. <em>Economic Inquiry</em>, 45(1), 145–161.</p></li>
+<li><p>White, M. H., &amp; Sheldon, K. M. (2014). The contract year
+syndrome in the NBA and MLB: A classic undermining pattern.
+<em>Motivation and Emotion</em>, 38(2), 196–205.</p></li>
+</ol>
+<hr />
+<p><em>Конец отчёта. Объём: ≈ 32 000 знаков с пробелами (~10 страниц при
+14 pt Times New Roman, 1,5 интервала). Дата компиляции: 12 мая 2026
+г.</em></p>

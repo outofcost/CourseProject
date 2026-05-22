@@ -1,0 +1,31 @@
+team_abbr,team_full,city,state,country,dma_rank_us,msa_population_millions,market_size_rank_nba,top5_market,top10_market,media_market_revenue_proxy
+NYK,New York Knicks,New York,NY,USA,1,20.14,1,1,1,20.14
+BRK,Brooklyn Nets,Brooklyn (New York),NY,USA,1,20.14,1,1,1,20.14
+LAL,Los Angeles Lakers,Los Angeles,CA,USA,2,13.20,2,1,1,13.20
+LAC,Los Angeles Clippers,Los Angeles,CA,USA,2,13.20,2,1,1,13.20
+CHI,Chicago Bulls,Chicago,IL,USA,3,9.45,3,1,1,9.45
+DAL,Dallas Mavericks,Dallas,TX,USA,5,7.69,4,0,1,7.69
+HOU,Houston Rockets,Houston,TX,USA,8,7.13,5,0,1,7.13
+TOR,Toronto Raptors,Toronto,ON,Canada,,6.45,6,0,1,6.45
+WAS,Washington Wizards,Washington,DC,USA,7,6.36,7,0,1,6.36
+PHI,Philadelphia 76ers,Philadelphia,PA,USA,4,6.25,8,0,1,6.25
+MIA,Miami Heat,Miami,FL,USA,16,6.18,9,0,1,6.18
+ATL,Atlanta Hawks,Atlanta,GA,USA,9,6.14,10,0,1,6.14
+BOS,Boston Celtics,Boston,MA,USA,10,4.94,11,0,0,4.94
+PHO,Phoenix Suns,Phoenix,AZ,USA,12,4.95,12,0,0,4.95
+GSW,Golden State Warriors,San Francisco / Oakland,CA,USA,6,4.69,13,1,0,4.69
+DET,Detroit Pistons,Detroit,MI,USA,15,4.37,14,0,0,4.37
+MIN,Minnesota Timberwolves,Minneapolis,MN,USA,14,3.69,15,0,0,3.69
+DEN,Denver Nuggets,Denver,CO,USA,17,2.97,16,0,0,2.97
+ORL,Orlando Magic,Orlando,FL,USA,18,2.82,17,0,0,2.82
+CHO,Charlotte Hornets,Charlotte,NC,USA,22,2.76,18,0,0,2.76
+SAS,San Antonio Spurs,San Antonio,TX,USA,31,2.66,19,0,0,2.66
+POR,Portland Trail Blazers,Portland,OR,USA,21,2.51,20,0,0,2.51
+SAC,Sacramento Kings,Sacramento,CA,USA,20,2.41,21,0,0,2.41
+CLE,Cleveland Cavaliers,Cleveland,OH,USA,19,2.18,22,0,0,2.18
+IND,Indiana Pacers,Indianapolis,IN,USA,25,2.15,23,0,0,2.15
+MIL,Milwaukee Bucks,Milwaukee,WI,USA,36,1.58,24,0,0,1.58
+OKC,Oklahoma City Thunder,Oklahoma City,OK,USA,41,1.45,25,0,0,1.45
+MEM,Memphis Grizzlies,Memphis,TN,USA,50,1.34,26,0,0,1.34
+NOP,New Orleans Pelicans,New Orleans,LA,USA,51,1.27,27,0,0,1.27
+UTA,Utah Jazz,Salt Lake City,UT,USA,29,1.26,28,0,0,1.26

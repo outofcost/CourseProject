@@ -1,0 +1,4 @@
+model,age_peak,exp_peak
+M1a_baseline (age + exp),30.589005372085353,—
+M1a_age_only (без exp),34.80845665663116,—
+M1a_exp_only (без age),—,12.060496220149586

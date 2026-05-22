@@ -1,0 +1,5 @@
+model,n_common,max_param_diff,n_fail
+M1a_pooled_basic,23,4.770797081294145e-05,0
+M1b_basic_yearFE,21,4.921132164406594e-05,0
+M1c_combined_yearFE,20,4.946004904404777e-05,0
+M1d_2wayFE_combined,15,4.434074375808672e-05,0

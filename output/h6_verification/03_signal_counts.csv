@@ -1,0 +1,11 @@
+signal,n_eq_1,n_eq_0,n_na
+contract_year,1100,1077,1483
+cy_exogenous,768,1339,1553
+cy_A_up,607,1785,1268
+cy_B_offseason,505,1511,1644
+cy_C,320,3340,0
+cy_same_team_endpoint,150,2242,1268
+cy_age_based,65,2327,1268
+cy_walk_back,596,1796,1268
+cy_renewal_year,1070,1322,1268
+cy_canonical_extended,895,1279,1486

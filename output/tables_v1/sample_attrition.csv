@@ -1,0 +1,8 @@
+stage,N,dropped
+0. data_merged loaded,3660,0
+1. single-team only,3152,508
+2. + dropna in regressors (M2 base),3152,0
+3. + tax matched (M2 final),3152,0
+4. + contract_year observed (M3a),2177,975
+5. + salary_next observed (M3c),2124,53
+6. + cy_exogenous observed (M3c_canonical),2054,70

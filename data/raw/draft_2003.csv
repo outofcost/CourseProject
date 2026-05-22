@@ -1,0 +1,59 @@
+player_id,player_clean,player_name,draft_year,draft_round,draft_pick,draft_team,college
+jamesle01,lebron james,LeBron James,2003,1,1,CLE,
+milicda01,darko milicic,Darko Miličić,2003,1,2,DET,
+anthoca01,carmelo anthony,Carmelo Anthony,2003,1,3,DEN,Syracuse
+boshch01,chris bosh,Chris Bosh,2003,1,4,TOR,Georgia Tech
+wadedw01,dwyane wade,Dwyane Wade,2003,1,5,MIA,Marquette
+kamanch01,chris kaman,Chris Kaman,2003,1,6,LAC,Central Michigan University
+hinriki01,kirk hinrich,Kirk Hinrich,2003,1,7,CHI,Kansas
+fordtj01,tj ford,T.J. Ford,2003,1,8,MIL,Texas
+sweetmi01,mike sweetney,Mike Sweetney,2003,1,9,NYK,Georgetown
+hayesja01,jarvis hayes,Jarvis Hayes,2003,1,10,WAS,Georgia
+pietrmi01,mickael pietrus,Mickaël Piétrus,2003,1,11,GSW,
+collini01,nick collison,Nick Collison,2003,1,12,SEA,Kansas
+banksma01,marcus banks,Marcus Banks,2003,1,13,MEM,UNLV
+ridnolu01,luke ridnour,Luke Ridnour,2003,1,14,SEA,Oregon
+gainere01,reece gaines,Reece Gaines,2003,1,15,ORL,Louisville
+belltr01,troy bell,Troy Bell,2003,1,16,BOS,Boston College
+cabarza01,zarko cabarkapa,Žarko Čabarkapa,2003,1,17,PHO,
+westda01,david west,David West,2003,1,18,NOH,Xavier
+pavloal01,sasha pavlovic,Sasha Pavlović,2003,1,19,UTA,
+jonesda02,dahntay jones,Dahntay Jones,2003,1,20,BOS,Duke
+diawbo01,boris diaw,Boris Diaw,2003,1,21,ATL,
+planizo01,zoran planinic,Zoran Planinić,2003,1,22,NJN,
+outlatr01,travis outlaw,Travis Outlaw,2003,1,23,POR,
+cookbr01,brian cook,Brian Cook,2003,1,24,LAL,Illinois
+delfica01,carlos delfino,Carlos Delfino,2003,1,25,DET,
+ebind01,ndudi ebi,Ndudi Ebi,2003,1,26,MIN,
+perkike01,kendrick perkins,Kendrick Perkins,2003,1,27,MEM,
+barbole01,leandro barbosa,Leandro Barbosa,2003,1,28,SAS,
+howarjo01,josh howard,Josh Howard,2003,1,29,DAL,Wake Forest
+lampema01,maciej lampe,Maciej Lampe,2003,1,30,NYK,
+kaponja01,jason kapono,Jason Kapono,2003,2,31,CLE,UCLA
+waltolu01,luke walton,Luke Walton,2003,2,32,LAL,Arizona
+beaslje01,jerome beasley,Jerome Beasley,2003,2,33,MIA,University of North Dakota
+schorso01,sofoklis schortsanitis,Sofoklis Schortsanitis,2003,2,34,LAC,
+szewcsz01,szymon szewczyk,Szymon Szewczyk,2003,2,35,MIL,
+austima01,mario austin,Mario Austin,2003,2,36,CHI,Mississippi State
+hansetr01,travis hansen,Travis Hansen,2003,2,37,ATL,BYU
+blakest01,steve blake,Steve Blake,2003,2,38,WAS,Maryland
+vranesl01,slavko vranes,Slavko Vraneš,2003,2,39,NYK,
+zimmede01,derrick zimmerman,Derrick Zimmerman,2003,2,40,GSW,Mississippi State
+greenwi01,willie green,Willie Green,2003,2,41,SEA,Detroit Mercy
+pachuza01,zaza pachulia,Zaza Pachulia,2003,2,42,ORL,
+boganke01,keith bogans,Keith Bogans,2003,2,43,MIL,Kentucky
+badiama01,malick badiane,Malick Badiane,2003,2,44,HOU,
+bonnema01,matt bonner,Matt Bonner,2003,2,45,CHI,Florida
+becirsa01,sani becirovic,Sani Bečirovič,2003,2,46,DEN,
+willima01,mo williams,Mo Williams,2003,2,47,UTA,Alabama
+langja01,james lang,James Lang,2003,2,48,NOH,
+jonesja02,james jones,James Jones,2003,2,49,IND,Miami (FL)
+morlepa01,paccelis morlende,Paccelis Morlende,2003,2,50,PHI,
+korveky01,kyle korver,Kyle Korver,2003,2,51,NJN,Creighton
+vandera01,remon van de hare,Remon van de Hare,2003,2,52,TOR,
+smithto03,tommy smith,Tommy Smith,2003,2,53,CHI,Arizona State
+sinanne01,nedzad sinanovic,Nedžad Sinanović,2003,2,54,POR,
+rickeri01,rick rickert,Rick Rickert,2003,2,55,MIN,Minnesota
+huntebr01,brandon hunter,Brandon Hunter,2003,2,56,BOS,Ohio University
+yuyanxu01,xue yuyang,Xue Yuyang,2003,2,57,DAL,
+glynian01,andreas glyniadakis,Andreas Glyniadakis,2003,2,58,DET,

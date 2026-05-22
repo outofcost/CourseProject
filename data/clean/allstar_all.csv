@@ -1,0 +1,215 @@
+player_id,player_clean,player_name,season,allstar,allstar_team
+curryst01,stephen curry,Stephen Curry,2016,1,West
+bryanko01,kobe bryant,Kobe Bryant,2016,1,West
+leonaka01,kawhi leonard,Kawhi Leonard,2016,1,West
+duranke01,kevin durant,Kevin Durant,2016,1,West
+westbru01,russell westbrook,Russell Westbrook,2016,1,West
+hardeja01,james harden,James Harden,2016,1,West
+thompkl01,klay thompson,Klay Thompson,2016,1,West
+paulch01,chris paul,Chris Paul,2016,1,West
+davisan02,anthony davis,Anthony Davis,2016,1,West
+aldrila01,lamarcus aldridge,LaMarcus Aldridge,2016,1,West
+greendr01,draymond green,Draymond Green,2016,1,West
+couside01,demarcus cousins,DeMarcus Cousins,2016,1,West
+lowryky01,kyle lowry,Kyle Lowry,2016,1,East
+georgpa01,paul george,Paul George,2016,1,East
+anthoca01,carmelo anthony,Carmelo Anthony,2016,1,East
+wadedw01,dwyane wade,Dwyane Wade,2016,1,East
+jamesle01,lebron james,LeBron James,2016,1,East
+walljo01,john wall,John Wall,2016,1,East
+millspa01,paul millsap,Paul Millsap,2016,1,East
+thomais02,isaiah thomas,Isaiah Thomas,2016,1,East
+derozde01,demar derozan,DeMar DeRozan,2016,1,East
+drumman01,andre drummond,Andre Drummond,2016,1,East
+gasolpa01,pau gasol,Pau Gasol,2016,1,East
+horfoal01,al horford,Al Horford,2016,1,East
+davisan02,anthony davis,Anthony Davis,2017,1,West
+hardeja01,james harden,James Harden,2017,1,West
+curryst01,stephen curry,Stephen Curry,2017,1,West
+duranke01,kevin durant,Kevin Durant,2017,1,West
+leonaka01,kawhi leonard,Kawhi Leonard,2017,1,West
+gasolma01,marc gasol,Marc Gasol,2017,1,West
+westbru01,russell westbrook,Russell Westbrook,2017,1,West
+thompkl01,klay thompson,Klay Thompson,2017,1,West
+haywago01,gordon hayward,Gordon Hayward,2017,1,West
+greendr01,draymond green,Draymond Green,2017,1,West
+jordade01,deandre jordan,DeAndre Jordan,2017,1,West
+couside01,demarcus cousins,DeMarcus Cousins,2017,1,West
+derozde01,demar derozan,DeMar DeRozan,2017,1,East
+antetgi01,giannis antetokounmpo,Giannis Antetokounmpo,2017,1,East
+irvinky01,kyrie irving,Kyrie Irving,2017,1,East
+jamesle01,lebron james,LeBron James,2017,1,East
+butleji01,jimmy butler,Jimmy Butler,2017,1,East
+georgpa01,paul george,Paul George,2017,1,East
+walljo01,john wall,John Wall,2017,1,East
+walkeke02,kemba walker,Kemba Walker,2017,1,East
+anthoca01,carmelo anthony,Carmelo Anthony,2017,1,East
+thomais02,isaiah thomas,Isaiah Thomas,2017,1,East
+lowryky01,kyle lowry,Kyle Lowry,2017,1,East
+millspa01,paul millsap,Paul Millsap,2017,1,East
+jamesle01,lebron james,LeBron James,2018,1,Team LeBron
+duranke01,kevin durant,Kevin Durant,2018,1,Team LeBron
+westbru01,russell westbrook,Russell Westbrook,2018,1,Team LeBron
+irvinky01,kyrie irving,Kyrie Irving,2018,1,Team LeBron
+davisan02,anthony davis,Anthony Davis,2018,1,Team LeBron
+georgpa01,paul george,Paul George,2018,1,Team LeBron
+drumman01,andre drummond,Andre Drummond,2018,1,Team LeBron
+bealbr01,bradley beal,Bradley Beal,2018,1,Team LeBron
+oladivi01,victor oladipo,Victor Oladipo,2018,1,Team LeBron
+walkeke02,kemba walker,Kemba Walker,2018,1,Team LeBron
+dragigo01,goran dragic,Goran Dragić,2018,1,Team LeBron
+aldrila01,lamarcus aldridge,LaMarcus Aldridge,2018,1,Team LeBron
+hardeja01,james harden,James Harden,2018,1,Team Stephen
+derozde01,demar derozan,DeMar DeRozan,2018,1,Team Stephen
+curryst01,stephen curry,Stephen Curry,2018,1,Team Stephen
+antetgi01,giannis antetokounmpo,Giannis Antetokounmpo,2018,1,Team Stephen
+embiijo01,joel embiid,Joel Embiid,2018,1,Team Stephen
+lowryky01,kyle lowry,Kyle Lowry,2018,1,Team Stephen
+thompkl01,klay thompson,Klay Thompson,2018,1,Team Stephen
+lillada01,damian lillard,Damian Lillard,2018,1,Team Stephen
+greendr01,draymond green,Draymond Green,2018,1,Team Stephen
+townska01,karl anthony towns,Karl-Anthony Towns,2018,1,Team Stephen
+horfoal01,al horford,Al Horford,2018,1,Team Stephen
+jamesle01,lebron james,LeBron James,2019,1,Team LeBron
+hardeja01,james harden,James Harden,2019,1,Team LeBron
+duranke01,kevin durant,Kevin Durant,2019,1,Team LeBron
+irvinky01,kyrie irving,Kyrie Irving,2019,1,Team LeBron
+leonaka01,kawhi leonard,Kawhi Leonard,2019,1,Team LeBron
+lillada01,damian lillard,Damian Lillard,2019,1,Team LeBron
+thompkl01,klay thompson,Klay Thompson,2019,1,Team LeBron
+bealbr01,bradley beal,Bradley Beal,2019,1,Team LeBron
+simmobe01,ben simmons,Ben Simmons,2019,1,Team LeBron
+townska01,karl anthony towns,Karl-Anthony Towns,2019,1,Team LeBron
+aldrila01,lamarcus aldridge,LaMarcus Aldridge,2019,1,Team LeBron
+wadedw01,dwyane wade,Dwyane Wade,2019,1,Team LeBron
+davisan02,anthony davis,Anthony Davis,2019,1,Team LeBron
+curryst01,stephen curry,Stephen Curry,2019,1,Team Giannis
+antetgi01,giannis antetokounmpo,Giannis Antetokounmpo,2019,1,Team Giannis
+georgpa01,paul george,Paul George,2019,1,Team Giannis
+embiijo01,joel embiid,Joel Embiid,2019,1,Team Giannis
+walkeke02,kemba walker,Kemba Walker,2019,1,Team Giannis
+middlkh01,khris middleton,Khris Middleton,2019,1,Team Giannis
+griffbl01,blake griffin,Blake Griffin,2019,1,Team Giannis
+westbru01,russell westbrook,Russell Westbrook,2019,1,Team Giannis
+jokicni01,nikola jokic,Nikola Jokić,2019,1,Team Giannis
+lowryky01,kyle lowry,Kyle Lowry,2019,1,Team Giannis
+russeda01,dangelo russell,D'Angelo Russell,2019,1,Team Giannis
+vucevni01,nikola vucevic,Nikola Vučević,2019,1,Team Giannis
+nowitdi01,dirk nowitzki,Dirk Nowitzki,2019,1,Team Giannis
+leonaka01,kawhi leonard,Kawhi Leonard,2020,1,Team LeBron
+davisan02,anthony davis,Anthony Davis,2020,1,Team LeBron
+jamesle01,lebron james,LeBron James,2020,1,Team LeBron
+hardeja01,james harden,James Harden,2020,1,Team LeBron
+doncilu01,luka doncic,Luka Dončić,2020,1,Team LeBron
+simmobe01,ben simmons,Ben Simmons,2020,1,Team LeBron
+westbru01,russell westbrook,Russell Westbrook,2020,1,Team LeBron
+paulch01,chris paul,Chris Paul,2020,1,Team LeBron
+bookede01,devin booker,Devin Booker,2020,1,Team LeBron
+sabondo01,domantas sabonis,Domantas Sabonis,2020,1,Team LeBron
+tatumja01,jayson tatum,Jayson Tatum,2020,1,Team LeBron
+jokicni01,nikola jokic,Nikola Jokić,2020,1,Team LeBron
+antetgi01,giannis antetokounmpo,Giannis Antetokounmpo,2020,1,Team Giannis
+walkeke02,kemba walker,Kemba Walker,2020,1,Team Giannis
+embiijo01,joel embiid,Joel Embiid,2020,1,Team Giannis
+siakapa01,pascal siakam,Pascal Siakam,2020,1,Team Giannis
+youngtr01,trae young,Trae Young,2020,1,Team Giannis
+lowryky01,kyle lowry,Kyle Lowry,2020,1,Team Giannis
+middlkh01,khris middleton,Khris Middleton,2020,1,Team Giannis
+goberru01,rudy gobert,Rudy Gobert,2020,1,Team Giannis
+mitchdo01,donovan mitchell,Donovan Mitchell,2020,1,Team Giannis
+butleji01,jimmy butler,Jimmy Butler,2020,1,Team Giannis
+adebaba01,bam adebayo,Bam Adebayo,2020,1,Team Giannis
+ingrabr01,brandon ingram,Brandon Ingram,2020,1,Team Giannis
+doncilu01,luka doncic,Luka Dončić,2021,1,Team LeBron
+curryst01,stephen curry,Stephen Curry,2021,1,Team LeBron
+antetgi01,giannis antetokounmpo,Giannis Antetokounmpo,2021,1,Team LeBron
+jokicni01,nikola jokic,Nikola Jokić,2021,1,Team LeBron
+jamesle01,lebron james,LeBron James,2021,1,Team LeBron
+paulch01,chris paul,Chris Paul,2021,1,Team LeBron
+brownja02,jaylen brown,Jaylen Brown,2021,1,Team LeBron
+georgpa01,paul george,Paul George,2021,1,Team LeBron
+lillada01,damian lillard,Damian Lillard,2021,1,Team LeBron
+sabondo01,domantas sabonis,Domantas Sabonis,2021,1,Team LeBron
+goberru01,rudy gobert,Rudy Gobert,2021,1,Team LeBron
+irvinky01,kyrie irving,Kyrie Irving,2021,1,Team Durant
+bealbr01,bradley beal,Bradley Beal,2021,1,Team Durant
+leonaka01,kawhi leonard,Kawhi Leonard,2021,1,Team Durant
+tatumja01,jayson tatum,Jayson Tatum,2021,1,Team Durant
+willizi01,zion williamson,Zion Williamson,2021,1,Team Durant
+hardeja01,james harden,James Harden,2021,1,Team Durant
+mitchdo01,donovan mitchell,Donovan Mitchell,2021,1,Team Durant
+lavinza01,zach lavine,Zach LaVine,2021,1,Team Durant
+vucevni01,nikola vucevic,Nikola Vučević,2021,1,Team Durant
+randlju01,julius randle,Julius Randle,2021,1,Team Durant
+conlemi01,mike conley,Mike Conley,2021,1,Team Durant
+curryst01,stephen curry,Stephen Curry,2022,1,Team LeBron
+jamesle01,lebron james,LeBron James,2022,1,Team LeBron
+antetgi01,giannis antetokounmpo,Giannis Antetokounmpo,2022,1,Team LeBron
+derozde01,demar derozan,DeMar DeRozan,2022,1,Team LeBron
+jokicni01,nikola jokic,Nikola Jokić,2022,1,Team LeBron
+doncilu01,luka doncic,Luka Dončić,2022,1,Team LeBron
+garlada01,darius garland,Darius Garland,2022,1,Team LeBron
+allenja01,jarrett allen,Jarrett Allen,2022,1,Team LeBron
+vanvlfr01,fred vanvleet,Fred VanVleet,2022,1,Team LeBron
+butleji01,jimmy butler,Jimmy Butler,2022,1,Team LeBron
+paulch01,chris paul,Chris Paul,2022,1,Team LeBron
+embiijo01,joel embiid,Joel Embiid,2022,1,Team Durant
+tatumja01,jayson tatum,Jayson Tatum,2022,1,Team Durant
+youngtr01,trae young,Trae Young,2022,1,Team Durant
+moranja01,ja morant,Ja Morant,2022,1,Team Durant
+wiggian01,andrew wiggins,Andrew Wiggins,2022,1,Team Durant
+bookede01,devin booker,Devin Booker,2022,1,Team Durant
+murrade01,dejounte murray,Dejounte Murray,2022,1,Team Durant
+ballla01,lamelo ball,LaMelo Ball,2022,1,Team Durant
+middlkh01,khris middleton,Khris Middleton,2022,1,Team Durant
+townska01,karl anthony towns,Karl-Anthony Towns,2022,1,Team Durant
+goberru01,rudy gobert,Rudy Gobert,2022,1,Team Durant
+lavinza01,zach lavine,Zach LaVine,2022,1,Team Durant
+tatumja01,jayson tatum,Jayson Tatum,2023,1,Giannis
+mitchdo01,donovan mitchell,Donovan Mitchell,2023,1,Giannis
+markkla01,lauri markkanen,Lauri Markkanen,2023,1,Giannis
+moranja01,ja morant,Ja Morant,2023,1,Giannis
+antetgi01,giannis antetokounmpo,Giannis Antetokounmpo,2023,1,Giannis
+adebaba01,bam adebayo,Bam Adebayo,2023,1,Giannis
+lillada01,damian lillard,Damian Lillard,2023,1,Giannis
+derozde01,demar derozan,DeMar DeRozan,2023,1,Giannis
+siakapa01,pascal siakam,Pascal Siakam,2023,1,Giannis
+sabondo01,domantas sabonis,Domantas Sabonis,2023,1,Giannis
+gilgesh01,shai gilgeous alexander,Shai Gilgeous-Alexander,2023,1,Giannis
+holidjr01,jrue holiday,Jrue Holiday,2023,1,Giannis
+irvinky01,kyrie irving,Kyrie Irving,2023,1,LeBron
+embiijo01,joel embiid,Joel Embiid,2023,1,LeBron
+jokicni01,nikola jokic,Nikola Jokić,2023,1,LeBron
+doncilu01,luka doncic,Luka Dončić,2023,1,LeBron
+jamesle01,lebron james,LeBron James,2023,1,LeBron
+brownja02,jaylen brown,Jaylen Brown,2023,1,LeBron
+randlju01,julius randle,Julius Randle,2023,1,LeBron
+georgpa01,paul george,Paul George,2023,1,LeBron
+edwaran01,anthony edwards,Anthony Edwards,2023,1,LeBron
+halibty01,tyrese haliburton,Tyrese Haliburton,2023,1,LeBron
+foxde01,deaaron fox,De'Aaron Fox,2023,1,LeBron
+jacksja02,jaren jackson,Jaren Jackson Jr.,2023,1,LeBron
+lillada01,damian lillard,Damian Lillard,2024,1,East
+halibty01,tyrese haliburton,Tyrese Haliburton,2024,1,East
+antetgi01,giannis antetokounmpo,Giannis Antetokounmpo,2024,1,East
+tatumja01,jayson tatum,Jayson Tatum,2024,1,East
+adebaba01,bam adebayo,Bam Adebayo,2024,1,East
+brownja02,jaylen brown,Jaylen Brown,2024,1,East
+banchpa01,paolo banchero,Paolo Banchero,2024,1,East
+barnesc01,scottie barnes,Scottie Barnes,2024,1,East
+brunsja01,jalen brunson,Jalen Brunson,2024,1,East
+maxeyty01,tyrese maxey,Tyrese Maxey,2024,1,East
+mitchdo01,donovan mitchell,Donovan Mitchell,2024,1,East
+youngtr01,trae young,Trae Young,2024,1,East
+gilgesh01,shai gilgeous alexander,Shai Gilgeous-Alexander,2024,1,West
+duranke01,kevin durant,Kevin Durant,2024,1,West
+jokicni01,nikola jokic,Nikola Jokić,2024,1,West
+doncilu01,luka doncic,Luka Dončić,2024,1,West
+jamesle01,lebron james,LeBron James,2024,1,West
+townska01,karl anthony towns,Karl-Anthony Towns,2024,1,West
+curryst01,stephen curry,Stephen Curry,2024,1,West
+davisan02,anthony davis,Anthony Davis,2024,1,West
+bookede01,devin booker,Devin Booker,2024,1,West
+edwaran01,anthony edwards,Anthony Edwards,2024,1,West
+leonaka01,kawhi leonard,Kawhi Leonard,2024,1,West
+georgpa01,paul george,Paul George,2024,1,West

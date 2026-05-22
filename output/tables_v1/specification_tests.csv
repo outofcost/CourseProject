@@ -1,0 +1,4 @@
+test,F,df_num,df_den,p_value,conclusion
+Year FE jointly = 0 (M1),12.541088152556702,6,3631,4.8183679268731794e-14,Reject — нужны year FE
+"Player FE jointly = 0 (M1, 953 players)",2.456098936799305,952,2685,0.0,Reject — нужны player FE
+Year FE jointly = 0 (M2c),23.661031974947537,8,3123,0.0,Reject — нужны year FE

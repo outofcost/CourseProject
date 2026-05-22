@@ -1,0 +1,46 @@
+group,cy_var,subset,n,n_cy_1,beta_cy,se_cy,p_cy,MDE_cy,note
+age,cy_exogenous,age<25,960,345,0.02780677053708905,0.035488439639363836,0.4335065206013464,0.09936763099021874,
+age,cy_exogenous,age 25-28,606,175,0.004147623610482525,0.06312827672324944,0.947638181638917,0.17675917482509843,
+age,cy_exogenous,age>=29,488,195,-0.16876051928340777,0.05236023806832933,0.0013583840187019192,0.14660866659132213,
+salary_tier,cy_exogenous,min (<$2M real),539,222,,,,,"error: exog does not have full column rank. If you wish to proceed with model estimation irrespective of the numerical accuracy of coefficient estimates, you can set check_rank=False."
+salary_tier,cy_exogenous,mid ($2-10M),897,345,-0.05118482605964825,0.03504344651653228,0.1444838060483069,0.09812165024629038,
+salary_tier,cy_exogenous,high ($10-25M),464,116,-0.24050741955758842,0.06469858066049432,0.0002275524388748451,0.1811560258493841,
+salary_tier,cy_exogenous,max ($25M+),154,32,,,,,"error: exog does not have full column rank. If you wish to proceed with model estimation irrespective of the numerical accuracy of coefficient estimates, you can set check_rank=False."
+experience,cy_exogenous,exp 1-2,634,160,0.013198061477149158,0.0559231158382608,0.8135095501198597,0.15658472434713025,
+experience,cy_exogenous,exp 3-6,741,315,-0.1884597563671966,0.0646344422679055,0.003659355138946996,0.1809764383501354,
+experience,cy_exogenous,exp 7+,679,240,-0.15531879185725236,0.045961017983870714,0.0007699207690343712,0.128690850354838,
+position,cy_exogenous,guards (PG+SG),855,313,,,,,"error: exog does not have full column rank. If you wish to proceed with model estimation irrespective of the numerical accuracy of coefficient estimates, you can set check_rank=False."
+position,cy_exogenous,forwards (SF+PF),776,256,,,,,"error: exog does not have full column rank. If you wish to proceed with model estimation irrespective of the numerical accuracy of coefficient estimates, you can set check_rank=False."
+position,cy_exogenous,centers (C),423,146,,,,,"error: exog does not have full column rank. If you wish to proceed with model estimation irrespective of the numerical accuracy of coefficient estimates, you can set check_rank=False."
+allstar_status,cy_exogenous,allstar=1,175,36,-0.04343353864462864,0.07214917670277322,0.5480977139789944,0.20201769476776502,
+allstar_status,cy_exogenous,allstar=0,1879,679,,,,,"error: exog does not have full column rank. If you wish to proceed with model estimation irrespective of the numerical accuracy of coefficient estimates, you can set check_rank=False."
+age,contract_year,age<25,981,502,0.5386027716498849,0.03013800264087761,0.0,0.0843864073944573,
+age,contract_year,age 25-28,641,301,0.5481811740313915,0.04724911390397612,0.0,0.13229751893113312,
+age,contract_year,age>=29,502,244,0.08055074582977045,0.04999316843281516,0.10779414642351592,0.13998087161188244,
+salary_tier,contract_year,min (<$2M real),574,386,,,,,"error: exog does not have full column rank. If you wish to proceed with model estimation irrespective of the numerical accuracy of coefficient estimates, you can set check_rank=False."
+salary_tier,contract_year,mid ($2-10M),931,484,0.37461815133110454,0.03261865638459324,0.0,0.09133223787686107,
+salary_tier,contract_year,high ($10-25M),465,142,-0.03903887996065386,0.059126220531908254,0.5094326703331797,0.1655534174893431,
+salary_tier,contract_year,max ($25M+),154,35,,,,,"error: exog does not have full column rank. If you wish to proceed with model estimation irrespective of the numerical accuracy of coefficient estimates, you can set check_rank=False."
+experience,contract_year,exp 1-2,652,258,0.5043073170578575,0.047171683659111084,0.0,0.13208071424551102,
+experience,contract_year,exp 3-6,778,477,0.7063599111198233,0.05122691205933547,0.0,0.1434353537661393,
+experience,contract_year,exp 7+,694,312,0.1044417602118014,0.04215474432932948,0.013474611501555156,0.11803328412212254,
+position,contract_year,guards (PG+SG),884,454,,,,,"error: exog does not have full column rank. If you wish to proceed with model estimation irrespective of the numerical accuracy of coefficient estimates, you can set check_rank=False."
+position,contract_year,forwards (SF+PF),807,375,,,,,"error: exog does not have full column rank. If you wish to proceed with model estimation irrespective of the numerical accuracy of coefficient estimates, you can set check_rank=False."
+position,contract_year,centers (C),433,218,,,,,"error: exog does not have full column rank. If you wish to proceed with model estimation irrespective of the numerical accuracy of coefficient estimates, you can set check_rank=False."
+allstar_status,contract_year,allstar=1,176,64,0.49045204557830396,0.06892332814982338,4.354872018552669e-11,0.19298531881950545,
+allstar_status,contract_year,allstar=0,1948,983,,,,,"error: exog does not have full column rank. If you wish to proceed with model estimation irrespective of the numerical accuracy of coefficient estimates, you can set check_rank=False."
+age,cy_walk_back,age<25,1056,195,0.37411090945920816,0.06152996833147955,1.6904930788541606e-09,0.17228391132814272,
+age,cy_walk_back,age 25-28,735,197,0.2801260441222422,0.06552838558523509,2.17486560394331e-05,0.18347947963865824,
+age,cy_walk_back,age>=29,601,204,-0.10475710929771359,0.05158747674950173,0.042749781349870286,0.14444493489860483,
+salary_tier,cy_walk_back,min (<$2M real),614,145,,,,,"error: exog does not have full column rank. If you wish to proceed with model estimation irrespective of the numerical accuracy of coefficient estimates, you can set check_rank=False."
+salary_tier,cy_walk_back,mid ($2-10M),1059,281,0.2100790643949232,0.048851892746524565,1.8673283993075884e-05,0.13678529969026879,
+salary_tier,cy_walk_back,high ($10-25M),554,130,-0.06521269582729265,0.06511169202904699,0.31702089542235545,0.18231273768133155,
+salary_tier,cy_walk_back,max ($25M+),165,40,,,,,"error: exog does not have full column rank. If you wish to proceed with model estimation irrespective of the numerical accuracy of coefficient estimates, you can set check_rank=False."
+experience,cy_walk_back,exp 1-2,714,105,0.13024320247111318,0.07724487711908344,0.09222971424059523,0.21628565593343363,
+experience,cy_walk_back,exp 3-6,869,231,0.4237815450571367,0.06275822520455754,2.7068125518781017e-11,0.1757230305727611,
+experience,cy_walk_back,exp 7+,809,260,-0.042022358132540495,0.046310932896321544,0.36447727558519527,0.12967061210970032,
+position,cy_walk_back,guards (PG+SG),991,256,,,,,"error: exog does not have full column rank. If you wish to proceed with model estimation irrespective of the numerical accuracy of coefficient estimates, you can set check_rank=False."
+position,cy_walk_back,forwards (SF+PF),910,212,,,,,"error: exog does not have full column rank. If you wish to proceed with model estimation irrespective of the numerical accuracy of coefficient estimates, you can set check_rank=False."
+position,cy_walk_back,centers (C),491,128,,,,,"error: exog does not have full column rank. If you wish to proceed with model estimation irrespective of the numerical accuracy of coefficient estimates, you can set check_rank=False."
+allstar_status,cy_walk_back,allstar=1,182,50,0.5200607667230955,0.09162790932901926,6.609511649102728e-08,0.25655814612125394,
+allstar_status,cy_walk_back,allstar=0,2210,546,,,,,"error: exog does not have full column rank. If you wish to proceed with model estimation irrespective of the numerical accuracy of coefficient estimates, you can set check_rank=False."

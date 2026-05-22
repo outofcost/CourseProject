@@ -1,0 +1,5 @@
+model,variable,β,SE,p,MDE_β (power=0.80),interpretation,plausibility
+M1a,allstar,-0.011020096038816436,0.06104843077977143,0.8567591269215118,0.17093560618335998,MDE × 1 = wage premium от All-Star,"Marginal: 17% wage premium может быть реален, но мы не детектируем"
+M2c,state_tax_rate,0.1508823254520323,0.1418775015191435,0.2876515355466076,0.3972570042536018,MDE × 0.535 (TX→CAN) = pre-tax wage shift,Detectable: 21% pre-tax compensation за tax 0→53.5%
+M2b,no_income_tax,-0.018586825283228824,0.03887162051037586,0.6325703252829984,0.1088405374290524,MDE = wage premium for tax-free state,Detectable: 11% wage premium
+M3c_canonical,cy_exogenous,-0.005133238210632884,0.02608830537102684,0.8440319929007538,0.07304725503887514,MDE = Δlog_salary за контрактный год,Tight: даже 7% бамп исключён → честный null
