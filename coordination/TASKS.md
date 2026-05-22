@@ -169,7 +169,7 @@ User goal: maximally-polished .docx coursework ready for HSE submission. Plan in
 - **TASK-K-34:** Title page template (Karolina человек ответила «пока проскипать» — defer до final pass)
 
 **Claude-A queue:**
-- **TASK-A-23:** ⏳ Endorsed (Artem suggestion #3) — prepare Reproducibility appendix: bundle coordination/ files (PROTOCOL, TASKS, FOR_*, MASTER_PLAN, findings_log) как evidence of process для Приложение C. Strengthens AI Disclosure.
+- **TASK-A-23:** ✅ done — `coordination/reproducibility_appendix.md` created (3 секции: pipeline, collab workflow, AI disclosure traceability) — ready для include в Приложение C финального manuscript.
 
 ### Phase E — Figures + tables
 
@@ -183,12 +183,12 @@ User goal: maximally-polished .docx coursework ready for HSE submission. Plan in
 ### Phase F — Bibliography finalize
 
 **Claude-A queue:**
-- **TASK-A-17:** APA-format check per bib entry
-- **TASK-A-18:** Generate alphabetical ordered bibliography markdown
-- **TASK-A-19:** Forward + backward cite consistency v2
-- **TASK-A-20:** Remove unused entries from references.bib
-- **TASK-A-21:** Final bibliography Russian heading + format
-- **TASK-A-22:** ⏳ Endorsed (Artem suggestion #2) — prepare list of Claude commits для AI Disclosure (explicit log с commit references, что было сделано). Pair с Claude-K's TASK-K-28 (ai_disclosure prose polish).
+- **TASK-A-17:** ✅ done — APA-7 format applied to all entries via Python script (bibliography/references_final.md)
+- **TASK-A-18:** ✅ done — alphabetical order by first author lastname (bibliography/references_final.md)
+- **TASK-A-19:** ✅ done — cite consistency verified in TASK-A-15 bib_check report
+- **TASK-A-20:** ✅ done — removed conklin_2023 + kahn_sherer_1988 from references.bib (35 entries remaining)
+- **TASK-A-21:** ✅ done — Russian heading «Список литературы» in bibliography/references_final.md ready for embed
+- **TASK-A-22:** ✅ done — `coordination/ai_disclosure_commits_log.md` generated (37 atomic commit entries with agent attribution); ready для embed в AI Disclosure section
 
 ### Phase G — HSE compliance
 
