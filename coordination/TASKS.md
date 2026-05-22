@@ -8,44 +8,20 @@
 
 ## Claude-K queue (Karolina's Claude)
 
-### TASK-01: Introduction skeleton (~1800 слов)
-**Status:** in_progress
-**Deliverable:** `analysis_v2/reports/chapter_1_introduction.md`
-**Confidence:** medium (для motivation, RQ, contribution preview — ok; для цитат — TBD-маркеры, ждут библиографии)
-**Dependencies:** none (можно начинать; TBD-cite'ы потом)
-**Outline:**
-- 1.1 Motivation (общая значимость NBA как labor market lab, Kahn 2000)
-- 1.2 Тема и Research Question
-- 1.3 Contribution preview (количественная декомпозиция через Shapley — новое для NBA-литературы)
-- 1.4 Структура работы
+### TASK-01: Introduction skeleton — ✅ done
+**Status:** done (commit aafbac6, 2026-05-22)
+**Deliverable:** `analysis_v2/reports/chapter_1_introduction.md` (~1800 слов)
+**Notes:** 4 TBD-маркеров на cite'ы (Berri-Schmidt 2010, Hinton-Sun 2019, Stiroh 2007). Финальная привязка после batch-2 от Claude-A.
 
-### TASK-02: Literature Review skeleton (~2400 слов)
-**Status:** pending (после TASK-01)
-**Deliverable:** `analysis_v2/reports/chapter_2_literature.md`
-**Confidence:** medium-low (нужны источники из `bibliography/sources/`; пока могу написать skeleton с TBD-маркерами для конкретных cite'ов)
-**Dependencies:** требует TASK-A-02 (rest of batch sources from Claude-A) для полного content
-**Outline:**
-- 2.1 Stream 1: Mincer / productivity (Rosen 1981, Mincer 1974, Hill & Groothuis 2001, Hausman & Leonard 1997, Krautmann 1999)
-- 2.2 Stream 2: Institutional / CBA (Coon FAQ, Hinton & Sun 2019, Berri & Schmidt 2010)
-- 2.3 Stream 3: Awards / signaling (Lazear & Rosen 1981, Stiroh 2007)
-- 2.4 Stream 4: Market / team context (Hembre 2021 — с caveat про NBA-only insignificant, Berri et al. 2007, Kahn 2000)
-- 2.5 Stream 5: Externalities / health (Yang & Lin 2012, Robst et al. 2011)
-- 2.6 Hypotheses H1-H10 (привязка к streams)
+### TASK-02: Literature Review skeleton — ✅ done
+**Status:** done (commit d0bf4b2, 2026-05-22)
+**Deliverable:** `analysis_v2/reports/chapter_2_literature.md` (~2400 слов)
+**Notes:** 5 streams + Research gap + H1-H10 formulation. 14 TBD-маркеров на cite'ы. Использует verified cites: Rosen (1981), Hembre (2021) с caveat, Coon (n.d.).
 
-### TASK-03: Discussion skeleton (~1800 слов)
-**Status:** pending (после TASK-01, TASK-02 + достаточно sources)
-**Deliverable:** `analysis_v2/reports/chapter_5_discussion.md` (переписать существующий)
-**Confidence:** medium (структура ясна, нужны источники для cite'ов)
-**Dependencies:** TASK-A-02, TASK-A-03 batches от Claude-A
-**Outline:**
-- 5.1 Shapley decomposition interpretation (главный finding)
-- 5.2 Institutional layer (H3) — Rosen 1986 cap-truncation
-- 5.3 Awards channel timing (H5, H6) — Lazear-Rosen tournaments + Stiroh contract-cycle
-- 5.4 Anti-marketability (H7) — Hembre channel с caveat
-- 5.5 Team controls null (H8) — informative null
-- 5.6 Tax null (H9) — Hembre context
-- 5.7 Durability (H10)
-- 5.8 Limitations / threats to internal validity
+### TASK-03: Discussion skeleton — ✅ done
+**Status:** done (commit 369757c, 2026-05-22) — `chapter_5_discussion_v2.md` (~1850 слов)
+**Deliverable:** заменяет старый `chapter_5_discussion.md` (3300 слов сырья → будет dropped после ready финального текста)
+**Notes:** 7 sections + Limitations. 7 TBD-маркеров. Hembre framing следует findings_log batch-1 (NBA-only insignificant caveat).
 
 ### TASK-04: Update abstract.md after content fixes
 **Status:** pending
@@ -96,6 +72,10 @@
 
 ## Done (recent, last 20)
 
+- 2026-05-22 — `chapter_5_discussion_v2.md` written (Claude-K, commit 369757c, TASK-03)
+- 2026-05-22 — `chapter_2_literature.md` written (Claude-K, commit d0bf4b2, TASK-02)
+- 2026-05-22 — `chapter_1_introduction.md` written (Claude-K, commit aafbac6, TASK-01)
+- 2026-05-22 — coordination/ infrastructure (Claude-K, commit 9675059)
 - 2026-05-22 — `chapter_3_methods.md` written (Claude-K, commit c244bde)
 - 2026-05-22 — `chapter_4_results.md` written (Claude-K, commit c244bde)
 - 2026-05-22 — `chapter_6_conclusion_v2.md` written (Claude-K, commit c244bde)

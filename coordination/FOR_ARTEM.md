@@ -12,16 +12,16 @@
 
 | Раздел | Файл | Объём | Статус |
 |---|---|---|---|
+| Глава 1. Введение | `chapter_1_introduction.md` | ~1800 слов | ✅ draft v1 (TASK-01 done, commit aafbac6, 4 TBD) |
+| Глава 2. Литературный обзор | `chapter_2_literature.md` | ~2400 слов | ✅ draft v1 (TASK-02 done, commit d0bf4b2, 14 TBD) |
 | Глава 3. Данные и методология | `chapter_3_methods.md` | ~3200 слов | ✅ draft v1 |
 | Глава 4. Результаты | `chapter_4_results.md` | ~2100 слов | ✅ draft v1 (без интерпретации, по HSE format) |
+| Глава 5. Обсуждение | `chapter_5_discussion_v2.md` | ~1850 слов | ✅ draft v1 (TASK-03 done, commit 369757c, 7 TBD) |
 | Глава 6. Заключение | `chapter_6_conclusion_v2.md` | ~1500 слов | ✅ draft v1 (с Hembre fix от 2026-05-22) |
 | AI Disclosure | `ai_disclosure.md` | ~750 слов | ✅ |
-| Аннотация (RU + EN) | `abstract.md` | ~600 слов | старый драфт (требует правки после Hembre fix — TASK-04) |
+| Аннотация (RU + EN) | `abstract.md` | ~600 слов | старый драфт (требует правки после batch-2 sources — TASK-04) |
 
-Не написано:
-- Глава 1. Introduction (~1800 слов)
-- Глава 2. Literature Review (~2400 слов)
-- Глава 5. Discussion (~1800 слов) — есть старый `chapter_5_discussion.md` (~3300 слов), но он будет переписан
+**Совокупно: ~13 600 слов на ~100% объёма работы.** Все главы существуют в draft v1; 25 TBD-маркеров общим числом по всем главам — все ждут заполненных шаблонов в `bibliography/sources/`.
 
 ---
 
