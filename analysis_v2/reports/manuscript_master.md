@@ -968,13 +968,26 @@ AI применялся как инструмент-ассистент в сле
 
 1. **Регресс-тест воспроизводимости v1**: запуск всех v1-спецификаций (M1a–M1d) на расширенном v2-датасете показывает максимальное расхождение коэффициентов с опубликованной v1-итерацией < 5 × 10⁻⁵. Это исключает гипотетическое введение AI-артефактов в базовые соотношения.
 
-2. **Аксиоматическая проверка Shapley R²**: efficiency property $\sum_i \phi_i = R^2_{\text{full}}$ верифицирована численно до машинной точности (диф. 1.4 × 10⁻¹⁶); это математическое равенство, выполнение которого исключает реализацию-зависимые ошибки.
+2. **Аксиоматическая проверка Shapley R²**: efficiency property $\sum_i \phi_i = R^2_{\text{full}}$ верифицирована численно до машинной точности (расхождение $1.4 \times 10^{-16}$); это математическое равенство, выполнение которого исключает реализационно-зависимые ошибки.
 
 3. **Hash-snapshot датасетов**: SHA256 v1-panel зафиксирован в `analysis_v2/reports/v1_snapshot.sha256` и проверяется при каждой пере-сборке.
 
 4. **Sample-size и degrees-of-freedom**: для каждой регрессионной таблицы число наблюдений и регрессоров проверено и согласуется с теоретическим расчётом (см. §4.2).
 
 5. **Параллельный счёт ключевых коэффициентов в R**: спецификации M1a, M1c, M2c независимо запущены в R (`scripts/*.R`) и сравнены с Python-версиями.
+
+6. **Bibliography cross-reference audit**: все cite'ы в драфтах глав 1–6 сверены с `bibliography/references.bib` через автоматизированный bib-check (`bibliography/bib_check_report.md`); 0 missing entries, 0 unverified citations при финальной проверке.
+
+## Async-коллаборация двух AI-сессий
+
+Работа подготовлена через **асинхронное сотрудничество двух независимых сессий Claude Code** на двух физических машинах с git-based координацией:
+
+- **Claude-K** (на стороне автора, Karolina303): работа над главами курсовой (`analysis_v2/reports/chapter_*.md`), методологическим addendum, аннотацией, AI Disclosure, manuscript assembly и Pandoc → .docx pipeline.
+- **Claude-A** (на стороне коллеги Артёма): работа над bibliography (`bibliography/sources/`, `bibliography/pdfs/`, `references.bib`, `MASTER_TABLE.md`), substance-finding extraction из верифицированных PDF, bibliography cross-reference audit.
+
+Координация — через git-based протокол с явной lane-дисциплиной (нет file-overlap между сессиями), формальной очередью задач (`coordination/TASKS.md`), и channels межсессионного обмена (`coordination/FOR_ARTEM.md`, `coordination/FOR_KAROLINA.md`). Все 50+ задач распределены между lanes; substance-changes документированы в `bibliography/findings_log.md` с timestamp и обоснованием.
+
+Полный атомарный лог всех commit'ов обеих сессий — `coordination/ai_disclosure_commits_log.md`. Для каждого commit'а доступно: agent (Claude-K / Claude-A), timestamp, commit message, и diff через `git show`. Reviewers могут независимо аудитировать вклад каждой сессии через standard git commands (см. `coordination/reproducibility_appendix.md` §C.2).
 
 ## Открытый исходный код
 
@@ -1077,7 +1090,24 @@ Yang, C.-H., & Lin, H.-Y. (2012). Is there salary discrimination by nationality 
 
 ## Приложения
 
-- **Приложение A.** Расширенные регрессионные таблицы — см. `analysis_v2/output/tables/` (30+ CSV-таблиц).
-- **Приложение B.** Описательная статистика по выборке — см. `analysis_v2/output/tables/descriptive_stats.csv`.
-- **Приложение C.** Hash-snapshots датасетов и регресс-тест воспроизводимости — см. `analysis_v2/regress_test_v1.py` и репозиторий.
-- **Приложение D.** AI-coordination evidence: `coordination/` файлы (PROTOCOL, TASKS, FOR_*, MASTER_PLAN, findings_log) как audit trail двух Claude-инстансов.
+### Приложение A. Расширенные регрессионные таблицы
+
+Полный набор регрессионных таблиц (30+ файлов) — `analysis_v2/output/tables/` в репозитории. Включает: M1a–M1d full coefficient panels, M9a/b/M_full tier specifications, M10a/b awards specifications, M11a/b durability specifications, event-study point estimates с pre-trend block, Shapley декомпозиция с эффективностью verified до $10^{-16}$, multiple-testing summary с Bonferroni и BH-FDR markers.
+
+### Приложение B. Описательная статистика
+
+См. `analysis_v2/output/tables/descriptive_stats.csv` — min/max/mean/median/sd для всех 153 переменных по полной выборке и subsamples (rookie / mid-tier / max / supermax; US-born / international; pre-CBA / post-CBA-2017).
+
+### Приложение C. Воспроизводимость и аудит AI-коллаборации
+
+Полная процедура воспроизведения вычислительного pipeline и аудита AI-вклада обеих сессий — `coordination/reproducibility_appendix.md`. Bundles:
+- End-to-end run commands (cold cache ~2 часа, warm cache ~3 минуты).
+- Hash-snapshots (SHA256) сырого и обработанного датасета.
+- Git audit commands для проверки вклада каждой Claude-сессии.
+- Lane-дисциплина и substance-affecting agent decisions с git refs.
+
+### Приложение D. AI Disclosure commit log
+
+Атомарный лог 35+ commit'ов обеих сессий — `coordination/ai_disclosure_commits_log.md`. Каждая запись: SHA, timestamp, agent (Claude-K / Claude-A), commit message.
+
+---

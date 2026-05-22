@@ -50,10 +50,27 @@ cat >> "$OUT" <<'TAIL_EOF'
 
 ## Приложения
 
-- **Приложение A.** Расширенные регрессионные таблицы — см. `analysis_v2/output/tables/` (30+ CSV-таблиц).
-- **Приложение B.** Описательная статистика по выборке — см. `analysis_v2/output/tables/descriptive_stats.csv`.
-- **Приложение C.** Hash-snapshots датасетов и регресс-тест воспроизводимости — см. `analysis_v2/regress_test_v1.py` и репозиторий.
-- **Приложение D.** AI-coordination evidence: `coordination/` файлы (PROTOCOL, TASKS, FOR_*, MASTER_PLAN, findings_log) как audit trail двух Claude-инстансов.
+### Приложение A. Расширенные регрессионные таблицы
+
+Полный набор регрессионных таблиц (30+ файлов) — `analysis_v2/output/tables/` в репозитории. Включает: M1a–M1d full coefficient panels, M9a/b/M_full tier specifications, M10a/b awards specifications, M11a/b durability specifications, event-study point estimates с pre-trend block, Shapley декомпозиция с эффективностью verified до $10^{-16}$, multiple-testing summary с Bonferroni и BH-FDR markers.
+
+### Приложение B. Описательная статистика
+
+См. `analysis_v2/output/tables/descriptive_stats.csv` — min/max/mean/median/sd для всех 153 переменных по полной выборке и subsamples (rookie / mid-tier / max / supermax; US-born / international; pre-CBA / post-CBA-2017).
+
+### Приложение C. Воспроизводимость и аудит AI-коллаборации
+
+Полная процедура воспроизведения вычислительного pipeline и аудита AI-вклада обеих сессий — `coordination/reproducibility_appendix.md`. Bundles:
+- End-to-end run commands (cold cache ~2 часа, warm cache ~3 минуты).
+- Hash-snapshots (SHA256) сырого и обработанного датасета.
+- Git audit commands для проверки вклада каждой Claude-сессии.
+- Lane-дисциплина и substance-affecting agent decisions с git refs.
+
+### Приложение D. AI Disclosure commit log
+
+Атомарный лог 35+ commit'ов обеих сессий — `coordination/ai_disclosure_commits_log.md`. Каждая запись: SHA, timestamp, agent (Claude-K / Claude-A), commit message.
+
+---
 TAIL_EOF
 
 wc -l "$OUT" && wc -w "$OUT"
