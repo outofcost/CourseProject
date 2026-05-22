@@ -67,12 +67,14 @@ Co-Authored-By: Claude <model> <noreply@anthropic.com>
 
 **Не пушим uncommitted spec changes**; ждём ответа человека.
 
-## Правило 5: Pull before work
+## Правило 5: Pull before work AND at start of every response
 
 Каждый Claude перед началом любого изменения делает:
 ```bash
 git pull origin main
 ```
+
+**В активной чат-сессии — `git pull` в начале КАЖДОГО ответа user'у**, не только перед изменениями. Cron fires только в idle gaps; в active chat session cron почти не срабатывает, поэтому manual pull обязателен. Если pull показывает новые коммиты от другой стороны — упомянуть в первой строке ответа.
 
 Если pull показывает конфликты (что не должно случиться при соблюдении лейн-дисциплины) — STOP и пиши HUMAN_REVIEW.
 
