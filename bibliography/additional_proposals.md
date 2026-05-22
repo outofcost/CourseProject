@@ -92,11 +92,14 @@
 
 ## Также рекомендую к замене из proposal:
 
-### Bodvarsson & Brastow (1998) — replacement for failed Robst 2011
-**APA:** Bodvarsson, Ö. B., & Brastow, R. T. (1998). Do employers pay for consistent performance? Evidence from the NBA. *Journal of Sports Economics, 1*(1), 95–102.
-**Найден через:** Agent A research; альтернатива для performance-variability argument
-**Зачем нужен:** Заменяет несуществующий Robst-et-al-2011-perf-var paper из bibliography_proposal. Прямо тестирует premium за consistency, не за peak performance — relevant для H10 (durability как часть consistency).
-**Приоритет:** СРЕДНИЙ (если perf-var argument остаётся в курсовой)
+### Bodvarsson & Brastow (1998) — replacement for failed Robst 2011 — ✅ template added
+**APA (verified via Crossref 2026-05-22):** Bodvarsson, Ö. B., & Brastow, R. T. (1998). Do employers pay for consistent performance?: Evidence from the NBA. *Economic Inquiry, 36*(1), 145–160. https://doi.org/10.1111/j.1465-7295.1998.tb01702.x
+
+⚠ Earlier note here had wrong journal: было «JSE 1(1), 95-102», реально — **Economic Inquiry**, vol 36(1), pp. 145–160, 1998 (per Crossref + RePEc IDEAS).
+
+**Найден через:** Agent A research + Crossref verification 2026-05-22
+**Зачем нужен:** Заменяет несуществующий Robst-et-al-2011-perf-var paper из bibliography_proposal. Прямо тестирует premium за consistency в NBA salaries — proper theoretical anchor для H10 (durability как форма consistency). Шаблон уже в `bibliography/sources/bodvarsson_1998.md` (skeleton — Wiley paywall).
+**Приоритет:** СРЕДНИЙ (recommended если consistency/perf-variability аргумент сохраняется в Discussion §5.6)
 
 ---
 
