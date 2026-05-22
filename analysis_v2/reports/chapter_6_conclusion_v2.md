@@ -35,7 +35,7 @@ $\beta_{\text{ppg}}$-коэффициент Performance внутри max_30-tier
 
 После контроля игроковых факторов (performance, age, awards, durability) окружающий контекст — рыночные характеристики команды, командные успехи, налог штата — **не имеет значимого эффекта** на индивидуальную зарплату. Все четыре командных контроля (win_pct_lag1, made_playoffs_lag1, playoff_round_reached, over_luxury_tax) дают p > 0.15; налог штата p = 0.29 (MDE = 21% pre-tax shift не достигается).
 
-Парадоксальный результат для рынка: top-5 NBA cities (LAL, LAC, NYK, BRK, CHI, GSW) дают не премию, а **дисконт −9.3%** (p = 0.022). Heterogeneity-тесты с wild-cluster bootstrap отвергают marketability-канал — interaction × allstar не значима. Этот результат согласуется с Hembre (2021) [TBD: подтвердить в bibliography] и объясняется через **compensating differential**: топ-игроки сознательно жертвуют ~$5–10 млн зарплаты ради off-court endorsement потенциала и lifestyle крупных рынков (примеры: LeBron 2018 → LAL под cap, Durant 2016 → GSW на 1+1).
+Парадоксальный результат для рынка: top-5 NBA cities (LAL, LAC, NYK, BRK, CHI, GSW) дают не премию, а **дисконт −9.3%** (p = 0.022). Heterogeneity-тесты с wild-cluster bootstrap отвергают marketability-канал — interaction × allstar не значима. Hembre (2021) даёт *theoretical channel*, совместимый с направлением нашего эффекта: при unrestricted free agency игроки требуют compensating differential за tax burden, что снижает spending power команд в high-tax штатах (CA, NY, IL — преимущественно где базируются top-5 NBA cities). Сам Hembre, однако, находит pooled effect на 4 лиги и сообщает, что NBA-specific coefficient статистически незначим ($\hat{\beta}_{\text{NBA}} \in [-0.143, -0.069]$, SE > 1.1, Table 3); поэтому мы не можем интерпретировать наш результат как direct confirmation Hembre, а только как consistent direction. Альтернативное объяснение — player-side **compensating differential** через off-court endorsement потенциал и lifestyle крупных рынков (примеры: LeBron 2018 → LAL под cap, Durant 2016 → GSW на 1+1) — не идентифицируется direct'ом в наших данных, но согласуется с revealed preference.
 
 Совокупно: Market + Team + Structural + International объясняют по Shapley только **2.4% дисперсии**. NBA в post-2011 CBA — это **рынок индивидуального таланта**, а не рынок team revenue redistribution. Salary cap эффективно нейтрализует team-side market power.
 
@@ -62,6 +62,8 @@ $\beta_{\text{ppg}}$-коэффициент Performance внутри max_30-tier
 4. **Rule-based tier classifier.** Категоризация контрактов основана на CBA-порогах с эвристическими допущениями (Rose Rule, ±5% pro-rate absorption). Полностью data-driven подход (через manual Coon-метки) был бы более строгим, но требует ручной разметки ≈ 2 268 строк.
 
 5. **Период замкнут на post-2011 CBA.** Выводы применимы к salary cap structure 2011–2023 гг. CBA 2023 (с second apron) может изменить динамику; этот период в выборку не входит.
+
+6. **Market vs tax channels не разложены direct'ом.** В нашей основной спецификации `no_income_tax` входит как бинарный structural контроль, а `top5_market` — как отдельный регрессор; continuous `state_tax_rate` не включён в joint M_full спецификации. Прямое разложение market-size channel vs tax compensating differential channel (через continuous state_tax_rate как control при top5_market) — естественная robustness check для будущей итерации.
 
 ## 6.5 Дальнейшие направления
 
