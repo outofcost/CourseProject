@@ -32,9 +32,11 @@
 
 ## Категория Б — NBA / sport-specific (recommended, 6 источников)
 
-### Б1. Anti-marketability (КЛЮЧЕВОЙ для H7)
-**Hembre, E. (2021). Tax Competition in Professional Sports: A Theoretical and Empirical Analysis. *Journal of Sports Economics, 22*(3), 280–304.** https://doi.org/10.1177/1527002520968551
-- *Зачем:* прямое объяснение нашего anti-marketability finding (β_top5 < 0); compensating differentials в крупных рынках.
+### Б1. Anti-marketability (КЛЮЧЕВОЙ для H7) — ⚠ CITE CORRECTED 2026-05-22
+**Hembre, E. (2021). *State income taxes and team performance* (Working paper, revised February 2021). University of Illinois at Chicago, Department of Economics. SSRN 2946169.** https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2946169
+- *Зачем:* предлагает theoretical channel (tax compensating differential при unrestricted free agency), совместимый с направлением нашего anti-marketability finding (β_top5 < 0).
+- **⚠ ВАЖНО:** preprint title — *"State Income Taxes and Team Performance"*; первоначальный proposal указывал title *"Tax Competition in Professional Sports..."* с DOI 10.1177/1527002520968551 → проверено Crossref-ом: **DOI возвращает 404**. Published version может иметь другой title; перед финальной cite — verify через Sage / JSE website.
+- **⚠ NBA-only coefficient статистически НЕ значим** (β_NBA ∈ [−0.143, −0.069], SE > 1.1, Table 3). Главный effect Hembre — pooled across 4 leagues (NFL/NBA/NHL/MLB). Цитировать как *theoretical channel*, не direct empirical confirmation NBA discount.
 
 ### Б2. Supermax structure (H3, H4)
 **Hinton, S., & Sun, Y. (2019). The supermax in the NBA: Effects on team performance and player retention.** [working paper / journal TBD]

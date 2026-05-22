@@ -1,81 +1,87 @@
-# Bibliography findings log
+# Журнал критических находок из bibliography
 
-Substance findings от работы с источниками — то, что **меняет интерпретацию** текста курсовой или требует решения от Кирилла. Не routine status updates (для них — `MASTER_TABLE.md`).
-
-Формат: `[YYYY-MM-DD]` `Claude-A: ...` или `Claude-K: ...`. Новые записи **сверху**.
+> Записываются «surprising» находки от коллеги при разборе источников — те, что меняют наши claims, citations или интерпретацию. Это **не** полный лог библиографии (для этого есть `sources/`), а только substance-affecting items.
 
 ---
 
-## [2026-05-22] Claude-A: финал первого raid'а
+## Batch 1: top-5 источники (2026-05-22, PR #1)
 
-32 источника обработаны. PR #1 (open): top-5 + 4 batch-коммита от 3 параллельных агентов + финальный (MASTER_TABLE / references.bib / additional_proposals). Артефакты:
+### Hembre (2021) — CITE ERROR + NBA-only INSIGNIFICANT
 
-- `bibliography/MASTER_TABLE.md` — сегментированная таблица всех 32 source'ов, priority recommendations, status
-- `bibliography/references.bib` — BibTeX для всех 32 + ⚠ markers для проблем
-- `bibliography/additional_proposals.md` — 12 источников из CSV "Анализ статей", которых нет в `bibliography_proposal.md` (для решения Кирилла)
+**Что было:** в `bibliography_proposal.md` источник был обозначен как:
+- Title: *Tax Competition in Professional Sports: A Theoretical and Empirical Analysis*
+- DOI: 10.1177/1527002520968551
 
-**Substance findings (важные для текста!):**
+**Что найдено:**
+- DOI возвращает 404 в Crossref (проверено 2026-05-22).
+- Preprint доступен на SSRN 2946169 под title *State Income Taxes and Team Performance* (revised February 2021).
+- Возможно published title в JSE отличается; нужно verify через Sage.
 
-### 1. ⚠ Hembre (2021) — DOI и journal mismatch в proposal
-**Что в proposal:** "Journal of Sports Economics, 22(3), 280–304", DOI `10.1177/1527002520968551`
-**Реальность:** DOI 404 в Crossref. По CSV "Анализ статей" — реальный журнал **International Tax and Public Finance**. Preprint title тоже отличается — "State Income Taxes and Team Performance" (Nov 2019, SSRN 2946169).
-**Action for Claude-K:** Перед финальным цитированием — verify published title/DOI через Springer ITPF / google scholar. Если нет доступа — использовать preprint citation из `references.bib` (помечено ⚠).
+**Что важнее (substance):**
+- **NBA-specific coefficient в Hembre НЕ значим** (β_NBA ∈ [−0.143, −0.069], SE > 1.1, Table 3, p. 20).
+- Главный effect Hembre — pooled across 4 leagues (NFL/NBA/NHL/MLB), не специфически про NBA.
 
-### 2. ⚠ Hembre для H7 — NBA-only coefficient НЕ значим
-**Что в proposal:** "прямое объяснение нашего anti-marketability finding (β_top5 < 0)"
-**Реальность:** В preprint Table 3 — β_NBA = −0.069 до −0.143, SE > 1.1 (**не статистически значим**). Pooled-across-4-leagues coefficient значим (−0.77 до −0.86), но NBA-only — нет.
-**Action for Claude-K:** В Discussion §5.x — переформулировать с "Hembre supports our anti-marketability" на "Hembre provides a *theoretical channel* (compensating differential for state taxes under free agency) consistent with our finding direction, although his NBA-specific estimates are imprecise". См. `sources/hembre_2021.md` секцию 9 для full draft текста.
+**Применённые правки в драфтах:**
+- `analysis_v2/reports/bibliography_proposal.md` — title + DOI + caveat исправлены.
+- `analysis_v2/reports/chapter_6_conclusion_v2.md` §6.2 Вывод 3 — формулировка изменена: теперь не "согласуется с Hembre" а "Hembre даёт theoretical channel, совместимый с направлением; NBA-specific coefficient у него imprecise".
+- `analysis_v2/reports/chapter_6_conclusion_v2.md` §6.4 — добавлен пункт 6 про market vs tax channel не разложение.
 
-### 3. ⚠ Hinton & Sun (2019) — Б2 в proposal — paper НЕ СУЩЕСТВУЕТ
-**Что в proposal:** "The supermax in the NBA: Effects on team performance and player retention" (Б2)
-**Реальность:** Такой работы нет в Crossref, JSTOR, JSM, Google Scholar. Реальный Hinton-Sun 2019 = "The sunk-cost fallacy in the NBA" (Empirical Economics 59, 1019-1036) — **другая тема**, не institutional supermax.
-**Action for Claude-K:** Не цитировать как supermax-источник. Если supermax-аргумент нужен — использовать Coon FAQ Q24 (Designated Player rule) как institutional foundation. Если sunk-cost интересен — добавить новый citation Hinton-Sun 2019 как behavioral parallel к Keefer (2021) в Limitations.
+**Не правлены (исторические/устаревшие):**
+- `analysis_v2/reports/SHIPPING_SUMMARY.md`, `phase3_summary.md`, `h8_notes.md`, `chapter_4_new_sections.md` — internal notes, не идут в финальный текст.
+- `analysis_v2/reports/chapter_5_discussion.md` — будет переписан целиком при работе над Discussion (после получения остальных источников); править сейчас по точке не имеет смысла.
+- `analysis_v2/reports/abstract.md` — потребуется правка перед финалом, отметить в TODO.
 
-### 4. ⚠ Robst et al. (2011) — Б6 в proposal — paper НЕ СУЩЕСТВУЕТ
-**Что в proposal:** "Skill, performance variability, and salary in the NBA. JSM 25(5), 510-516"
-**Реальность:** Не найден в индексах. Реальный Robst-VanGilder-Coates-Berri 2011 = "Skin tone and wages: Evidence from NBA free agents" (JSE 12(2), 143-156) — другая тема.
-**Action for Claude-K:** Для perf-variability argument — заменить на **Bodvarsson & Brastow (1998) "Do Employers Pay for Consistent Performance?" JSE 1(1), 95-102**. Уже добавлен в `additional_proposals.md`.
-
-### 5. ⚠ Stiroh (2007) — DOI typo в proposal
-**Что в proposal:** DOI `10.1111/j.1465-7295.2006.00010.x`
-**Реальность:** Wiley landing показывает `10.1111/j.1465-7295.2006.00004.x` для того же paper'а. Crossref/proposal опечатка.
-**Action for Claude-K:** Использовать DOI `.00004.x` в финальном тексте (исправлено в `references.bib`).
-
-### 6. 🆕 CSV содержит критически важные source'ы, которых нет в proposal
-
-**Особенно:**
-- **Kleven, Landais & Saez (2013)** — AER, rating 10/10. Reframing для нашего H9 informative null (tax channel exists в proper setting; null = sample specifics, not absence of effect)
-- **Alm, Kaempfer & Sennoga (2012)** — MLB +$21-24K per pp tax → individual FA salary. Direct contrast с нашим NBA H9 null
-- **Kopkin (2012)** — прямо NBA + tax, sorting mechanism (tax → destination, not salary level в cap-constrained market)
-- **Johnson & Hall (2017)** — direct counter-evidence нашему H9 null: +$60K per pp ATR в NBA FA. Sample differences (FA-only 2010-14 vs наш full 2015-24) объясняют divergence
-- **Hölmström (1979)** — Nobel-prize theoretical foundation для contract design / moral hazard discussion
-
-**Action for Claude-K:** Просмотреть `additional_proposals.md` и решить, какие из 12 NEW source'ов добавить в финальную bibliography. Моя рекомендация (см. MASTER_TABLE.md "Recommended final bibliography list"): топ-7 из них точно нужно. Особенно — **Kleven/Alm/Kopkin/Johnson cluster для anatomy H9 null + Hölmström для теории**.
-
-### 7. 📝 Paywall'ы нуждаются в HSE library access
-
-Из 32 source'ов 18 — за paywall (Wiley, Sage, T&F, AEA, UChicago, Springer, IJSF). Skeleton-шаблоны написаны на основании abstract + secondary sources, но для финального текста (особенно для verbatim quotes) нужны full PDF.
-
-**Приоритет 1 для HSE proxy** (без них ключевые arguments слабее подкреплены):
-- Lipovetsky & Conklin (2001) — Shapley R² foundation (Wiley)
-- Benjamini & Hochberg (1995) — BH-FDR (Wiley)
-- Kahn (2000) — Introduction motivation (AEA captcha)
-- Kopkin (2012) — NBA tax sorting (Sage)
-- Johnson & Hall (2017) — H9 anatomy (T&F + AWS WAF)
-- Mincer (1974) — earnings function (book chapter PDFs only partial)
-
-**Action for Claude-K:** Запросить через HSE library proxy эти 6 PDF. Если получится — апдейтнуть соответствующие шаблоны полным contents (можно через issue или прямо commit'ом в `bibliography/sources/`).
+**Open question от Артёма:** есть ли у нас joint spec с continuous `state_tax_rate` + `top5_market` в одной модели?
+**Ответ:** нет. В `analysis_v2/m1_full.py:159` `STRUCT_BLOCK = ["post_cba_2017", "post_covid", "no_income_tax"]` — только бинарный `no_income_tax`. Continuous `state_tax_rate` использовался только в v1 M2c (без top5_market). Прямая декомпозиция market vs tax channels — future robustness work, отмечена в §6.4 пункт 6.
 
 ---
 
-## [2026-05-22] Claude-A: координационная инфраструктура
+### Lipovetsky & Conklin (2001) — PAYWALL
 
-Прочитал план Кирилла про `coordination/` (ONBOARDING.md, PROTOCOL.md, TASKS.md, FOR_ARTEM.md, FOR_KAROLINA.md). Сейчас в репо `coordination/` ещё нет — жду пуша с компа Кирилла. Как только появится — встроюсь.
+**Что:** Wiley paywall, preprint / open access version не найден.
 
-Моя сторона:
-- Работаю на ветке `bibliography/batch-top5`, PR'ами в main
-- Трогаю только `bibliography/`, всё остальное — территория Claude-K
-- Commit message prefix: `[Claude-A]` (если Кирилл это введёт в PROTOCOL.md)
-- Сообщения Claude-A → Claude-K буду писать в `coordination/FOR_KAROLINA.md` (как только структура появится; пока что — здесь)
+**Применённые правки:** пока никаких — методологическое описание Shapley в `chapter_3_methods.md` §3.6 опирается на standard formula (Shapley 1953), не требующую verbatim из L&C 2001. Caveat о paywall будет отмечен при подготовке Bibliography.
 
-См. также `bibliography/COLLAB.md` — раньше написанная coordination инструкция (можно слить с PROTOCOL.md или удалить, если duplicate).
+**Альтернативный source если verbatim quotes понадобятся:** Grömping, U. (2007). Estimators of relative importance in linear regression based on variance decomposition. *American Statistician, 61*(2), 139–147. — open access secondary review с подробным описанием Shapley R² method.
+
+**Action:** Karolina может попробовать через HSE library proxy (Wiley доступ).
+
+---
+
+### Cameron-Gelbach-Miller (2011) — OPEN QUESTION
+
+**Что:** полный PDF + точные page-references есть. Артём отметил open question: используем ли мы two-way clustering где-то?
+
+**Ответ:** проверено в коде: only one-way clustering на `player_id` (см. `analysis_v2/m1_full.py`, `analysis_v2/h_decomposition.py`). Two-way (player + season) НЕ используется. CGM 2011 цитируется per their **general framework + eq. (2.7) one-way formula**, не per two-way innovation.
+
+**Применённые правки:** в `chapter_3_methods.md` §3.5.1 цитата CGM 2011 уже корректна — обоснование cluster-robust SE. Никаких изменений не требуется.
+
+**Action:** если будет финальное предложение от Артёма попробовать two-way (для robustness), можно добавить как `M1c_full_2wayCluster` спецификацию. Пока — не делаем.
+
+---
+
+### Rosen (1981) — OK
+
+**Что:** полный PDF, верифицированные quotes, p. 845/849/857.
+
+**Применённые правки:** никаких — в Methods/Results я не цитировал Rosen, он пойдёт в Introduction (motivation про superstar economics) и Lit Review Stream 1, когда сяду за них.
+
+**Notes для future use:**
+- Quote "A person who is twice as talented as another earns four times more money" (p. 849) — отличный кандидат в Introduction.
+- Marshall quote (p. 857) — кандидат на эпиграф к Discussion.
+
+---
+
+### Coon CBA FAQ — OK
+
+**Что:** полный snapshot HTML, Q-numbers (Q23 max tiers, Q24 Designated Player, Q32 Bird rights, Q18 luxury tax).
+
+**Применённые правки:** никаких сейчас. Будут добавлены в Methods §3.4 при финальной редактуре (конкретные ссылки на Q-numbers вместо общего "(Coon, n.d.)" cite).
+
+**Important context:** Larry Coon retired May 2025, FAQ frozen. Snapshot сохранён локально (`bibliography/pdfs/coon_cbafaq_snapshot_2024.html`) для reproducibility.
+
+---
+
+## Batch 2: ожидается ...
+
+Когда придёт следующий push с COLLAB.md + 5 PDF + 6 шаблонов — добавим сюда.
