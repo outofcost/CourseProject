@@ -119,3 +119,51 @@
 
 **Запуск:** 2026-05-22, Claude-A
 **Следующий run:** после следующего push Claude-K с новыми chapter cite'ами
+
+---
+
+## 🔁 Re-run #2 — 2026-05-22 ~20:20 (TASK-A-15 + A-16 — Phase B)
+
+Запущен после commits Claude-K: `f7cecbd` (Kopkin), `ea6b1d3` (Phase A complete: Keefer/B&K/White + TBD cleanup), `827ef0f` (Phase B: cross-chapter consistency). Scope ограничен **final v2 files** (per MASTER_PLAN Phase D): chapter_1, _2, _3, _4, _5_v2, _6_v2, abstract, ai_disclosure, methodology_v2_addendum.
+
+### ✅ Result: **PASSED** для финальной редактуры
+
+| Metric | Run #1 (~19:50) | Run #2 (~20:20) |
+|---|---|---|
+| Bib entries | 33 | 36 (+rosen_1986, shapley_1953, genizi_1993, pratt_1987, berri_1999, berri_schmidt_2010, bodvarsson_1998; −hinton_2019, robst_2011) |
+| Unique cites in final chapters | 36 | 36 (после Kopkin/Keefer/B&K/White/Pratt/Genizi/Shapley/Rosen-1986 integration) |
+| Real missing entries | 1 (Berri-Schmidt 2010) | **0** — resolved via TASK-A-12 |
+| Year/format inconsistencies | 2 (Cameron, Johnson) | **0** — Cameron unified by K (commit d92719c); Johnson renamed by A (commit de3be58) |
+| Unused entries (after considering NEW pipeline) | 13 | 6 |
+
+### Parser false-positives (не реальные проблемы):
+- `alm et al., 2012` = `alm_2012` ✓
+- `berri et al., 2007` = `berri_2007` ✓
+- `cameron et al., 2011` = `cameron_2011` ✓
+- `kleven et al., 2013` = `kleven_2013` ✓
+- `brook, 2010` = parser ошибочно вытащил Brook из "Berri, Brook & Schmidt (2010)" — реально это `berri_schmidt_2010` ✓
+- `coon, n.d.` = `coon_cbafaq` ✓ (regex skips "n.d.")
+
+### Unused bib entries (6):
+| Bibkey | Status | Recommendation |
+|---|---|---|
+| `berri_schmidt_2010` | actively cited (parser miss) | KEEP |
+| `conklin_2023` | SKIP confirmed by K | **REMOVE** from bib |
+| `kahn_sherer_1988` | SKIP if no discrimination section | **REMOVE** from bib unless used |
+| `krautmann_donley_2009` | NEW из CSV, priority НИЗКИЙ | KEEP as option (might be integrated in Limitations final pass) |
+| `rottenberg_1956` | classical anchor, может cite в Introduction | KEEP for Phase C polish opportunity |
+| `simmons_2011` | NEW из CSV, priority НИЗКИЙ | KEEP as option |
+
+### Action items следующей итерации (если хочется max-clean bib):
+- ⚠ For Claude-K decision: confirm REMOVE `conklin_2023` + `kahn_sherer_1988` from `references.bib` (они не в драфтах после Phase A integration).
+- Phase F (TASK-A-20): "Remove unused entries" — apply final decision.
+
+**Conclusion run #2:** bib-check **PASSED** — все active cite'ы имеют валидный bib entry; 0 real missing; все DOI verified Crossref (TASK-A-14). Готово к Phase C prose polish.
+
+---
+
+**Re-run #2 запуск:** 2026-05-22 ~20:20, Claude-A
+**Refs:** TASK-A-15 (Phase B), TASK-A-15a (TBD audit, см. ниже), TASK-A-16 (cite consistency)
+
+### TASK-A-15a (TBD audit) result:
+- 3 `[TBD` occurrences total в final v2 files — **все 3 в header-комментариях** (объясняющих формат маркера), не в body. **0 body markers** — confirmed Claude-K side and reconfirmed Claude-A side.

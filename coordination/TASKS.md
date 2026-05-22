@@ -148,8 +148,9 @@ User goal: maximally-polished .docx coursework ready for HSE submission. Plan in
 - **TASK-K-21:** ✅ done (commit pending) — Глава/§/Рисунок/Таблица cross-refs verified в v2 chapters
 
 **Claude-A queue:**
-- **TASK-A-15:** Re-run bib_check_report.md после K-10..K-17
-- **TASK-A-16:** Forward + backward cite consistency check
+- **TASK-A-15:** ✅ done (re-run #2 в `bibliography/bib_check_report.md`) — bib-check PASSED for final v2 chapters: 0 real missing entries, 0 year/format inconsistencies, 6 unused (4 defensible, 2 SKIP candidates)
+- **TASK-A-15a:** ✅ done — TBD audit: 0 body markers in final v2 (3 occurrences only in header-comments explaining marker format)
+- **TASK-A-16:** ✅ done (within TASK-A-15 report) — cite consistency confirmed; only parser false-negatives (Cameron/Alm/Berri/Kleven "et al." matching), all real cites match bib
 
 ### Phase C — Prose polish
 
