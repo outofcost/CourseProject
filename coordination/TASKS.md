@@ -44,45 +44,68 @@
 **Deliverable:** `bibliography/sources/{hembre,lipovetsky,cameron,rosen,coon}.md`
 **Notes from Claude-K:** все 5 шаблонов прочитаны и применены. Hembre — substance fix применён. См. `bibliography/findings_log.md` batch 1.
 
-### TASK-A-02: Mid-priority sources (next batch)
-**Status:** pending (Claude-A работает в фоне, согласно user)
-**Deliverable:** заполненные шаблоны для:
-- Mincer (1974), Lazear & Rosen (1981), Hausman & Leonard (1997)
-- Krautmann (1999), Hill & Groothuis (2001), Stiroh (2007)
-- Berri et al. (2007), Hinton & Sun (2019)
-**Confidence (Claude-K's request):** для каждого шаблона — особенно проверить numeric claims (R², coefficients, sample sizes), которые мы будем цитировать. Если что-то выглядит подозрительным — verify в исходнике или флагуй HUMAN_REVIEW.
+### TASK-A-02: Mid-priority sources (next batch) — ✅ done
+**Status:** done (PR #2 merged 2026-05-22; см. FOR_KAROLINA.md для подробностей)
+**Deliverable:** все 8 шаблонов в `bibliography/sources/`:
+- mincer_1974.md (skeleton — NBER только ToC PDF доступен)
+- lazear_1981.md (FULL — NBER WP w0401, полный текст)
+- hausman_1997.md (FULL — MIT DSpace WP)
+- krautmann_1999.md (skeleton — Wiley paywall)
+- hill_2001.md (skeleton — Sage paywall)
+- stiroh_2007.md (skeleton — Wiley paywall; ⚠ DOI typo в proposal: было `.00010.x`, реально `.00004.x`)
+- berri_2007.md (skeleton — IJSF/FIT paywall)
+- hinton_2019.md (skeleton; ⚠ **TOPIC MISMATCH**: указанный в proposal "supermax" paper НЕ СУЩЕСТВУЕТ. Реальный Hinton-Sun 2019 = "Sunk-cost fallacy in NBA" — другая тема. Skip из финальной biblio для supermax-аргумента.)
+**Notes from Claude-A:** numeric claims в FULL templates verified из PDF; в skeleton — из abstracts + secondary sources с маркером ⚠. См. `bibliography/findings_log.md`.
 
-### TASK-A-05: 🔴 ПРИОРИТЕТНО — Hill & Groothuis (2001) template
-**Status:** pending (PDF уже есть в `bibliography/pdfs/hill_2001.pdf`)
-**Deliverable:** `bibliography/sources/hill_2001.md`
-**Why priority:** разрешает 4 TBD-маркеров одновременно:
-- `chapter_2_literature.md` §2.2 (Stream 1: classical NBA salary distribution analysis)
-- `chapter_2_literature.md` §2.3 (Stream 2: institutional layer per CBA 1995)
-- `chapter_2_literature.md` §2.4 (cap nullifies team-side market power)
-- `chapter_5_discussion_v2.md` §5.2 (institutional layer interpretation)
-**Confidence ask:** verify, что Hill-Groothuis действительно тестировал structural break post-CBA-1995 (мы используем как parallel для H4 post-CBA-2017). Если факт не подтверждается — флагуй HUMAN_REVIEW.
+### TASK-A-05: Hill & Groothuis (2001) template — ✅ done (в TASK-A-02)
+**Status:** done (PR #2 merged 2026-05-22)
+**Deliverable:** `bibliography/sources/hill_2001.md` (skeleton — Sage paywall)
+**Confidence answer:** Hill-Groothuis (2001) per abstract обсуждает median-voter model и Robin Hood rent redistribution в новом CBA (post-1995). Direct тестирование structural break как такового в abstract не упоминается — нужен full text для verification. Использовать осторожно как **theoretical antecedent** для H4 post-CBA-2017, не как direct empirical parallel. HSE proxy для Sage был бы полезен.
 
-### TASK-A-06: 🔴 ПРИОРИТЕТНО — Mincer (1974) template
-**Status:** pending (PDF уже есть в `bibliography/pdfs/mincer_1974.pdf`)
-**Deliverable:** `bibliography/sources/mincer_1974.md`
-**Why priority:** anchor reference в `chapter_2_literature.md` §2.2 и Methods §3.5.1.
-**Confidence ask:** verify, что в Mincer (1974) представлена canonical earnings function $\ln(W) = f(\text{schooling}, \text{experience}, \text{experience}^2)$ — это foundational claim, на котором строится вся работа.
+### TASK-A-06: Mincer (1974) template — ✅ done (в TASK-A-02)
+**Status:** done (PR #2 merged 2026-05-22)
+**Deliverable:** `bibliography/sources/mincer_1974.md` (skeleton — только ToC доступен; book chapter PDFs partial)
+**Confidence answer:** earnings function $\ln(W) = f(\text{schooling}, \text{experience}, \text{experience}^2)$ — canonical Mincer formulation, **широко** подтверждена в secondary literature (Heckman, Lochner & Todd 2003; Lemieux 2006). Foundational claim — solid. Полный текст книги нужен для verbatim quotes; HSE library access (book ISBN 978-0-870-14265-9).
 
-### TASK-A-07: 🔴 ПРИОРИТЕТНО — Kahn (2000) template
-**Status:** pending (PDF уже есть в `bibliography/pdfs/kahn_2000.pdf`)
-**Deliverable:** `bibliography/sources/kahn_2000.md`
-**Why priority:** key citation в `chapter_1_introduction.md` §1.1 (NBA как labor market lab); также `chapter_2_literature.md` §2.4 (cap-era uniform pricing).
-**Confidence ask:** verify quote "The sports business as a labor market laboratory" и фразу "sports industry positioned as lab for labor economics" (p. 75).
+### TASK-A-07: Kahn (2000) template — ✅ done (в TASK-A-03)
+**Status:** done (PR #2 merged 2026-05-22)
+**Deliverable:** `bibliography/sources/kahn_2000.md` (skeleton — AEA captcha-blocked для direct download)
+**Confidence answer:** title "The Sports Business as a Labor Market Laboratory" — verified через Crossref (DOI 10.1257/jep.14.3.75, JEP 14(3), 75-94). Точная цитата p. 75 — нужен full PDF для verbatim. AEA формально open access; нужен HSE library proxy либо AEA account.
 
-### TASK-A-03: Low-priority + methods sources
-**Status:** pending
-**Deliverable:** шаблоны для Yang & Lin (2012), Robst et al. (2011), Kahn (2000), Rottenberg (1956), Oster (2019), Benjamini-Hochberg (1995), MacKinnon-Webb (2018)
+### TASK-A-03: Low-priority + methods sources — ✅ done
+**Status:** done (PR #2 merged 2026-05-22)
+**Deliverable:** все 7 шаблонов:
+- yang_2012.md (skeleton — Sage paywall)
+- robst_2011.md (skeleton; ⚠ **TOPIC MISMATCH**: указанный perf-variability paper НЕ СУЩЕСТВУЕТ. Real Robst-VanGilder-Coates-Berri 2011 = "Skin tone and wages" — другая тема. Для perf-variability аргумента — заменить на Bodvarsson & Brastow (1998), см. `additional_proposals.md`)
+- kahn_2000.md (skeleton — см. TASK-A-07)
+- rottenberg_1956.md (skeleton — JSTOR/UChicago paywall)
+- oster_2019.md (FULL — Emily Oster's site)
+- benjamini_1995.md (skeleton — Wiley paywall, no preprint)
+- mackinnon_2018.md (FULL — Queen's University WP)
 
-### TASK-A-04: Hembre published title verification
-**Status:** pending (open question from Claude-A's batch 1)
-**Deliverable:** verified APA cite (либо preprint title, либо real published title в JSE)
-**Confidence:** high (механическая verification через Sage / JSE site)
-**Notes from Claude-K:** preprint title — *State Income Taxes and Team Performance* (SSRN 2946169). Если published version в JSE имеет другой title — заменить в bibliography_proposal.md и proposed-cite в chapter_6_conclusion_v2.md §6.2 Вывод 3.
+### TASK-A-04: Hembre published title verification — ✅ done
+**Status:** done (verified via Crossref query 2026-05-22; `references.bib` updated)
+**Found:**
+- DOI: `10.1007/s10797-021-09685-y`
+- Journal: **International Tax and Public Finance** (НЕ Journal of Sports Economics как в proposal)
+- Year: 2022 (online first 2021)
+- Volume/issue/pages: 29(3), 704–725
+- Title: "State Income Taxes and Team Performance" (та же, что у preprint)
+**Notes from Claude-A:** bibkey в `references.bib` изменён `hembre_2021 → hembre_2022`. Если у тебя в `chapter_*.md` уже стоит `\cite{hembre_2021}` — нужна замена. Скажи в FOR_KAROLINA.md, могу подготовить PR с alias entry для compatibility.
+
+### TASK-A-08: Master deliverables (PR #2 final batch) — ✅ done
+**Status:** done (PR #2 merged 2026-05-22)
+**Deliverable:**
+- `bibliography/MASTER_TABLE.md` — сегментированная таблица 32 source'ов с priority + status
+- `bibliography/references.bib` — BibTeX для всех 32 + ⚠ markers для DOI/title issues
+- `bibliography/additional_proposals.md` — 12 NEW из CSV "Анализ статей" с priority recommendations (просьба к Karolina: решить какие добавить в `bibliography_proposal.md`)
+**Action for Claude-K:** см. `coordination/FOR_KAROLINA.md` «Что нужно от тебя» — особенно решение по NEW sources + HSE proxy для top-priority paywall'нутых.
+
+### TASK-A-09: Stand-by для следующих циклов
+**Status:** standby (continuous)
+**Deliverable:** реакция на новые задачи из Claude-K queue, запросы в FOR_ARTEM.md, или ручные prompt'ы от Artem.
+**Confidence:** high (процедурная задача)
+**Dependencies:** ждёт push'ей от Claude-K или ручных prompt'ов.
 
 ---
 
