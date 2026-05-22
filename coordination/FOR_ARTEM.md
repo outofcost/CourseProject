@@ -2,7 +2,29 @@
 
 > Этот файл — way для Karolina-side обновлять Artem на текущее состояние работы. Artem (или Claude-A) читает после каждого `git pull`.
 
-**Последнее обновление:** 2026-05-22 (после batch-1 review).
+**Последнее обновление:** 2026-05-22 19:15 MSK — **ping**: 3 высокоприоритетные задачи в твоей очереди (TASK-A-05/06/07).
+
+---
+
+## 🔴 PING для Claude-A: следующая работа
+
+Karolina сказала, что ты запущен но не видно активности. У меня в queue нет available задач (все ждут твои batch-2 templates). Чтобы разблокировать прогресс, я добавил **3 конкретные приоритетные задачи в твою очередь** в `coordination/TASKS.md`:
+
+| Task | Источник | PDF в репо? | Куда идёт |
+|---|---|---|---|
+| TASK-A-05 | Hill & Groothuis (2001) | ✅ `bibliography/pdfs/hill_2001.pdf` | разрешает 4 TBD-маркера сразу в LitRev §2.2/§2.3/§2.4 + Discussion §5.2 |
+| TASK-A-06 | Mincer (1974) | ✅ `bibliography/pdfs/mincer_1974.pdf` | anchor для LitRev §2.2 + Methods §3.5.1 |
+| TASK-A-07 | Kahn (2000) | ✅ `bibliography/pdfs/kahn_2000.pdf` | Introduction §1.1 + LitRev §2.4 |
+
+**Все три PDF уже у тебя в репо** — нужно только заполнить шаблон `bibliography/TEMPLATE.md` для каждого. После этого commit + push, и мой cron подхватит их на следующем fire'е (каждые 10 мин на off-minute) → автоматически разрешит соответствующие TBD-маркеры в главах.
+
+**Рекомендуемый порядок:** Hill (max impact, 4 markers) → Kahn (key quote needed) → Mincer (anchor cite).
+
+Если у тебя есть свой cron — он подхватит эти задачи в следующий fire. Если нет — Артём может явно пинговать тебя prompt'ом: «возьми TASK-A-05 из coordination/TASKS.md и выполни». Это unblock'ит мой workflow.
+
+---
+
+
 
 ---
 

@@ -52,6 +52,28 @@
 - Berri et al. (2007), Hinton & Sun (2019)
 **Confidence (Claude-K's request):** для каждого шаблона — особенно проверить numeric claims (R², coefficients, sample sizes), которые мы будем цитировать. Если что-то выглядит подозрительным — verify в исходнике или флагуй HUMAN_REVIEW.
 
+### TASK-A-05: 🔴 ПРИОРИТЕТНО — Hill & Groothuis (2001) template
+**Status:** pending (PDF уже есть в `bibliography/pdfs/hill_2001.pdf`)
+**Deliverable:** `bibliography/sources/hill_2001.md`
+**Why priority:** разрешает 4 TBD-маркеров одновременно:
+- `chapter_2_literature.md` §2.2 (Stream 1: classical NBA salary distribution analysis)
+- `chapter_2_literature.md` §2.3 (Stream 2: institutional layer per CBA 1995)
+- `chapter_2_literature.md` §2.4 (cap nullifies team-side market power)
+- `chapter_5_discussion_v2.md` §5.2 (institutional layer interpretation)
+**Confidence ask:** verify, что Hill-Groothuis действительно тестировал structural break post-CBA-1995 (мы используем как parallel для H4 post-CBA-2017). Если факт не подтверждается — флагуй HUMAN_REVIEW.
+
+### TASK-A-06: 🔴 ПРИОРИТЕТНО — Mincer (1974) template
+**Status:** pending (PDF уже есть в `bibliography/pdfs/mincer_1974.pdf`)
+**Deliverable:** `bibliography/sources/mincer_1974.md`
+**Why priority:** anchor reference в `chapter_2_literature.md` §2.2 и Methods §3.5.1.
+**Confidence ask:** verify, что в Mincer (1974) представлена canonical earnings function $\ln(W) = f(\text{schooling}, \text{experience}, \text{experience}^2)$ — это foundational claim, на котором строится вся работа.
+
+### TASK-A-07: 🔴 ПРИОРИТЕТНО — Kahn (2000) template
+**Status:** pending (PDF уже есть в `bibliography/pdfs/kahn_2000.pdf`)
+**Deliverable:** `bibliography/sources/kahn_2000.md`
+**Why priority:** key citation в `chapter_1_introduction.md` §1.1 (NBA как labor market lab); также `chapter_2_literature.md` §2.4 (cap-era uniform pricing).
+**Confidence ask:** verify quote "The sports business as a labor market laboratory" и фразу "sports industry positioned as lab for labor economics" (p. 75).
+
 ### TASK-A-03: Low-priority + methods sources
 **Status:** pending
 **Deliverable:** шаблоны для Yang & Lin (2012), Robst et al. (2011), Kahn (2000), Rottenberg (1956), Oster (2019), Benjamini-Hochberg (1995), MacKinnon-Webb (2018)
