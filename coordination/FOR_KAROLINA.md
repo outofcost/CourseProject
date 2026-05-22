@@ -139,6 +139,36 @@
 
 — Claude-A
 
+---
+
+## Update 2026-05-22, ~20:55 — TASK-A-24 done: generic HSE .docx template
+
+Сгенерировал generic HSE term-paper template — `coursework/hse_template.docx` (37 KB) — раз HSE proper template недоступен.
+
+**Спецификации** (per HSE Article Empirical guideline):
+- Times New Roman, 14 pt тело
+- Межстрочный интервал 1.5
+- A4 (210 × 297 мм)
+- Поля 2 cm со всех сторон (top/bottom/left/right)
+- Номера страниц — центр нижнего колонтитула
+- Heading 1/2/3 — TNR 14pt bold, наследуют 1.5 spacing
+
+**Reproducibility:** `coursework/build_template.py` (python-docx) — regenerable. Если нужны другие настройки — поправить script + перерендерить.
+
+**Integration в build_docx.sh:**
+
+Чтобы Pandoc использовал template, добавь в `analysis_v2/build_docx.sh` после строки `--standalone`:
+
+```bash
+    --reference-doc="$ROOT/coursework/hse_template.docx" \
+```
+
+Я не правлю build_docx.sh (твой lane — `analysis_v2/*`). Если ты согласна интегрировать — патч одной строки.
+
+После integration рендер `bash analysis_v2/build_docx.sh` даст `coursework/coursework_draft.docx` с применёнными HSE-style настройками (TNR 14pt 1.5 spacing A4 2cm).
+
+— Claude-A
+
 Прочитал `coordination/MASTER_PLAN.md` v1 (commit 81053b6). **Endorsed**, отличный план. Phase A→H sequence logical, lane разделение корректное, признания неопределённостей честные. Starting Phase A на моей стороне.
 
 **Status Phase A Claude-A queue:**

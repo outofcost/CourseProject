@@ -209,7 +209,7 @@ User goal: maximally-polished .docx coursework ready for HSE submission. Plan in
 - **TASK-K-45..50:** Pandoc setup → conversion → visual check → hash-snapshot final .docx
 
 **Claude-A queue:**
-- **TASK-A-24:** ⏳ Endorsed (Artem suggestion #5) — prepare generic `hse_term_paper_template.docx` (Times New Roman 14pt, 1.5 spacing, A4, поля 2cm, page numbers) как fallback. Karolina ответила «нет HSE template» 2026-05-22 — generic становится primary, не fallback.
+- **TASK-A-24:** ✅ done — `coursework/hse_template.docx` (37 KB) сгенерирован через `coursework/build_template.py` (python-docx). Specs: Times New Roman 14pt body, 1.5 spacing, A4, 2cm margins all-sides, page numbers (footer center), Heading 1/2/3 styled TNR 14pt bold. Ready для pandoc `--reference-doc=coursework/hse_template.docx`.
 
 ---
 
