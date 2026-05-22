@@ -72,7 +72,7 @@ State income tax effect в spor labor markets теоретически и эмп
 
 Совокупно: Kleven + Alm + Johnson-Hall + Hembre дают сильное theoretical + cross-sport empirical evidence существования tax channel в spor labor markets. Наш H9 null в post-2017 NBA — informative deviation, требующая институциональной интерпретации (cap-binds, restricted mobility, off-court endorsement substitution).
 
-Health и durability — наименее разработанный sub-stream в NBA литературе. Прямое quantitative тестирование retrospective games_missed как predictor subsequent salary в post-2011-CBA-эпохе peer-reviewed работами не проведено; classic Bodvarsson & Brastow (1998) обсуждают performance consistency, но не durability как такового. Наш H10 (β = −0.005/game, см. §4.8) делает одну из первых формальных оценок этого эффекта.
+Health и durability — наименее разработанный sub-stream в NBA литературе. Ближайший classical antecedent — Bodvarsson & Brastow (1998), которые впервые эмпирически показали, что NBA labor market rewards consistent performance: после контроля mean productivity, players с более консистентной игрой получают statistically significant premium (Bodvarsson & Brastow, 1998, pp. 145–160). Их consistency measure — game-to-game variance в performance metrics; наш durability measure — retrospective games_missed (отсутствие игры вообще). Концепты related но не identical: B&B измеряют statistical inconsistency, мы — availability inconsistency. Прямое quantitative тестирование retrospective games_missed как predictor subsequent salary в post-2011-CBA-эпохе peer-reviewed работами не проведено; наш H10 (β = −0.005/game, см. §4.8) — расширение B&B logic на duration dimension и одна из первых формальных оценок этого специфического эффекта.
 
 International composition NBA — растущая часть литературы. [TBD: yang_lin_2012.md.] Yang & Lin (2012) тестируют salary discrimination по nationality в NBA, контролируя performance; их main finding — после контроля on-court performance no significant salary penalty для foreign-born players. Это обосновывает наше включение continent-dummies (INTL_BLOCK) как control в M1c_full без specific hypothesis о discrimination direction.
 
@@ -110,7 +110,7 @@ International composition NBA — растущая часть литератур
 
 **Stream 5 (Externalities / health):**
 - **H9:** State income tax влияет на pre-tax ln(salary) через compensating differential. (Kleven, Landais & Saez, 2013; Alm, Kaempfer & Sennoga, 2012; Johnson & Hall, 2018; Hembre, 2022)
-- **H10:** Durability (games_missed_lag1) отрицательно влияет на ln(salary). (новая гипотеза для NBA; контекстный antecedent — Bodvarsson & Brastow, 1998 [TBD])
+- **H10:** Durability (games_missed_lag1) отрицательно влияет на ln(salary). (новая гипотеза для NBA; контекстный antecedent — Bodvarsson & Brastow, 1998)
 
 Тестирование гипотез описано в Главе 3 (методология) и представлено в Главе 4 (результаты).
 
