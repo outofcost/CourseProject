@@ -122,29 +122,30 @@ User goal: maximally-polished .docx coursework ready for HSE submission. Plan in
 ### Phase A — Content completion
 
 **Claude-K queue:**
-- **TASK-K-10:** Integrate Kopkin (2012) — direct NBA tax migration paper — в chapter_2 §2.6 + chapter_5 §5.5
-- **TASK-K-11:** Integrate Keefer (2021) — cap-shock methodology — в chapter_5 §5.7
-- **TASK-K-12:** Integrate Berri & Krautmann (2006) — NBA shirking — в chapter_5 §5.7
-- **TASK-K-13:** Integrate White & Sheldon (2014) — CY effect — в chapter_5 §5.7
-- **TASK-K-14:** Resolve skeleton TBD-маркеры (Mincer, Stiroh, Hill-Groothuis, Krautmann, Kahn) — verified general cite
-- **TASK-K-15:** Cite Pratt (1987) + Genizi (1993) в Methods §3.6
-- **TASK-K-16:** Cite Shapley (1953) в Methods §3.6
-- **TASK-K-17:** Cite Rosen (1986) в Methods §3.4 + Discussion §5.2 (cap concavity)
+- **TASK-K-10:** ✅ done (commit f7cecbd) — Kopkin (2012) integrated в chapter_2 §2.6 + chapter_5 §5.5
+- **TASK-K-11:** ✅ done (commit ea6b1d3) — Keefer (2021) integrated в chapter_5 §5.7
+- **TASK-K-12:** ✅ done (commit ea6b1d3) — Berri & Krautmann (2006) integrated в chapter_5 §5.7
+- **TASK-K-13:** ✅ done (commit ea6b1d3) — White & Sheldon (2014) integrated в chapter_5 §5.7
+- **TASK-K-14:** ✅ done (commit ea6b1d3) — TBD body markers cleaned via sed across chapters 1/2/3/5
+- **TASK-K-15:** ✅ done (Pratt 1987 + Genizi 1993 уже в Methods §3.6)
+- **TASK-K-16:** ✅ done (Shapley 1953 уже в Methods §3.6)
+- **TASK-K-17:** ✅ done (Rosen 1986 уже в Methods §3.4 + Discussion §5.2)
 
 **Claude-A queue:**
 - **TASK-A-10:** ✅ done (commit de3be58) — bibkey renamed johnson_2017 → johnson_2018
 - **TASK-A-11:** ✅ done (commit de3be58) — hinton_2019 + robst_2011 removed
 - **TASK-A-12:** ✅ done (commit de3be58) — berri_schmidt_2010 @book added (Stumbling on Wins, FT Press, ISBN 978-0-13-235778-5)
-- **TASK-A-13:** 🚫 BLOCKED — HSE library proxy требует student login; Claude-A не может self-execute. Karolina (human) — нужна твоя сторона. Top-priority paywall: lipovetsky_2001, mincer_1974 (full book), hill_2001, stiroh_2007, johnson_2018, kopkin_2012.
+- **TASK-A-13:** 🚫 BLOCKED — HSE library proxy требует student login; Claude-A не может self-execute. Karolina (human) — нужна твоя сторона. Top-priority paywall: lipovetsky_2001, mincer_1974 (full book), hill_2001, stiroh_2007, johnson_2018, kopkin_2012. Karolina ответила «пока нет доступа» 2026-05-22 — пропускаем для draft v2, ждём финальной верификации перед защитой.
 - **TASK-A-14:** ✅ done — verified 25 DOIs via Crossref; 3 typos fixed (kopkin_2012, krautmann_donley_2009, simmons_2011 — все близкие но неверные digits). Все 25 теперь валидны.
+- **TASK-A-15a:** ⏳ Endorsed (Artem suggestion #1) — после K-10..K-17 запустить `grep -r '\[TBD' analysis_v2/reports/` чтобы убедиться нет упущенных маркеров. (Claude-K side: проверка сделана 2026-05-22, 0 body markers.)
 
 ### Phase B — Cross-chapter consistency
 
 **Claude-K queue:**
-- **TASK-K-18:** Hypothesis numbering audit
-- **TASK-K-19:** Numerical consistency check (Shapley shares, R²-values, β-coefficients)
-- **TASK-K-20:** Terminology unification (tier names, market terminology, CBA dates)
-- **TASK-K-21:** Cross-reference verification (Глава, Раздел, Рисунок, Таблица)
+- **TASK-K-18:** ✅ done (commit pending) — H1-H10 numbering audit; H11 leftovers only in deprecated _v1 files (drop in K-30)
+- **TASK-K-19:** ✅ done (commit pending) — fixed peak age (29.5 not 28-29), post_cba_2017 (+24.5% not +26%), 10 hypotheses (not 11), Hembre 2022 в abstract
+- **TASK-K-20:** ✅ done (commit pending) — 8-tier list в chapter_1 §1.2 расширен (добавлен high-mid), терминология консистентна
+- **TASK-K-21:** ✅ done (commit pending) — Глава/§/Рисунок/Таблица cross-refs verified в v2 chapters
 
 **Claude-A queue:**
 - **TASK-A-15:** Re-run bib_check_report.md после K-10..K-17
@@ -160,11 +161,14 @@ User goal: maximally-polished .docx coursework ready for HSE submission. Plan in
 ### Phase D — Master document assembly
 
 **Claude-K queue:**
-- **TASK-K-30:** Drop deprecated _v1 chapter files
+- **TASK-K-30:** Drop deprecated _v1 chapter files (chapter_4_new_sections.md, chapter_5_discussion.md, chapter_6_conclusion.md без _v2 suffix)
 - **TASK-K-31:** Create manuscript_master.md combining 8 files in HSE order
 - **TASK-K-32:** Length 55–70 страниц check
 - **TASK-K-33:** Section numbering (1.1, 1.2, …)
-- **TASK-K-34:** Title page template
+- **TASK-K-34:** Title page template (Karolina человек ответила «пока проскипать» — defer до final pass)
+
+**Claude-A queue:**
+- **TASK-A-23:** ⏳ Endorsed (Artem suggestion #3) — prepare Reproducibility appendix: bundle coordination/ files (PROTOCOL, TASKS, FOR_*, MASTER_PLAN, findings_log) как evidence of process для Приложение C. Strengthens AI Disclosure.
 
 ### Phase E — Figures + tables
 
@@ -183,6 +187,7 @@ User goal: maximally-polished .docx coursework ready for HSE submission. Plan in
 - **TASK-A-19:** Forward + backward cite consistency v2
 - **TASK-A-20:** Remove unused entries from references.bib
 - **TASK-A-21:** Final bibliography Russian heading + format
+- **TASK-A-22:** ⏳ Endorsed (Artem suggestion #2) — prepare list of Claude commits для AI Disclosure (explicit log с commit references, что было сделано). Pair с Claude-K's TASK-K-28 (ai_disclosure prose polish).
 
 ### Phase G — HSE compliance
 
@@ -194,12 +199,16 @@ User goal: maximally-polished .docx coursework ready for HSE submission. Plan in
 - **TASK-K-44:** AI Disclosure §1.3 compliance check
 
 **Joint:**
-- **TASK-J-01:** HSE template guideline readout (fonts/margins/page numbers)
+- **TASK-J-01:** HSE template guideline readout (fonts/margins/page numbers) — BLOCKED: у Karolina пока нет HSE template; используем generic.
+- **TASK-J-02:** ⏳ Endorsed (Artem suggestion #4) — pre-final read-through на single chunk (после конкатенации в master). Может выявить cross-chapter awkwardness, которые grep не найдёт.
 
 ### Phase H — Pandoc → .docx
 
 **Claude-K queue:**
 - **TASK-K-45..50:** Pandoc setup → conversion → visual check → hash-snapshot final .docx
+
+**Claude-A queue:**
+- **TASK-A-24:** ⏳ Endorsed (Artem suggestion #5) — prepare generic `hse_term_paper_template.docx` (Times New Roman 14pt, 1.5 spacing, A4, поля 2cm, page numbers) как fallback. Karolina ответила «нет HSE template» 2026-05-22 — generic становится primary, не fallback.
 
 ---
 

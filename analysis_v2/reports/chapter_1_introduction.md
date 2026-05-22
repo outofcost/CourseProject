@@ -23,7 +23,7 @@
 
 **Проблема 1: Количественная иерархия факторов.** Литература по NBA salary в основном тестирует отдельные гипотезы (effect of performance metric X, of award Y, of market size Z) в изолированных спецификациях. Что отсутствует — систематическая, axiomatically-justified декомпозиция variance зарплат по тематическим блокам факторов. Поэтому остаётся открытым вопрос: **какая доля variance ln(salary) объясняется performance, а какая — институциональной категоризацией, awards history, командным контекстом, рыночными условиями, durability?** Без такой декомпозиции невозможно ответственно ranked-prioritize факторы при policy analysis.
 
-**Проблема 2: Влияние институциональной структуры (CBA) на distribution зарплат.** Hill & Groothuis (2001) утверждают, что salary cap создаёт «institutional layer» поверх traditional Mincer mechanism. Но прямой quantitative test — сколько variance объясняется одним только tier-категориями contract (rookie scale / minimum / mid-level / max-25/30/35 / supermax), без participation performance-метрик — не проведён в существующей литературе. Это критический gap, потому что наличие near-deterministic institutional categorization меняет интерпретацию pricing функции NBA salary с continuous на discrete.
+**Проблема 2: Влияние институциональной структуры (CBA) на distribution зарплат.** Hill & Groothuis (2001) утверждают, что salary cap создаёт «institutional layer» поверх traditional Mincer mechanism. Но прямой quantitative test — сколько variance объясняется одним только tier-категориями contract (8 уровней: minimum / rookie scale / mid-level / high-mid / max-25 / max-30 / max-35 / supermax), без participation performance-метрик — не проведён в существующей литературе. Это критический gap, потому что наличие near-deterministic institutional categorization меняет интерпретацию pricing функции NBA salary с continuous на discrete.
 
 **Проблема 3: Marketability и off-court доход.** Классическая Rosen-mechanism предполагает, что игроки в больших медиа-рынках должны получать premium за counter-amplified market exposure. Но в современном NBA с salary cap эта премия должна быть нейтрализована (Hill & Groothuis, 2001). Эмпирические работы дают разнородные результаты: Hembre (2022), исследуя effect state tax на performance команд в pooled-cross-sport panel, находит negative effect, хотя NBA-specific coefficient в его Table 3 статистически незначим. Вопрос **направления и магнитуды market-size effect именно для NBA в post-2017-CBA эпоху** остаётся открытым.
 
@@ -74,4 +74,4 @@
 
 ---
 
-[Слов в главе: ≈ 1 800; TBD-маркеров: 4 — все ждут источников от Claude-A в batch-2.]
+[Слов в главе: ≈ 1 800; TBD-маркеров: 0; статус — финализирован после Phase A.]

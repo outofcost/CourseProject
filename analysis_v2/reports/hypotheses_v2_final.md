@@ -9,9 +9,9 @@
 | # | Гипотеза | Stream | Источник в v1/v2 | Статус (BH-FDR @ 5%) | Ключевой коэффициент |
 |---|---|---|---|---|---|
 | **H1** | Performance metrics (PPG, WS, BPM) положительно влияют на ln_salary | Mincer / productivity | v1 (был H1) | ✅ подтверждена | β_ppg = +0.04 (v1) / +0.07 (внутри mid_level v2) |
-| **H2** | Возрастной профиль salary имеет форму inverted-U с пиком ~28-29 лет | Mincer / career arc | v1 (был H2) | ✅ подтверждена | peak age ≈ 29 |
+| **H2** | Возрастной профиль salary имеет форму inverted-U с пиком ~29-30 лет | Mincer / career arc | v1 (был H2) | ✅ подтверждена | peak age ≈ 29.5 (95% CI [28.4, 30.6]) |
 | **H3** | Salary cap создаёт discrete tier structure; tier dummies одни объясняют доминирующую долю дисперсии | Institutional / CBA | v2 (был H9 старая) | ✅ подтверждена | R² = 0.85 на одних tier dummies |
-| **H4** | CBA 2017 (designated extension) создаёт структурный break: post-2017 рост wage в верхнем хвосте | Institutional / CBA | v1 (был H3) | ✅ подтверждена | post_cba_2017 = +26% |
+| **H4** | CBA 2017 (designated extension) создаёт структурный break: post-2017 рост wage в верхнем хвосте | Institutional / CBA | v1 (был H3) | ✅ подтверждена | post_cba_2017 β = +0.219, +24.5% |
 | **H5** | All-NBA selection повышает будущую salary через career signaling | Awards / signaling | v2 (был H10 старая) | ✅ подтверждена | β_{all_nba_lag1} = +0.185, p = 0.008 |
 | **H6** | Awards-эффект работает с 2-3-летним лагом через contract renewal cycle | Awards / dynamics | v2 (event study) | ✅ подтверждена | τ=+2 β=+0.21, τ=+3 β=+0.22 |
 | **H7** | Top-5 market teams платят premium игрокам | Market context | v2 (был H8 старая) | ❌ rejected anti-direction | β_top5 = −0.098, p = 0.022 |

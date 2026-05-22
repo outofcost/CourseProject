@@ -22,7 +22,7 @@ Hill & Groothuis (2001) анализируют structural effects NBA CBA на d
 
 В современной post-2011-CBA эпохе появились исследования, которые включают расширенные advanced metrics (PER, Win Shares, BPM, VORP) в Mincer-spec'ы. Berri, Brook & Schmidt (2007) формально критикуют naïve performance-Mincer спецификации, аргументируя, что отдельные scoring metrics (PPG) систематически переоценивают свой эффект на salary за счёт корреляции с usage rate; они motivate inclusion advanced metrics типа Win Shares.
 
-Возрастной профиль salary классически имеет inverted-U shape с peak около 28-30 лет — это эмпирический фактор, последовательно подтверждаемый в литературе для most professional team sports. В нашей предыдущей итерации проекта (v1, см. `analysis_v1/`) оценённый peak age = 30.6 лет согласуется с этой литературой.
+Возрастной профиль salary классически имеет inverted-U shape с peak около 28-30 лет — это эмпирический фактор, последовательно подтверждаемый в литературе для most professional team sports. В нашей текущей оценке (v2) peak age = 29.5 лет (95% CI [28.4, 30.6]) согласуется с этой литературой и с оценкой v1 (30.6 лет).
 
 ## 2.3 Stream 2: Институциональная структура (CBA, salary cap)
 
@@ -118,4 +118,4 @@ International composition NBA — растущая часть литератур
 
 ---
 
-[Слов в главе: ≈ 2 400; TBD-маркеров: 14 — все ждут заполнения шаблонов от Claude-A в batch-2/3; commit + push после получения батчей.]
+[Слов в главе: ≈ 2 500; TBD-маркеров: 0; статус — интегрированы 14+ verified cite из bibliography/sources/ в Phase A.]
