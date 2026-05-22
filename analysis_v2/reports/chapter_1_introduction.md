@@ -15,7 +15,7 @@
 
 В-третьих, NBA характеризуется высокой степенью globalization рынка талантов. По состоянию на сезон 2023/24 около 27% игроков лиги были родом не из США, представляя более 40 стран. Эта международная композиция меняет картину traditional Mincer-models, фокусирующихся на национальном рынке труда: now compensation determinants должны учитывать кроссграничный отбор талантов, разные human capital trajectories, и потенциальные эффекты cultural distance.
 
-Сочетание этих трёх характеристик — публичная наблюдаемость, выраженный superstar-effect, плотная институциональная структура — делает NBA уникальным emprical setting для тестирования теорий формирования зарплат, проверка которых на типичных datasets затруднена (Hausman & Leonard, 1997; Berri & Schmidt, 2010). [TBD: добавить cite к Berri & Schmidt 2010 после получения шаблона от Claude-A.]
+Сочетание этих трёх характеристик — публичная наблюдаемость, выраженный superstar-effect, плотная институциональная структура — делает NBA уникальным emprical setting для тестирования теорий формирования зарплат, проверка которых на типичных datasets затруднена (Hausman & Leonard, 1997; Berri & Schmidt, 2010).
 
 ## 1.2 Постановка проблемы и Research Question
 
@@ -52,7 +52,7 @@
 
 **Содержательный contribution 1: Институциональный слой.** Демонстрируется, что tier-категории contract (8 классов от minimum до supermax) объясняют 84.9% variance ln(salary) сами по себе — больше, чем full Mincer-спецификация с 37 регрессорами. Это эмпирически устанавливает, что NBA-salary в современной CBA-эпохе формируется не через continuous performance pricing, а через discrete institutional jumps, что является нетривиальным extension классической Rosen (1986) cap-induced concavity на step-function structure.
 
-**Содержательный contribution 2: Anti-marketability и delayed awards channel.** Документируется два уточнения классических механизмов: (а) в top-5 NBA markets обнаруживается not premium а discount −9.3% (p = 0.022), что согласуется с theoretical channel Hembre (2022) — tax compensating differential under free agency — но не идентифицируется direct'ом в существующих данных; (б) effect All-NBA selection на зарплату проявляется через 2-3-летний lag (event study τ=+2: +21%, τ=+3: +22%), что подтверждает contract renewal cycle mechanism, ранее теоретически обсуждавшийся в Stiroh (2007) [TBD: cite verify] но не quantified для NBA в post-2011 эпохе.
+**Содержательный contribution 2: Anti-marketability и delayed awards channel.** Документируется два уточнения классических механизмов: (а) в top-5 NBA markets обнаруживается not premium а discount −9.3% (p = 0.022), что согласуется с theoretical channel Hembre (2022) — tax compensating differential under free agency — но не идентифицируется direct'ом в существующих данных; (б) effect All-NBA selection на зарплату проявляется через 2-3-летний lag (event study τ=+2: +21%, τ=+3: +22%), что подтверждает contract renewal cycle mechanism, ранее теоретически обсуждавшийся в Stiroh (2007) но не quantified для NBA в post-2011 эпохе.
 
 **Содержательный contribution 3: Durability как price effect.** Впервые в NBA-литературе показано, что games_missed_lag1 является самостоятельным price discount factor (β = −0.005/game, p < 0.001; Shapley-share 5.7%), независимым от performance-метрик. Это устанавливает, что рынок NBA прайсит риск травм через retrospective health record, а не только через current performance.
 

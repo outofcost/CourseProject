@@ -1,7 +1,7 @@
 # Глава 3. Данные и методология
 
 > Драфт под HSE term paper, Article (Empirical) format. Объём: ≈ 25% работы (целевые ~3000 слов).
-> Цитирования — APA. Источники, помеченные [TBD], уточняются после получения полных текстов от коллеги (см. `bibliography/`).
+> Цитирования — APA.
 
 ---
 
@@ -115,7 +115,7 @@ $$+ \text{Awd}'_{i,t} \beta_6 + \text{Dur}'_{i,t} \beta_7 + \text{Team}'_{i,t} \
 - M9b — M1c_full + tier dummies.
 - M9c — M9b + `supermax_eligible_loose` + interaction `tier_max_30 × eligible`. (Interactions с `tier_supermax` и `tier_max_35` опускаются — у первой нулевая вариация по eligible by classifier design, у второй perfect collinearity.)
 
-Дополнительно — tier-specific Mincer-регрессии: восемь отдельных регрессий $\ln(\text{salary}) \sim \text{Stats} + \text{Age}$ на подвыборках по tier. Тестируется cap-truncation: ожидаемо, что $\beta_{\text{ppg}}$ в max-tiers ниже, чем в mid-level (Rosen, 1986; [TBD]).
+Дополнительно — tier-specific Mincer-регрессии: восемь отдельных регрессий $\ln(\text{salary}) \sim \text{Stats} + \text{Age}$ на подвыборках по tier. Тестируется cap-truncation: ожидаемо, что $\beta_{\text{ppg}}$ в max-tiers ниже, чем в mid-level (Rosen, 1986;).
 
 **M10 (тестирование H5 — awards channel) и event study (тестирование H6).** Спецификации:
 - M10a (cumulative) — M1c_full с `all_nba_lag1 + career_all_nba_count + career_allstar_count`.
@@ -180,7 +180,7 @@ $$\phi_i = \sum_{S \subseteq N \setminus \{i\}} \frac{|S|! (|N| - |S| - 1)!}{|N|
 
 ### 3.7.3 Multiple testing correction
 
-При тестировании 10 гипотез H1–H10 (см. §2 [TBD: финальная нумерация в Lit Review]) с одиннадцатью ключевыми коэффициентами (некоторые гипотезы тестируются несколькими спецификациями) применяются две процедуры:
+При тестировании 10 гипотез H1–H10 (см. §2) с одиннадцатью ключевыми коэффициентами (некоторые гипотезы тестируются несколькими спецификациями) применяются две процедуры:
 
 - **Bonferroni** при $\alpha = 0.05$: $\alpha^* = 0.05 / 11 = 0.0045$ — наиболее консервативная коррекция.
 - **Benjamini-Hochberg False Discovery Rate (BH-FDR)** при $q = 0.05$: контроль ожидаемой доли ложных открытий среди всех отвергнутых гипотез (Benjamini & Hochberg, 1995).
