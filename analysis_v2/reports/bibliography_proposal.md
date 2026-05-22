@@ -32,18 +32,18 @@
 
 ## Категория Б — NBA / sport-specific (recommended, 6 источников)
 
-### Б1. Anti-marketability (КЛЮЧЕВОЙ для H7) — ⚠ CITE CORRECTED 2026-05-22
-**Hembre, E. (2021). *State income taxes and team performance* (Working paper, revised February 2021). University of Illinois at Chicago, Department of Economics. SSRN 2946169.** https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2946169
+### Б1. Anti-marketability (КЛЮЧЕВОЙ для H7) — ⚠ CITE CORRECTED 2026-05-22 (×2)
+**Hembre, E. (2022). State income taxes and team performance. *International Tax and Public Finance, 29*(3), 704–725.** https://doi.org/10.1007/s10797-021-09685-y
 - *Зачем:* предлагает theoretical channel (tax compensating differential при unrestricted free agency), совместимый с направлением нашего anti-marketability finding (β_top5 < 0).
-- **⚠ ВАЖНО:** preprint title — *"State Income Taxes and Team Performance"*; первоначальный proposal указывал title *"Tax Competition in Professional Sports..."* с DOI 10.1177/1527002520968551 → проверено Crossref-ом: **DOI возвращает 404**. Published version может иметь другой title; перед финальной cite — verify через Sage / JSE website.
+- **Published version verified via Crossref 2026-05-22:** journal — *International Tax and Public Finance* (НЕ Journal of Sports Economics, как было в первоначальном proposal); year — 2022 (online first 2021). Preprint доступен также на SSRN 2946169.
 - **⚠ NBA-only coefficient статистически НЕ значим** (β_NBA ∈ [−0.143, −0.069], SE > 1.1, Table 3). Главный effect Hembre — pooled across 4 leagues (NFL/NBA/NHL/MLB). Цитировать как *theoretical channel*, не direct empirical confirmation NBA discount.
 
-### Б2. Supermax structure (H3, H4)
-**Hinton, S., & Sun, Y. (2019). The supermax in the NBA: Effects on team performance and player retention.** [working paper / journal TBD]
-- *Зачем:* институциональный контекст для CBA 2017 designated extension и tier_supermax классификации.
+### Б2. Supermax structure (H3, H4) — ❌ SKIPPED 2026-05-22 (TOPIC MISMATCH)
+~~Hinton, S., & Sun, Y. (2019). The supermax in the NBA...~~ — указанный paper не существует. Реальный Hinton & Sun (2019) — "Sunk-cost fallacy in NBA" (*Empirical Economics, 59*) — другая тема (sunk-cost), не supermax. **Для supermax-аргумента** оставляем Coon (n.d., Q24) как primary institutional reference; альтернатива из NEW-сегмента — Keefer (2021) (sunk-cost + cap shock methodology).
 
-### Б3. Contract year effect
-**Stiroh, K. J. (2007). Playing for keeps: Pay and performance in the NBA. *Economic Inquiry, 45*(1), 145–161.** https://doi.org/10.1111/j.1465-7295.2006.00010.x
+### Б3. Contract year effect — ⚠ DOI CORRECTED 2026-05-22
+**Stiroh, K. J. (2007). Playing for keeps: Pay and performance in the NBA. *Economic Inquiry, 45*(1), 145–161.** https://doi.org/10.1111/j.1465-7295.2006.00004.x
+(Was `.00010.x` in proposal — Claude-A verified Crossref correct DOI ends `.00004.x`.)
 - *Зачем:* классическое доказательство contract-year эффекта; используется в H6 (dynamics) + Limitations.
 
 ### Б4. Performance and signaling
@@ -54,9 +54,8 @@
 **Yang, C.-H., & Lin, H.-Y. (2012). Is there salary discrimination by nationality in the NBA? Foreign talent or foreign market. *Journal of Sports Economics, 13*(1), 53–75.** https://doi.org/10.1177/1527002510391617
 - *Зачем:* основание для включения continent dummies (INTL_BLOCK) в Mincer; интерпретация born_country β-коэффициентов.
 
-### Б6. Performance variability
-**Robst, J., VanGilder, J., Coates, C. E., & Berri, D. J. (2011). Skill, performance variability, and salary in the NBA. *Journal of Sport Management, 25*(5), 510–516.**
-- *Зачем:* связь durability (variance of games played) и компенсации; контекст для H10.
+### Б6. Performance variability — ❌ SKIPPED 2026-05-22 (TOPIC MISMATCH)
+~~Robst, J., VanGilder, J., Coates, C. E., & Berri, D. J. (2011)~~ — указанный paper не существует. Реальный Robst-VanGilder-Coates-Berri (2011) "Skin tone and wages" — другая тема. **Replacement candidate:** Bodvarsson, Ö. B., & Brastow, R. T. (1998). Do employers pay for consistent performance? Evidence from the NBA. *Economic Inquiry, 36*(1), 145–160. Использовать осторожно — это performance consistency, не durability per se.
 
 ---
 

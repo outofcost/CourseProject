@@ -32,7 +32,7 @@ Hill & Groothuis (2001) [TBD] анализируют structural effects NBA CBA 
 
 Теоретическая литература о cap-induced concavity начинается с Rosen (1986) [TBD], который показывает, что binding cap создаёт concave reward function для top-tier игроков. Этот мecanism теоретически предсказывает, что $\beta_{\text{performance}}$ in cap-bound tiers должна быть ниже, чем в free-market tiers — что мы эмпирически тестируем через tier-specific Mincer regressions (Глава 4 §4.3).
 
-Hinton & Sun (2019) [TBD] анализируют эффекты supermax extension (введённой CBA 2017) на team performance и player retention, документируя, что Designated Veteran Extension создаёт specific contract tier с уникальной dynamic. Это работа — ключевая для понимания H3 и H4 в наших гипотезах.
+Прямого quantitative анализа supermax-extension (введённой CBA 2017) в peer-reviewed литературе на момент написания работы обнаружено не было; институциональные детали Designated Veteran Extension доступны через Coon (n.d., Q24) как practitioner-reference, а количественный analysis эффекта supermax на team performance и player retention остаётся открытым gap, частично закрываемым настоящей работой через tier-classifier и H3-test.
 
 Берри, Brook & Schmidt (2010) [TBD] и более раннее Berri (1999) [TBD] доказывают, что традиционные performance-based pay model недооценивают role institutional channelling: игроки с high observable stats но без awards selections могут systematically underprice'ить себя по сравнению с awards-elevated players в той же performance bucket.
 
@@ -52,7 +52,7 @@ Hinton & Sun (2019) [TBD] анализируют эффекты supermax extensi
 
 Однако в post-2011-CBA эпохе с binding salary cap эта премия теоретически нейтрализуется на team-side: cap rules out monopsonistic surplus extraction, делая marginal revenue от больших рынков ≈ 0 для дополнительного спендинга на игрока. Это аргумент Hill & Groothuis (2001) [TBD].
 
-Hembre (2021) предлагает дополнительный теоретический канал: при unrestricted free agency игроки требуют compensating differential за state income tax burden, что снижает spending power команд в high-tax штатах. Hembre находит pooled effect across 4 major US leagues: 1pp увеличение state tax rate → −0.77 до −0.86 pp в team win percentage (Hembre, 2021, p. 1). Важное caveat: **NBA-specific coefficient в Hembre Table 3 статистически незначим** ($\hat{\beta}_{\text{NBA}} \in [-0.143, -0.069]$, SE > 1.1, Table 3, p. 20). То есть Hembre даёт *theoretical channel*, совместимый с anti-marketability finding для NBA, но не direct empirical confirmation; pooled effect доминируется NFL и MLB sub-samples.
+Hembre (2022) предлагает дополнительный теоретический канал: при unrestricted free agency игроки требуют compensating differential за state income tax burden, что снижает spending power команд в high-tax штатах. Hembre находит pooled effect across 4 major US leagues: 1pp увеличение state tax rate → −0.77 до −0.86 pp в team win percentage (Hembre, 2022, p. 1). Важное caveat: **NBA-specific coefficient в Hembre Table 3 статистически незначим** ($\hat{\beta}_{\text{NBA}} \in [-0.143, -0.069]$, SE > 1.1, Table 3, p. 20). То есть Hembre даёт *theoretical channel*, совместимый с anti-marketability finding для NBA, но не direct empirical confirmation; pooled effect доминируется NFL и MLB sub-samples.
 
 Дополнительные эмпирические работы [TBD: berri_brook_schmidt_2007.md, kahn_2000.md] критикуют market-size premium hypothesis: Berri et al. (2007) показывают, что после контроля individual performance team-level controls (revenue, market size, championship status) добавляют мало к explanatory power; Kahn (2000) в обзоре аргументирует, что cap-эпоха sports leagues создаёт labor market structure, в которой individual talent оценивается ≈ uniformly across markets.
 
@@ -64,7 +64,7 @@ Team-level контроли (win percentage, playoff success, luxury tax burden)
 
 State income tax effect для NBA салаrа теоретически разрешается в null после контроля cap-share (как мы тестируем в H9). Эмпирические работы [TBD: alm_kaempfer_sennoga_2012.md, kleven_landais_saez_2013.md — есть PDFs от Claude-A, ждём шаблоны] исследуют сравнительные effects taxation на mobility и compensation спортсменов. Kleven, Landais & Saez (2013) показывают, что для European football players налогообложение влияет на cross-country mobility, но не обязательно на pre-tax salary level — это полезный benchmark для нашего H9 informative null.
 
-Health и durability — undervalued sub-stream в NBA литературе. [TBD: robst_vangilder_2011.md.] Robst, VanGilder, Coates & Berri (2011) исследуют связь performance variability и salary, но direct effect retrospective games_missed на subsequent salary в современной CBA-эпохе формально quantified не был. Наш H10 (β = −0.005/game) делает первую формальную оценку.
+Health и durability — наименее разработанный sub-stream в NBA литературе. Прямое quantitative тестирование retrospective games_missed как predictor subsequent salary в post-2011-CBA-эпохе peer-reviewed работами не проведено; classic Bodvarsson & Brastow (1998) обсуждают performance consistency, но не durability как такового. Наш H10 (β = −0.005/game, см. §4.8) делает одну из первых формальных оценок этого эффекта.
 
 International composition NBA — растущая часть литературы. [TBD: yang_lin_2012.md.] Yang & Lin (2012) тестируют salary discrimination по nationality в NBA, контролируя performance; их main finding — после контроля on-court performance no significant salary penalty для foreign-born players. Это обосновывает наше включение continent-dummies (INTL_BLOCK) как control в M1c_full без specific hypothesis о discrimination direction.
 
@@ -76,7 +76,7 @@ International composition NBA — растущая часть литератур
 
 Содержательный gap — недостаточное quantification разлинамики между continuous performance-pricing (Mincer-core) и discrete institutional categorization (CBA tier structure). Без этого не возможен принципиальный ответ на вопрос: NBA-salary — это «правда» функция от продуктивности с small cap-bound noise, или это «правда» institutional categorization с performance в качестве determinant категории? Наш H3 — первый формальный test этой dichotomy.
 
-Третий gap — adequate treatment of anti-marketability в современной NBA. После пионерской работы Hembre (2021), которая даёт pooled-sport theoretical channel но не precise NBA estimate, нет систематического NBA-specific тестирования market-size effects с контролем wild-cluster bootstrap inference для heterogeneity-проверки.
+Третий gap — adequate treatment of anti-marketability в современной NBA. После пионерской работы Hembre (2022), которая даёт pooled-sport theoretical channel но не precise NBA estimate, нет систематического NBA-specific тестирования market-size effects с контролем wild-cluster bootstrap inference для heterogeneity-проверки.
 
 Настоящая работа закрывает все три gaps: (а) применяет Shapley R²-декомпозицию к 9 блокам факторов с axiom-verification (efficiency $\sum_i \phi_i = R^2$ с точностью $10^{-16}$); (б) формально quantified tier dummies vs Mincer-core contribution ($R^2_{tier-only} = 0.849$ vs $R^2_{M1c} = 0.651$); (в) тестирует market discount с wild-cluster bootstrap (1000 реплик) на heterogeneity по звёздности и nationality.
 
@@ -89,20 +89,20 @@ International composition NBA — растущая часть литератур
 - **H2:** Возрастной профиль ln(salary) имеет inverted-U shape с peak около 28–30 лет. (Rosen, 1981; Krautmann, 1999 [TBD])
 
 **Stream 2 (Institutional / CBA):**
-- **H3:** Tier dummies (8 категорий contracts от minimum до supermax) одни объясняют доминирующую долю variance ln(salary), большую чем full Mincer-спецификация. (Coon, n.d.; Hill & Groothuis, 2001 [TBD]; Rosen, 1986 [TBD]; Hinton & Sun, 2019 [TBD])
-- **H4:** CBA 2017 (Designated Veteran Extension) создаёт структурный break — post-2017 рост ln(salary) в верхнем хвосте. (Coon, n.d. Q24; Hinton & Sun, 2019 [TBD])
+- **H3:** Tier dummies (8 категорий contracts от minimum до supermax) одни объясняют доминирующую долю variance ln(salary), большую чем full Mincer-спецификация. (Coon, n.d.; Hill & Groothuis, 2001 [TBD]; Rosen, 1986 [TBD])
+- **H4:** CBA 2017 (Designated Veteran Extension) создаёт структурный break — post-2017 рост ln(salary) в верхнем хвосте. (Coon, n.d. Q24)
 
 **Stream 3 (Awards / signaling):**
 - **H5:** All-NBA selection в предыдущем сезоне (all_nba_lag1) повышает текущую ln(salary) через signaling и institutional eligibility (supermax). (Lazear & Rosen, 1981 [TBD]; Hausman & Leonard, 1997 [TBD]; Coon, n.d. Q24)
 - **H6:** Эффект All-NBA на salary проявляется с 2–3-летним лагом через contract renewal cycle (event study τ = +2, +3). (Stiroh, 2007 [TBD]; Lazear & Rosen, 1981 [TBD])
 
 **Stream 4 (Market / team context):**
-- **H7:** Top-5 market teams (LAL, LAC, NYK, BRK, CHI, GSW) платят premium игрокам через marketability channel. (Rosen, 1981; Hembre, 2021 — anti-direction prediction with NBA caveat)
+- **H7:** Top-5 market teams (LAL, LAC, NYK, BRK, CHI, GSW) платят premium игрокам через marketability channel. (Rosen, 1981; Hembre, 2022 — anti-direction prediction with NBA caveat)
 - **H8:** Team success (win_pct_lag1, made_playoffs_lag1, over_luxury_tax_t) положительно влияет на individual ln(salary). (Berri, Brook & Schmidt, 2007 [TBD]; Kahn, 2000 [TBD])
 
 **Stream 5 (Externalities / health):**
-- **H9:** State income tax влияет на pre-tax ln(salary) через compensating differential. (Hembre, 2021; Kleven, Landais & Saez, 2013 [TBD])
-- **H10:** Durability (games_missed_lag1) отрицательно влияет на ln(salary). (Robst, VanGilder, Coates & Berri, 2011 [TBD])
+- **H9:** State income tax влияет на pre-tax ln(salary) через compensating differential. (Hembre, 2022; Kleven, Landais & Saez, 2013 [TBD])
+- **H10:** Durability (games_missed_lag1) отрицательно влияет на ln(salary). (новая гипотеза для NBA; контекстный antecedent — Bodvarsson & Brastow, 1998 [TBD])
 
 Тестирование гипотез описано в Главе 3 (методология) и представлено в Главе 4 (результаты).
 

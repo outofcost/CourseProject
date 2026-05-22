@@ -46,9 +46,9 @@
 | Stream | Hypotheses | Ключевые источники |
 |---|---|---|
 | **1. Productivity / Mincer** | H1, H2 | Rosen (1981), Mincer (1974), Hill & Groothuis (2001), Krautmann (1999) |
-| **2. Institutional / CBA** | H3, H4 | Coon CBA FAQ, Hinton & Sun (2019), Berri & Schmidt (2010) |
+| **2. Institutional / CBA** | H3, H4 | Coon CBA FAQ, Hill & Groothuis (2001), Rosen (1986) |
 | **3. Awards / signaling** | H5, H6 | Lazear & Rosen (1981), Hausman & Leonard (1997), Stiroh (2007) |
 | **4. Market / team context** | H7, H8 | Hembre (2021), Berri et al. (2007), Kahn (2000) |
-| **5. Externalities / health** | H9, H10 | Yang & Lin (2012), Robst et al. (2011), Krautmann (1999) |
+| **5. Externalities / health** | H9, H10 | Yang & Lin (2012), Krautmann (1999), Kleven et al. (2013), Alm et al. (2012), Johnson & Hall (2017) |
 
 Этот mapping = структура Глав 2 (Literature Review) и 5 (Discussion).
