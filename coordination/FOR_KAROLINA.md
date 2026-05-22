@@ -107,3 +107,46 @@
 Если хочешь чтобы я нашёл full PDF (Wiley paywall — нужен HSE proxy либо contact автора) — флагуй в TASKS.md.
 
 — Claude-A
+
+---
+
+## Update 2026-05-22, ~19:50 — bib-check executed (max-value action ✓)
+
+Прошёлся по всем cite'ам в `chapter_*.md` + `methodology_v2_addendum.md` + `ai_disclosure.md` против `references.bib`. Детальный отчёт — **`bibliography/bib_check_report.md`**.
+
+### Resolved (added to references.bib):
+1. **`rosen_1986`** — cap-induced concavity (cited в 8 файлах с `[TBD]` маркерами; AER 76(4), 701-715)
+2. **`shapley_1953`** — foundational theorem (cited в Methods)
+3. **`genizi_1993`** — alternative R² decomposition method
+4. **`pratt_1987`** — alternative R² decomposition method
+5. **`berri_1999`** — "Who is 'Most Valuable'?" (Crossref-verified; MDE 20(8), 411-427)
+
+Все 5 verified через Crossref / JSTOR. Можно теперь убрать `[TBD]` маркеры в драфтах (например, `chapter_2_literature.md` Stream 1, и т.д.).
+
+### Need clarification (от тебя):
+1. **`Berri & Schmidt (2010)`** — упоминается 3 раза, но я не смог идентифицировать точное издание. Скорее всего book "Stumbling on Wins" (FT Press). Подтверди — book или paper? Если book — дам `@book{}` entry.
+2. **`Cameron et al. (2008)` vs `Cameron et al. (2011)`** — в твоих драфтах mixed: 2008 (preprint) и 2011 (published). Унифицируй на одном — рекомендую 2011 per APA. Bibkey `cameron_2011`.
+3. **`Hembre (2021)` в `_v1` файлах** — `chapter_4_new_sections.md`, `chapter_5_discussion.md`, `chapter_6_conclusion.md`. `_v2` ты уже зафиксил. `_v1` будут dropped или нужно sync?
+
+### Need action (от меня):
+- `johnson_2017` bibkey — в драфтах цитируется как `Johnson & Hall (2018)`. Поправлю bibkey на `johnson_2018` следующим коммитом (или confirm — ты предпочитаешь 2017?).
+
+### Unused bib entries — 13 штук
+Большинство — NEW из CSV (Keefer, Kopkin, Berri-Krautmann, White, Simmons) — ждут интеграции в Discussion / Limitations. Это **OK, действуй по своему расписанию**.
+
+⚠ `hinton_2019` и `robst_2011` — dropped per `2baa0eb`. Можно их удалить из bib для cleanliness — скажи в TASKS, сделаю одним коммитом.
+
+### Open question (твой) — skeleton sufficiency
+
+Мой ответ: **зависит от типа источника**.
+
+| Source type | Skeleton OK | Need full PDF |
+|---|---|---|
+| Methods (Mincer, Lazear-Rosen, Hölmström — теория) | ✅ да; парафраз формулы достаточен (everywhere-described) | только если verbatim quote критичен в Discussion |
+| Classical NBA empirics (Hill-Groothuis, Hausman-Leonard) | ✅ да для general framing; ❌ для точных коэффициентов | если используешь конкретные numbers (β, R²) — нужен PDF |
+| Modern NBA / tax (Kopkin, Johnson-Hall, Stiroh) | ⚠ minimal — парафраз и общая claim OK | для credibility verbatim quote желателен |
+| Methodological (Benjamini-Hochberg, MacKinnon-Webb) | ✅ да; формула стандартная | ❌ |
+
+Моя рекомендация: **skeleton достаточен для draft v2**; HSE proxy нужно для **финальной версии** на защите (где обычно требуют verbatim quotes для главных аргументов). Если защита через 2-3 недели — попроси Karolina-human запросить proxy сейчас.
+
+— Claude-A
