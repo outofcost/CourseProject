@@ -83,19 +83,6 @@
   doi     = {10.1007/s10797-021-09685-y}
 }
 
-% ⚠ Hinton & Sun 2019: topic mismatch — proposal claimed "supermax"
-% paper, actual paper is "sunk-cost fallacy". Cited here for completeness;
-% recommend SKIP for final bibliography.
-@article{hinton_2019,
-  author  = {Hinton, Peyton and Sun, Yixiao},
-  title   = {The Sunk-Cost Fallacy in the National Basketball Association: Evidence Using Player Salary and Playing Time},
-  journal = {Empirical Economics},
-  volume  = {59},
-  pages   = {1019--1036},
-  year    = {2019},
-  doi     = {10.1007/s00181-019-01641-4}
-}
-
 % ⚠ Stiroh 2007: proposal listed DOI 10.1111/j.1465-7295.2006.00010.x;
 % Wiley landing shows 10.1111/j.1465-7295.2006.00004.x. Likely Crossref typo.
 @article{stiroh_2007,
@@ -130,22 +117,10 @@
   doi     = {10.1177/1527002510391617}
 }
 
-% ⚠ Robst et al. 2011: bibliography_proposal listed
-% "Skill, performance variability, and salary in the NBA" JSM 25(5) —
-% that paper DOES NOT EXIST per Crossref/JSTOR/GoogleScholar search.
-% The real Robst-VanGilder-Coates-Berri 2011 paper is on skin tone (below).
-% For the perf-variability argument, see bodvarsson_brastow_1998 instead.
-@article{robst_2011,
-  author  = {Robst, John and VanGilder, Jennifer and Difatta, Charity and Berri, David J.},
-  title   = {Skin Tone and Wages: Evidence from {NBA} Free Agents},
-  journal = {Journal of Sports Economics},
-  volume  = {12},
-  number  = {2},
-  pages   = {143--156},
-  year    = {2011},
-  doi     = {10.1177/1527002510378825},
-  note    = {⚠ Different paper than referenced in bibliography_proposal.md.}
-}
+% NOTE: Robst et al. 2011 entry removed per Claude-K confirmation
+% (commit d92719c). The paper in bibliography_proposal does not exist;
+% the "skin tone" variant Robst-VanGilder-Difatta-Berri 2011 is not
+% used in drafts. For perf-variability argument see bodvarsson_1998.
 
 % =========================================================================
 % Category C — Labor economics classics (4)
@@ -289,12 +264,14 @@
   doi     = {10.1177/1527002511434967}
 }
 
-@article{johnson_2017,
+% Renamed from johnson_2017 → johnson_2018 (publication year = 2018);
+% draft cite-format `(Johnson & Hall, 2018)` per Claude-K.
+@article{johnson_2018,
   author  = {Johnson, Joshua and Hall, Joshua C.},
   title   = {State Income Taxes and Team Performance},
   journal = {Applied Economics Letters},
-  year    = {2017},
-  note    = {Per CSV: Applied Economics Letters; full DOI to be verified via HSE proxy. Also: WVU Research Repository WP 17-11.}
+  year    = {2018},
+  note    = {Full DOI / volume / issue to be verified via HSE proxy. Also referenced as WVU Research Repository WP 17-11 (2017 working paper).}
 }
 
 @article{kahn_sherer_1988,
@@ -439,6 +416,18 @@
   publisher = {University of Tampere},
   year      = {1987},
   pages     = {245--260}
+}
+
+% Berri & Schmidt 2010: "Stumbling on Wins" book (FT Press); cited
+% in chapter_1 Stream 1 motivation and chapter_5 §5.x (MLB market premium).
+% Per Claude-K (commit d92719c), book reference without specific page.
+@book{berri_schmidt_2010,
+  author    = {Berri, David J. and Schmidt, Martin B.},
+  title     = {Stumbling on Wins: Two Economists Expose the Pitfalls on the Road to Victory in Professional Sports},
+  publisher = {FT Press},
+  address   = {Upper Saddle River, NJ},
+  year      = {2010},
+  isbn      = {978-0-13-235778-5}
 }
 
 % Berri 1999: cited in chapter_2 §2.x (Stream 1 critique of performance
