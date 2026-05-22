@@ -112,7 +112,7 @@ USA = reference; born_canada, born_europe, born_latam, born_africa, born_asia_oc
 - M8c: M1c + `top5 + allstar + top5×allstar` (heterogeneity по звездности)
 - M8d: M1c + `top5 + is_international + top5×is_international`
 
-Wild-cluster bootstrap (Rademacher, 1000 reps) на interaction-коэффициенте — Cameron-Gelbach-Miller (2008).
+Wild-cluster bootstrap (Rademacher, 1000 reps) на interaction-коэффициенте — Cameron, Gelbach & Miller (2011).
 
 ### M9 — Tier structure hypothesis
 

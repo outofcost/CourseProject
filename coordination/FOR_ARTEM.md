@@ -6,6 +6,42 @@
 
 ---
 
+## 🟢 RESPONSE на bib-check report (commit 4b3106e)
+
+Спасибо за bib-check! Очень полезно. Применил/отвечаю по пунктам:
+
+**(1) Cameron 2008 vs 2011 inconsistency:** ✅ FIXED (commit pending). Унифицировал на **(Cameron et al., 2011)** во всех местах. Chapter_3 и methodology_v2_addendum обновлены.
+
+**(2) Berri & Schmidt (2010) "Stumbling on Wins" — book**: confirm, это **book** (FT Press, 2010). Cite в моих драфтах общий — без specific page. Добавь в `references.bib` как `@book{berri_schmidt_2010, ...}`. У меня есть упоминание только в `chapter_1_introduction.md` Stream 1 motivation; если book template'а нет — оставлю как general reference без page.
+
+**(3) `_v1` файлы (chapter_4_new_sections, chapter_5_discussion, chapter_6_conclusion без _v2):** **deprecated, будут dropped перед финалом.** Они — сырьё-стадия. Финальные chapter'ы у нас:
+- `chapter_1_introduction.md`
+- `chapter_2_literature.md`
+- `chapter_3_methods.md`
+- `chapter_4_results.md`
+- `chapter_5_discussion_v2.md`
+- `chapter_6_conclusion_v2.md`
+- `ai_disclosure.md`
+- `methodology_v2_addendum.md` (note: technical addendum, потенциально merge'нется в chapter_3 при финале)
+
+Bib-check на финальной редакции — только эти 8 файлов. `_v1` варианты можно игнорировать.
+
+**(4) Johnson_2017 → johnson_2018 bibkey:** твоя ответственность — fix in `references.bib`. У меня в драфтах формат in-text `Johnson & Hall (2018)`, что correct.
+
+**(5) hinton_2019 + robst_2011 в `references.bib`:** ✅ **можно удалить из bib**. Они dropped в драфтах commit 2baa0eb. В финальной библиографии не нужны.
+
+**(6) NEW integration recommendation:**
+- **Kopkin (2012)** — direct NBA tax migration paper, рекомендую интегрировать в `chapter_2_literature.md` §2.6 как ещё один data point для H9 framing. Сейчас сделаю.
+- **Keefer (2021)** — для Limitations / Methods (cap shock 2016/17 DiD methodology). Интегрирую если будет место в Discussion §5.x.
+- **Berri & Krautmann (2006)** — для Limitations (NBA shirking).
+- **White & Sheldon (2014)** — для CY discussion.
+
+Эти 4 — в очереди на integration в Discussion / Limitations.
+
+**(7) 5 new entries (rosen_1986, shapley_1953, genizi_1993, pratt_1987, berri_1999):** ✅ спасибо, эти cite'ы у меня действительно использованы (Rosen 1986 в Methods + Discussion для cap concavity; Shapley 1953 в Methods §3.6; Pratt/Genizi в Methods §3.6 как альтернативы; Berri 1999 в Lit Review). Bib-check resolved their absence.
+
+---
+
 ## 🟢 RESPONSE на FOR_KAROLINA от 2026-05-22 (PR #2)
 
 Спасибо за batch-2/3/4 — это **огромный** вклад. 27 новых templates, MASTER_TABLE, references.bib, additional_proposals. Я провёл массовую integration. **Все substance-fixes применены в commits 2baa0eb + f5bfeee.**

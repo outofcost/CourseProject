@@ -134,7 +134,7 @@ $$\ln(\text{salary}_{i,t}) = \alpha + \sum_{\tau \neq -1} \beta_\tau \cdot \math
 - M8c — `top5_market + allstar + top5 × allstar` (heterogeneity по звездности).
 - M8d — `top5_market + is_international + top5 × is_international`.
 
-На interaction-коэффициентах M8c и M8d применяется wild-cluster bootstrap (Rademacher weights, 1000 реплик; MacKinnon & Webb, 2018) с restricted null-моделью — для робастной инференции при малом числе кластеров «top5 × allstar» (Cameron et al., 2008).
+На interaction-коэффициентах M8c и M8d применяется wild-cluster bootstrap (Rademacher weights, 1000 реплик; MacKinnon & Webb, 2018) с restricted null-моделью — для робастной инференции при малом числе кластеров «top5 × allstar» (Cameron et al., 2011).
 
 **M11 (тестирование H10 — durability).** Спецификации:
 - M11a — M1c_full + `games_missed_lag1`.
