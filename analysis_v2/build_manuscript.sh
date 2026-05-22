@@ -43,13 +43,10 @@ done
 strip_chapter "$DIR/ai_disclosure.md" >> "$OUT"
 printf "\n---\n\n" >> "$OUT"
 
+strip_chapter "$DIR/references_apa.md" >> "$OUT"
+printf "\n---\n\n" >> "$OUT"
+
 cat >> "$OUT" <<'TAIL_EOF'
-
-## Список литературы
-
-См. отдельный файл `bibliography/references.bib` (BibTeX) и `bibliography/MASTER_TABLE.md` (читаемый список с приоритетами). Финальный APA-bibliography текстом будет добавлен в Phase F при сборке .docx.
-
----
 
 ## Приложения
 
