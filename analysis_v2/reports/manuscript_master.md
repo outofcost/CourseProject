@@ -46,15 +46,15 @@ The headline methodological result is a quantitative factor hierarchy: Performan
 
 Во-вторых, NBA операционализирована под детальную, периодически пересматриваемую коллективную трудовую структуру (CBA — Collective Bargaining Agreement). С 2011 года действовала CBA с salary cap, luxury tax и системой individual maximum contracts; в 2017 году эта структура была дополнена «Designated Veteran Extension» (известным как supermax), привязывающим highest salary tier к performance criteria (All-NBA / DPOY / MVP selections). В 2023 году CBA снова была пересмотрена с введением second apron. Эти институциональные изменения создают серию natural experiments для тестирования того, как формальные правила влияют на distribution вознаграждения.
 
-В-третьих, NBA характеризуется высокой степенью globalization рынка талантов. По состоянию на сезон 2023/24 около 27% игроков лиги были родом не из США, представляя более 40 стран. Эта международная композиция меняет картину traditional Mincer-models, фокусирующихся на национальном рынке труда: now compensation determinants должны учитывать кроссграничный отбор талантов, разные human capital trajectories, и потенциальные эффекты cultural distance.
+В-третьих, NBA характеризуется высокой степенью глобализации рынка талантов. По состоянию на сезон 2023/24 около 27% игроков лиги были родом не из США и представляли более 40 стран. Эта международная композиция меняет картину традиционных моделей Минсера, ориентированных на национальный рынок труда: детерминанты компенсации теперь должны учитывать кроссграничный отбор талантов, различные траектории накопления человеческого капитала и потенциальные эффекты культурной дистанции.
 
 Сочетание этих трёх характеристик — публичная наблюдаемость, выраженный superstar-effect, плотная институциональная структура — делает NBA уникальным emprical setting для тестирования теорий формирования зарплат, проверка которых на типичных datasets затруднена (Hausman & Leonard, 1997; Berri & Schmidt, 2010).
 
 ## 1.2 Постановка проблемы и Research Question
 
-Несмотря на исключительную привлекательность NBA для labor economics исследований и значительное накопление эмпирической литературы (Hausman & Leonard, 1997; Krautmann, 1999; Hill & Groothuis, 2001; Berri, Brook & Schmidt, 2007; Stiroh, 2007; Yang & Lin, 2012; Hembre, 2022), имеется три не до конца разрешённых вопроса в современной post-2011-CBA эпохе:
+Несмотря на исключительную привлекательность NBA для исследований labor economics и значительное накопление эмпирической литературы (Hausman & Leonard, 1997; Krautmann, 1999; Hill & Groothuis, 2001; Berri, Brook & Schmidt, 2007; Stiroh, 2007; Yang & Lin, 2012; Hembre, 2022), в современной post-2011-CBA эпохе остаются три не до конца разрешённых вопроса:
 
-**Проблема 1: Количественная иерархия факторов.** Литература по NBA salary в основном тестирует отдельные гипотезы (effect of performance metric X, of award Y, of market size Z) в изолированных спецификациях. Что отсутствует — систематическая, axiomatically-justified декомпозиция variance зарплат по тематическим блокам факторов. Поэтому остаётся открытым вопрос: **какая доля variance ln(salary) объясняется performance, а какая — институциональной категоризацией, awards history, командным контекстом, рыночными условиями, durability?** Без такой декомпозиции невозможно ответственно ranked-prioritize факторы при policy analysis.
+**Проблема 1: Количественная иерархия факторов.** Литература по зарплатам NBA в основном тестирует отдельные гипотезы (effect of performance metric X, of award Y, of market size Z) в изолированных спецификациях. Чего недостаёт — систематической, аксиоматически обоснованной декомпозиции вариации зарплат по тематическим блокам факторов. Поэтому остаётся открытым вопрос: **какая доля вариации $\ln(\text{salary})$ объясняется производительностью, а какая — институциональной категоризацией, историей наград, командным контекстом, рыночными условиями, durability?** Без такой декомпозиции невозможно ответственно ранжировать факторы по приоритету при policy analysis.
 
 **Проблема 2: Влияние институциональной структуры (CBA) на distribution зарплат.** Hill & Groothuis (2001) утверждают, что salary cap создаёт «institutional layer» поверх traditional Mincer mechanism. Но прямой quantitative test — сколько variance объясняется одним только tier-категориями contract (8 уровней: minimum / rookie scale / mid-level / high-mid / max-25 / max-30 / max-35 / supermax), без participation performance-метрик — не проведён в существующей литературе. Это критический gap, потому что наличие near-deterministic institutional categorization меняет интерпретацию pricing функции NBA salary с continuous на discrete.
 
@@ -85,9 +85,9 @@ The headline methodological result is a quantitative factor hierarchy: Performan
 
 **Содержательный contribution 1: Институциональный слой.** Демонстрируется, что tier-категории contract (8 классов от minimum до supermax) объясняют 84.9% variance ln(salary) сами по себе — больше, чем full Mincer-спецификация с 37 регрессорами. Это эмпирически устанавливает, что NBA-salary в современной CBA-эпохе формируется не через continuous performance pricing, а через discrete institutional jumps, что является нетривиальным extension классической Rosen (1986) cap-induced concavity на step-function structure.
 
-**Содержательный contribution 2: Anti-marketability и delayed awards channel.** Документируется два уточнения классических механизмов: (а) в top-5 NBA markets обнаруживается not premium а discount −9.3% (p = 0.022), что согласуется с theoretical channel Hembre (2022) — tax compensating differential under free agency — но не идентифицируется direct'ом в существующих данных; (б) effect All-NBA selection на зарплату проявляется через 2-3-летний lag (event study τ=+2: +21%, τ=+3: +22%), что подтверждает contract renewal cycle mechanism, ранее теоретически обсуждавшийся в Stiroh (2007) но не quantified для NBA в post-2011 эпохе.
+**Содержательный contribution 2: Anti-marketability и delayed awards channel.** Документируется два уточнения классических механизмов: (а) в top-5 NBA markets обнаруживается не премия, а дисконт −9.3% (p = 0.022), что согласуется с теоретическим каналом Hembre (2022) — tax compensating differential under free agency — но direct'но не идентифицируется в существующих данных; (б) эффект All-NBA selection на зарплату проявляется с 2–3-летним лагом (event study $\tau$=+2: +21%, $\tau$=+3: +22%), что подтверждает contract renewal cycle mechanism, ранее теоретически обсуждавшийся у Stiroh (2007), но не квантифицированный для NBA в post-2011 эпохе.
 
-**Содержательный contribution 3: Durability как price effect.** Впервые в NBA-литературе показано, что games_missed_lag1 является самостоятельным price discount factor (β = −0.005/game, p < 0.001; Shapley-share 5.7%), независимым от performance-метрик. Это устанавливает, что рынок NBA прайсит риск травм через retrospective health record, а не только через current performance.
+**Содержательный contribution 3: Durability как ценовой эффект.** Впервые в NBA-литературе показано, что `games_missed_lag1` является самостоятельным фактором ценового дисконта ($\beta = -0.005$/game, p < 0.001; Shapley-доля 5.7%), независимым от performance-метрик. Это устанавливает, что рынок NBA прайсит риск травм через retrospective health record, а не только через текущую продуктивность.
 
 **Воспроизводимость:** Полный исходный код, сырые данные, тесты воспроизводимости (max coef diff с предыдущей версией < 5 × 10⁻⁵), hash-snapshots датасета размещены в публичном репозитории `https://github.com/outofcost/CourseProject` под MIT-лицензией. Это делает работу одной из первых полностью открытых эмпирических работ по NBA salary economics с воспроизводимым пайплайном от scraping до figure generation.
 
@@ -880,7 +880,7 @@ $\beta_{\text{ppg}}$-коэффициент Performance внутри max_30-tier
 
 ### Вывод 4. Durability — реальный price discount (поддерживает H10)
 
-Каждый пропущенный матч в прошлом сезоне снижает зарплату на 0.49%; за 30 пропусков — потеря −14.7%. Эффект устойчив (p < 0.001, проходит Bonferroni и BH-FDR). По Shapley декомпозиции durability даёт **5.7% объяснённой дисперсии** — больше, чем плановое ожидание (≈1%). Это указывает на то, что **рынок прайсит риск травм отдельно от текущей продуктивности**: 30-минутный matchup с травматизирующим противником не отражается в текущем PPG, но отражается в games_missed_lag1 и далее в следующем контракте.
+Каждый пропущенный матч в прошлом сезоне снижает зарплату на 0.49%; за 30 пропусков — потеря −14.7%. Эффект устойчив (p < 0.001, проходит Bonferroni и BH-FDR). По Shapley-декомпозиции durability даёт **5.7% объяснённой дисперсии** — больше, чем плановое ожидание (≈ 1%). Это указывает на то, что **рынок оценивает риск травм отдельно от текущей продуктивности**: отдельный инцидент травмы не отражается в текущем PPG, но фиксируется в `games_missed_lag1` и далее в следующем контракте.
 
 ## 6.3 Главный методологический вклад
 
@@ -892,7 +892,7 @@ $\beta_{\text{ppg}}$-коэффициент Performance внутри max_30-tier
 
 ## 6.4 Ограничения
 
-1. **Endorsement income не наблюдается.** Маркетинговый и эндорсмент-доход игроков (≈ $30 млн/год для LeBron) собран не был; marketability-канал идентифицирован только через residual selection. Это ограничивает причинный интерпретацию anti-marketability findings.
+1. **Endorsement income не наблюдается.** Маркетинговый и эндорсмент-доход игроков (≈ $30 млн/год для LeBron) собран не был; marketability-канал идентифицирован только через residual selection. Это ограничивает причинную интерпретацию anti-marketability findings.
 
 2. **TOT-attribution problem.** Игроки, поменявшие команду внутри сезона (≈ 14% выборки), получают NaN в team/market-зависимых спецификациях. Альтернативная импутация (взвешенная по доле игр) была отвергнута как расширяющая идентификационные предположения; результаты H7 и H8 строятся на 2 268 obs из 3 660.
 
@@ -908,7 +908,7 @@ $\beta_{\text{ppg}}$-коэффициент Performance внутри max_30-tier
 
 1. **Two-sided matching model** для NBA: текущий анализ редуцирован к hedonic regression; полная structural модель учла бы выбор команды игроком и наоборот.
 2. **Endorsement-augmented Mincer**: пополнение datasets по эндорсмент-доходам (Forbes Power 50, NBA jersey sales rankings) позволит decompose marketability vs salary каналы напрямую.
-3. **CBA 2023 second-apron event study**: новые ограничения для over-luxury-tax команд создают natural experiment для testing того, ослабляет ли salary cap элиту-команд (warrying-tax dynamics).
+3. **CBA 2023 second-apron event study**: новые ограничения для команд, превышающих luxury tax, создают natural experiment для тестирования того, ослабляет ли усиление salary cap концентрацию топ-игроков в командах-чемпионатах (luxury-tax dynamics).
 4. **Counterfactual cap simulation**: что произошло бы с distribution salary, если бы cap-правила были отменены? Это можно simulate в structural model on calibrated parameters.
 
 ## 6.6 Финальное утверждение
