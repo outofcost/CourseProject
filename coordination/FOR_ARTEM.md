@@ -401,3 +401,56 @@ Chapter 3 и 5 — solid в текущем виде, точечную правк
 Open в Word или LibreOffice. Шаблон применяет TNR 12pt, 1.5 spacing, A4, поля 35-10-20-20 мм по HSE guideline §6.1.
 
 — Claude-K
+
+---
+
+## Update 2026-05-23 — ITERATION 1 hostile review done (commit 5229a40)
+
+Karolina переключила режим работы на **dual-agent hostile review** (см. её последнее сообщение в проекте). Цель — циклическое улучшение, пока не упрёмся в лимиты. Подробное описание см. в её сообщении: NotebookEdit / claude-code / .claude — я не могу зеркалировать его сюда полностью, но суть:
+
+- Каждая итерация = два агента анализируют с разных перспектив, спорят, исправляют, перепроверяют
+- Запрещены overclaims, выдуманные источники, непроверенные утверждения
+- Постоянное сравнение с гайдлайном + 5 примерами ВКР
+- Не останавливаться при «нормальном» качестве — всегда искать слабости
+
+### Что сделал Agent A (Claude-K) в ITER 1
+
+Прошёлся по всем 6 главам с perspective «hostile academic reviewer + factchecker». Нашёл **30 issues**, все исправлены в commit `5229a40`. Главные категории:
+
+1. **Overclaims (10 fixes):** «впервые», «уникальный», «первое», «канонический пример» — все softened к «насколько известно автору, одна из первых» / «один из» / «допускает интерпретацию».
+2. **Внутренний жаргон (4 fixes):** «версия v2 модели», «после фикса A3», «output/tables_v1/...» — заменено на корректные академические формулировки.
+3. **Контекст цитирований (5 fixes):** Hembre без pooled-explanation, Krautmann без MLB-context, Hill-Groothuis с неправильной CBA date, Rosen 1986 transfer.
+4. **Грамматические ошибки (2 fixes):** Объект/Предмет без copula, «обнаруживает + хотя незначим» противоречие.
+5. **Объяснение специфических деталей (3 fixes):** Rose Rule, 10% validation, 6 команд для топ-5 рынков.
+6. **AI Disclosure framing (1 fix):** «согласно требованию HSE» (не подтверждено) → «добавлена автором в целях прозрачности».
+7. **H5/H6 parallel format (1 fix):** переформулированы в «Чем больше X, тем больше Y» style.
+8. **Practical significance (1 fix):** «даёт инструмент оценки» (overclaim — descriptive method) → «даёт ориентир относительной важности».
+9. **Hembre 2022 framing (2 fixes):** «обнаруживает» → «имеет высокую SE и статистически незначим»; контекст pooled across 4 лиг.
+10. **Speculative claims (1 fix):** «релевантно для других рынков» → «открывает перспективу для будущего применения».
+
+### Что прошу от Agent B (Claude-A) — ITER 1 counter-attack
+
+1. **Прочитай commit `5229a40` diff** на все 6 главных файлов.
+2. **Попытайся опровергнуть мои fix'ы:**
+   - Где я ослабил утверждение слишком сильно? (например, «насколько известно автору, одна из первых» — может выглядеть defensive)
+   - Где я переписал, но introduce новую проблему? (например, грамматика, factual error)
+   - Где я не заметил issue? (другая perspective)
+3. **Найди НОВЫЕ слабости** в текущем тексте — я работал из одной perspective; ты можешь увидеть другие angle:
+   - Methodology critique (статистик): VIF > 10 для age/age² — это by-construction, но reviewer может всё равно придраться. Достаточно ли мы это объяснили?
+   - Бейсбольный аналог Krautmann (1999) — корректна ли его применимость к NBA?
+   - Cite Stiroh (2007) для contract-cycle: это NBA-specific paper или общий?
+   - Hembre Table 3 NBA coefficient: правильно ли я процитировал интервал [-0,143; -0,069]?
+   - Yang & Lin (2012) использование как контроль discrimination — пересмотри.
+4. **Сделай ITER 1 counter-commit** на любом из 6 chapter files с твоими findings + fixes.
+
+### Что планирую в ITER 2 (Agent A)
+
+После твоего counter-attack — пройти по всем главам с новых perspectives:
+- **Methodology critique** (statistician): challenge каждое допущение модели
+- **Factual claims** (basketball expert): проверить все NBA-specific facts (даты CBA, имена игроков, статус naturalization, итд)
+- **Editorial polish** (style editor): repetition, awkward Russian phrasing
+- **Antiplagiat** (originality check): найти любые copy-paste constructions
+
+Время не ограничено, как сказала Karolina. Продолжаем до лимитов.
+
+— Claude-K
