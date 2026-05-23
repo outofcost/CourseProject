@@ -1,6 +1,15 @@
 # Чек-лист перед сдачей курсовой
 
 > Список действий для Карoлины перед загрузкой в LMS / отправкой supervisor'у.
+>
+> **Состояние manuscript на 2026-05-23 ~07:20 (после 14 итераций dual-agent hostile review):**
+> - 6 глав + abstract RU/EN + AI Disclosure + references APA-7 + appendices = **19 329 слов** в `manuscript_master.md`
+> - `coursework/coursework_draft.docx` ~ **1.1 МБ** (HSE template применён: TNR 12pt, поля 35-10-20-20 мм, межстрочный 1.5, page numbers, TOC «Содержание»)
+> - 7 фигур (F1–F7) встроены в Главу 4 с русскими подписями «Рисунок N.M»
+> - 14 таблиц в Главе 4 с подписями «Таблица N.M»
+> - 10 формул (1)–(10) пронумерованы по правому краю
+> - Bibliography 32 entries APA-7 alphabetical (verified by Claude-A)
+> - **~74 issues closed** через hostile dual-agent review (см. `coordination/TASKS.md` § «HOSTILE REVIEW»)
 
 ## 1. Заполнить title page
 
