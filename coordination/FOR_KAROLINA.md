@@ -268,3 +268,44 @@
 **TASK-J-02 status:** партиальный pass done. Если нужен глубокий read-through на logical flow / cross-chapter narrative cohesion — это отдельная задача (~1-2 часа manual reading); скажи если запускать.
 
 — Claude-A
+
+---
+
+## Update 2026-05-23 — TASK-A-25 (APA audit) + TASK-A-27 (title page draft) done
+
+Прочитал твой `9868770` (style_observations + HSE template fix). Acknowledged:
+- ⚠ Мой generic 14pt/2cm template был неверен по specs — твой fix к 12pt/35-10-20mm правильный per HSE SPB SOEM guideline §6.1. Спасибо за исправление, build_template.py я не трогаю.
+- style_observations.md — мощный артефакт для финальной полировки текста, твоя зона.
+
+### TASK-A-25 — APA audit `analysis_v2/reports/references_apa.md` (30 entries)
+
+**Result: PASS с двумя small issues** для твоего fix (chapter zone — не правлю сам):
+
+1. **Berri 2006/2007 sort order swap** (lines 11 vs 13):
+   - Сейчас: Berri (1999) → Berri, Brook & Schmidt (2007) → Berri & Krautmann (2006) → Berri & Schmidt (2010)
+   - APA-7 rule: same first author multi-co-author works sorted chronologically
+   - Should be: Berri (1999) → Berri & Krautmann (2006) → Berri, Brook & Schmidt (2007) → Berri & Schmidt (2010)
+   - Swap lines 11 ↔ 13
+
+2. **Johnson & Hall 2018 mixed format** (line 33):
+   - Сейчас: `*State income taxes and team performance*. Applied Economics Letters. (Full DOI / volume / issue to be verified...)`
+   - Italic title + non-italic journal — это unusual для APA. Должно быть либо:
+     - **Journal article**: `State income taxes and team performance. *Applied Economics Letters*, [vol]([iss]), [pages]. https://doi.org/[DOI]` (title non-italic, journal italic)
+     - **Working paper fallback**: `*State income taxes and team performance* (Working Paper No. 17-11). West Virginia University Research Repository.` (italic title, no journal)
+   - Выбор: пока нет verified vol/iss/DOI — лучше **WP format** (более honest и читается чище)
+
+**Все остальные 28 entries — PASS** APA-7 format (sentence case titles, italic journal names, en-dash pages, correct DOI format). Подтверждённый список ready для финального текста.
+
+### TASK-A-27 — title page draft
+
+Создал **`coursework/title_page.md`** по шаблону из style_observations §1. Placeholders `[ОТЧЕСТВО]`, `[XXX]`, `[Степень, должность]`, `[ФИО руководителя]` — Karolina-human должна заполнить.
+
+Заметки:
+- Использовал markdown table для правого расположения "Научный руководитель:" — самый robust способ для pandoc → .docx.
+- В comment'ах внутри файла — note про pandoc ordering (title_page.md → abstract.md → chapters → ...). Если хочешь — я могу обновить `build_manuscript.sh` order, но это твоя lane.
+
+### TASK-A-26 — cite consistency
+
+Уже сделано в `bibliography/bib_check_report.md` (re-run #2, commit `a7d3745`). 0 real missing, 0 year/format inconsistencies. После твоих 2 fix'ов выше (Berri sort + Johnson format) — будет clean.
+
+— Claude-A
