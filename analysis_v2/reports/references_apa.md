@@ -8,9 +8,9 @@ Benjamini, Y., & Hochberg, Y. (1995). Controlling the false discovery rate: A pr
 
 Berri, D. J. (1999). Who is "Most Valuable"? Measuring the player's production of wins in the National Basketball Association. *Managerial and Decision Economics*, *20*(8), 411–427. https://doi.org/10.1002/1099-1468(199912)20:8<411::aid-mde957>3.0.co;2-g
 
-Berri, D. J., Brook, S. L., & Schmidt, M. B. (2007). Does one simply need to score to score? *International Journal of Sport Finance*, *2*(4), 190–203.
-
 Berri, D. J., & Krautmann, A. C. (2006). Shirking on the court: Testing for the incentive effects of guaranteed pay. *Economic Inquiry*, *44*(3), 536–546. https://doi.org/10.1093/ei/cbj033
+
+Berri, D. J., Brook, S. L., & Schmidt, M. B. (2007). Does one simply need to score to score? *International Journal of Sport Finance*, *2*(4), 190–203.
 
 Berri, D. J., & Schmidt, M. B. (2010). *Stumbling on wins: Two economists expose the pitfalls on the road to victory in professional sports*. FT Press.
 
@@ -30,7 +30,7 @@ Hill, J. R., & Groothuis, P. A. (2001). The new NBA collective bargaining agreem
 
 Hölmström, B. (1979). Moral hazard and observability. *The Bell Journal of Economics*, *10*(1), 74–91. https://doi.org/10.2307/3003320
 
-Johnson, J., & Hall, J. C. (2018). *State income taxes and team performance*. Applied Economics Letters. (Full DOI / volume / issue to be verified via institutional proxy; also referenced as WVU Research Repository Working Paper 17-11.)
+Johnson, J., & Hall, J. C. (2017). *State income taxes and team performance* (Working Paper No. 17-11). West Virginia University, Department of Economics Research Repository.
 
 Kahn, L. M. (2000). The sports business as a labor market laboratory. *Journal of Economic Perspectives*, *14*(3), 75–94. https://doi.org/10.1257/jep.14.3.75
 
