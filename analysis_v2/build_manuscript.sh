@@ -32,6 +32,12 @@ strip_chapter() {
     ' "$1"
 }
 
+TITLE_PAGE="$(cd "$(dirname "$0")"/../coursework && pwd)/title_page.md"
+if [ -f "$TITLE_PAGE" ]; then
+    strip_chapter "$TITLE_PAGE" >> "$OUT"
+    printf "\n\\\\newpage\n\n" >> "$OUT"
+fi
+
 strip_chapter "$DIR/abstract.md" >> "$OUT"
 printf "\n---\n\n" >> "$OUT"
 
