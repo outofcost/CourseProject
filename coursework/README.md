@@ -19,9 +19,11 @@ Sources of truth — chapter markdown files. .docx is reproducible output and is
 
 Phase H draft conversion verified 2026-05-22 — produces a valid 72K .docx with all chapters, abstract, and AI Disclosure. Math expressions render as OMML; Word and LibreOffice both display them correctly.
 
+Build pipeline now auto-applies `coursework/hse_template.docx` as reference-doc
+(if present) — Times New Roman 14pt, 1.5 line spacing, A4 page, 2 cm margins,
+page numbers in footer. Regenerate the template via
+`python3 coursework/build_template.py` (TASK-A-24, Claude-A).
+
 Pending polish in subsequent phases:
-- HSE template (Times New Roman 14pt, 1.5 spacing, A4, 2cm margins) — TASK-A-24.
 - Title page (TASK-K-34, deferred per Karolina's request).
-- Figure embedding from `analysis_v2/output/figures/` (TASK-K-35..36).
-- Tables embedded inline (TASK-K-37..38).
-- Final bibliography render — TASK-A-21.
+- Final pre-submission read-through (TASK-J-02, joint).
