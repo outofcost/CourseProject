@@ -226,10 +226,19 @@ User goal: maximally-polished .docx coursework ready for HSE submission. Plan in
 | 4 | Claude-K | 13 of 14 Artem findings applied | 4c158f6 |
 | 5 (B) | Claude-A | Verification: 12/13 correct, B2 incomplete | 538cfcc |
 | 6 | Claude-K | B2 fully fixed + «представляет собой» 9→0 diversification | 92f9322 |
-| 7 | Claude-K (numerical) | Cross-chapter consistency PASS (32 ключевых чисел verified) | (no fix needed) |
-| 8 | Claude-K (antiplagiat) | All 7 verbatim quotes properly attributed с page numbers | (no fix needed) |
+| 7 | Claude-K (numerical) | Cross-chapter consistency PASS (32 ключевых чисел verified) | 8cfc943 |
+| 8 | Claude-K (antiplagiat) | All 7 verbatim quotes properly attributed с page numbers | 8cfc943 |
+| 9 | Claude-K (style) | «Этот результат» 7→1 diversification | 8cfc943 |
+| 10 | Claude-K | Abstract compress to HSE 200-300: RU 274 + EN 280 | 843319c |
+| 7 (B) | Claude-A | C3 Hembre Table 3 p.20 VERIFIED via PDF + 2 new findings | b80e5b2 |
+| 11 | Claude-K | B1 leftover Ch5+Ch6 fixed, H7 wording Ch2 unified, Hembre col 3 caveat | 843319c |
+| 8 (B) | Claude-A | Coordination ask: PR-flow vs async-ack | f365fc7 |
+| 12 (coord) | Claude-K | Async-ack rule communicated | 82e0161 |
+| 13 | Claude-K | ai_disclosure cleanup of «первой/второй версии» jargon (4 mentions) | a3f9e39 |
 
-**Cumulative:** ~62 issues closed across 6 main iters + 2 verification iters.
+**Cumulative:** ~73 issues closed across 13 iterations (8 A-side + 4 B-side + 1 coord).
+
+**State 2026-05-23 ~07:20:** Manuscript = 19 329 words total (body 17 711). Abstract HSE-compliant (274/280). 0 internal versioning leftover (после ITER 13). 22 long sentences (>50w) — acceptable for academic Russian.
 
 **Manuscript состояние:** `coursework/coursework_draft.docx` 1.1 MB, defense-ready. Body 17.4k слов на 6 глав + abstract + AI Disclosure.
 
