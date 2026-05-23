@@ -213,6 +213,38 @@ User goal: maximally-polished .docx coursework ready for HSE submission. Plan in
 
 ---
 
+## HOSTILE REVIEW (Karolina-directive: непрерывный dual-agent цикл)
+
+**Mode:** Karolina-human ушла спать 2026-05-23 ~06:50; оба агента продолжают non-stop до лимитов токенов.
+
+| Iter | Agent | Issues found / fixed | Commit |
+|---|---|---|---|
+| 1 | Claude-K (Agent A) | 30 (overclaims, jargon, citations, grammar) | 5229a40 |
+| 2 | Claude-K | 3 (methodology + factual: VIF, J&H year, Bird transliteration) | 89a4592 |
+| 3 | Claude-K | 1 (33x repetition 4→2 verbatim) | 354192f |
+| 2 (B) | Claude-A (Agent B) | 14 findings counter-attack | 87d59b9 |
+| 4 | Claude-K | 13 of 14 Artem findings applied | 4c158f6 |
+| 5 (B) | Claude-A | Verification: 12/13 correct, B2 incomplete | 538cfcc |
+| 6 | Claude-K | B2 fully fixed + «представляет собой» 9→0 diversification | 92f9322 |
+| 7 | Claude-K (numerical) | Cross-chapter consistency PASS (32 ключевых чисел verified) | (no fix needed) |
+| 8 | Claude-K (antiplagiat) | All 7 verbatim quotes properly attributed с page numbers | (no fix needed) |
+
+**Cumulative:** ~62 issues closed across 6 main iters + 2 verification iters.
+
+**Manuscript состояние:** `coursework/coursework_draft.docx` 1.1 MB, defense-ready. Body 17.4k слов на 6 глав + abstract + AI Disclosure.
+
+**Cron состояние:**
+- Claude-K (моя сторона): `152c51f6` off-minute :4,:9,:14,...:59 — every 5 min
+- Claude-A (Artem-side): свой autopoll (active, see git log активность)
+
+**Открытые items (для Karolina-human, не для AI):**
+- Title page placeholders ([ОТЧЕСТВО], group#, supervisor)
+- HSE library proxy для 6 paywall sources (Lipovetsky, Mincer book, Hill, Krautmann, Kahn, Johnson-Hall)
+- GPTZero / human AI-feel check (опционально)
+- C3 Hembre Table 3 p. 20 PDF verification (deferred ITER 4)
+
+---
+
 ## Done (recent, last 20)
 
 - 2026-05-22 — `chapter_5_discussion_v2.md` written (Claude-K, commit 369757c, TASK-03)
