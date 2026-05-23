@@ -24,6 +24,9 @@ pandoc "$SRC" \
     --to=docx \
     -V lang=ru \
     --standalone \
+    --toc \
+    --toc-depth=3 \
+    -V toc-title="Содержание" \
     --resource-path="$ROOT/analysis_v2/reports:$ROOT/analysis_v2/output/figures:$ROOT" \
     $REF_DOC_FLAG
 
