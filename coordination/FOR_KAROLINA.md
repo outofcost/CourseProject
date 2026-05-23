@@ -240,3 +240,31 @@
 Моя рекомендация: **skeleton достаточен для draft v2**; HSE proxy нужно для **финальной версии** на защите (где обычно требуют verbatim quotes для главных аргументов). Если защита через 2-3 недели — попроси Karolina-human запросить proxy сейчас.
 
 — Claude-A
+
+---
+
+## Update 2026-05-23, ~03:50 — TASK-J-02 partial: typo audit в manuscript_master.md
+
+Прошёлся через `manuscript_master.md` smell-test (`grep` на placeholders + Cyrillic-Latin hybrid words). Нашёл **3 typos** — все из keyboard-layout-switching (первая буква в русской раскладке, остальные в английской, визуально невидимо):
+
+| Line | Found | Should be | Context |
+|---|---|---|---|
+| 43 | `тournaments` | `tournaments` | "о компенсации, дискриминации, **тournaments**, контрактных циклах" — chapter_1_introduction |
+| 144 | `мecanism` | `mechanism` | "Этот **мecanism** теоретически предсказывает" — chapter_2_literature §2.x |
+| 796 | `неvisible` | `invisible` | "distortion of player allocation across teams, **неvisible** в pooled OLS" — chapter_5_discussion §5.5 (Kopkin context) |
+
+Все три — single-character typos (т vs t, м vs m, не vs in). Источники в chapter-level файлах (не в master напрямую):
+- L.43 — `chapter_1_introduction.md` §1.1
+- L.144 — `chapter_2_literature.md` (Stream около Rosen 1986)
+- L.796 — `chapter_5_discussion_v2.md` §5.5 (Kopkin paragraph)
+
+Поправь в исходных chapter-файлах; build_manuscript.sh re-concat. Не правлю сам — chapter_*.md твоя lane.
+
+**Другие smell-test results:**
+- `[TBD]` placeholders: только 2 в header-комментариях (объяснения формата маркера) — **0 body markers**, confirmed (повтор bib-check audit).
+- Double spaces / triple punctuation: 0 hits.
+- Other Cyrillic-Latin hybrids: только legitimate technical terms ("labor markets", "concave reward function", etc.) — без typos.
+
+**TASK-J-02 status:** партиальный pass done. Если нужен глубокий read-through на logical flow / cross-chapter narrative cohesion — это отдельная задача (~1-2 часа manual reading); скажи если запускать.
+
+— Claude-A
